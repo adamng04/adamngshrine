@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adamng's Shrine</title>
+    <link rel="icon" href="images/logo-01-01.png" type="image/x-icon" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    font-family: "Merriweather", sans-serif;
+    margin: 0 200px;
+}
+
+.background {
+    background-image: url(images/lain.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center center;
+    z-index: -1;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.70); /* Semi-transparent black overlay */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+.navigation{
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+    position: sticky;
+    background: linear-gradient(to right, #009479, #ff8000, gray);
+    padding: 5px;
+    top: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    z-index: 1030;
+}
+.navigation_border {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.navigation_border_items_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigation_border_items_logo a {
+    margin: 10px;
+    text-decoration: none;
+    color: #ffc073;
+    font-size: 20px;
+}
+
+.navigation_border_items_logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.navigation_border_items_logo img:last-child {
+    width: 350px;
+    height: 50px;
+}
+
+.navigation_border_items_logo a:hover {
+    color: #009479;
+}
+
+.navigation_border_list a:hover {
+    color: #009479;
+}
+
+.navigation_border_list {
+    padding: 18px;
+    font-size: 25px;
+}
+
+.navigation_border_list a {
+    margin: 10px;
+    text-decoration: none;
+    color: #ffc073;
+    font-size: 20px;
+}
+
+.thankyou p {
+    color: #ffc073;
+    font-size: 10px;
+    text-align: right;
+}
+
+.menu {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    background-clip: padding-box; /* !importanté */
+}
+
+.menu_items{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.menu_items img {
+    width: 350px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    border-style: groove;
+    border-color: orange;
+}
+
+.gallery {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    background-clip: padding-box;
+}
+.journey h2 {
+    color: #ffc073;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.journey p {
+    color: #ffc073;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.gallery_items {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #ffc073;
+}
+
+.gallery_items img {
+    width: 450px;
+    opacity: 1;
+    display: block;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    border-style: groove;
+    border-color: orange;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.gallery_items img:hover{
+    opacity: 0.8;
+}
+
+.dimdenmain {
+    margin: 0 210px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    border-style: solid;
+    border-color: #009479;
+}
+
+.dimden_explanation {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 1px;
+    margin-top: 20px;
+    text-align: start;
+    margin-left: 90px;
+    color: #ffc073;
+    font-size: 10px;
+}
+
+.dimden_explanation p {
+    margin-right: 200px;
+}
+
+.dimdenmain_content {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+.hotlinktitle {
+    color: #ffc073;
+    font-size: 12px;
+    margin: 0 210px;
+    margin-top: 50px;
+    
+}
+
+.hotlink {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 1px; 
+    margin: 0 180px;
+    box-sizing: border-box;
+
+}
+
+.hotlink_content {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#epicring {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    text-align: right;
+    color: wheat;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #ffc073;
+    padding-top: 20px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="navigation container">
+        <div class="navigation_border">
+            <div class="navigation_border_items_logo">
+                <img src="images/logo-01-01.png" alt="logoimage">
+                <a href="index.html">Welcome to Adamng's Shrine</a>
+                <img class="halloween" src="images/hallloween.gif" alt="">
+
+            </div>
+            <div class="navigation_border_list">
+                <a href="about.html">About me</a>
+                <a href="blog.html">Blogs</a>
+            </div>
+        </div>
+    </div>
+    <div class="thankyou">
+        <p>thanks for the gif, <a href="https://blinkies.cafe/" style="color: #ffc073;">blinkie maker!</a></p>
+    </div>
+
+    <div class="menu container">
+        <div class="menu_items">
+            <a href="https://youtu.be/5EqaekCD_uQ?t=7"><img src="images/kys.jpg" alt=""></a>
+            <h2>Hello there!</h2>
+            <p>[This website is currently under construction]</p>
+            <br>
+            <p>Welcome to my website. Whatever is in the website, will be the result of my journey learning web development.</p>
+            <p>The menu is inspired by carrd.co design, nothing fancy here besides a few buttons to my deepest darkest secrets.</p>
+            <p>although not all of them are secrets...</p>
+        </div>
+    </div>
+   
+    <div class="journey">
+        <h2>My Web Development History:</h2>
+        <p>(you can click on them!)</p>
+    </div>
+    <div class="gallery">
+        <div class="gallery_items">
+            <p>May 2023</p>
+            <a href="firstweb.html"><img src="images/webdev1.png" alt=""></a>
+            <p>September 2023</p>
+            <a href="secondweb.html"><img src="images/webdev2.png" alt=""></a>
+        </div>
+    </div>
+    
+    <div class="date">
+        <h3>Current date:</h3>
+        <p id="p1"></p>
+    </div>
+
+    <div class="dimdenmain">
+        <div class="dimden_explanation">
+            <h1>Where widgets belong</h1>
+            <p>I really love making things move, even putting ads in it. Navlink ad is immune from uBlock because it's cool.</p>
+        </div>
+        <div class="dimdenmain_content">
+            <div class="dimdenmain_content_navlink">
+                <iframe width="180" height="180" style="padding:5px;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>            
+            </div>
+            <div class="dimdenmain_content_dimdenmoon">
+                <iframe width="250" height="180" style="padding:5px; border-radius: 10px; border-color: #009479;" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>    
+            </div>
+        </div>     
+    </div>
+
+    <div class="hotlinktitle">
+        <h2>webrings!</h2>
+    </div>
+    <div class="hotlink">
+        <div class="hotlink_content">
+            <div class="hotlink_content_dimden">
+                <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+            </div>
+
+            <div class="hotline_content_octosquigglez">
+                <a href="https://octosquigglez.nekoweb.org" target="_blank"><img src="https://files.catbox.moe/fksi0k.gif"></a>
+            </div>
+
+            <div class="hotline_content_s1nez">
+                <a href="https://s1nez.nekoweb.org/"><img src="https://s1nez.nekoweb.org/BUTTON.gif"></a>            
+            </div>
+
+            <div class="hotline_content_epic1">
+                <a target="_blank" href="https://epic1.neocities.org"><img alt="Visit my webpage!" src="https://epic1.neocities.org/button.gif" style="image-rendering: pixelated"></a>
+            </div>
+
+            <div class="clown">
+                <a href="https://excessiveclownery.neocities.org/"><img src="https://excessiveclownery.neocities.org/Buttons/DaCircus.png"></a>
+            </div>
+
+            <div class="hotline_content_notbyai">
+                <a href="https://notbyai.fyi/"><img class="pt-3 d-block mx-auto" src="images/Created-By-Human-Not-By-AI-Badge-white.png" alt="Written By Human, Not By AI"></a>
+            </div>
+
+            <div class="hotline_content_statuscafe">
+                <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id='epicring'>
+        <script type="text/javascript" src="https://epic1.neocities.org/epicring/onionring-variables.js"></script>
+        <script type="text/javascript" src="https://epic1.neocities.org/epicring/classic-widget.js"></script>
+    </div>
+    
+    <br><br><br>
+    <div class="copyright">
+        <footer>Copyright 2024 adamngshrine</footer>
+    </div>
+
+    <script>
+        var date = new Date();
+        document.getElementById("p1").innerHTML = date;
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.overalls {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.navigation a{
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: white;
+}
+
+.navigation_logo {
+    gap: 20px;
+}
+
+.logo {
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.logo:hover{
+    border-radius: 5px;
+}
+
+.navigation_logo a {
+    letter-spacing: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation_logo a:hover{
+    letter-spacing: 1px;
+}
+
+.background {
+    background-color: #353535;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navigation_footer p{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.navigation_box {
+    position: sticky;
+    top: 50px;
+    z-index: 1;
+    background-color: #353535;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(236, 218, 209, 0.53);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.43);
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation_box:hover {
+    border: 1px solid rgb(236, 218, 209);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.43);
+}
+
+.blogcontent_all {
+    background-color: #424242;
+    border-radius: 10px;
+    border: 1px solid rgb(236, 218, 209);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.52);
+}
+
+.blogcontent a{
+    text-decoration: none;
+    color: #00ddb4;
+}
+
+.subheader {
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.button {
+    background-color: #009479;
+    border-radius: 5px;
+    width: 160px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #dd5928;
+    border-radius: 5px;
+    width: 220px;
+    font-size: 16px;
+    letter-spacing: 4px;
+}
+
+@media only screen  and  (max-width:995px){
+    .blog {
+        scale: 95%;
+        padding-top: 440px;
+        position: absolute;
+    }
+
+    .image img{
+        height: 200px;
+    }
+}

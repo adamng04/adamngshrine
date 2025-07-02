@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.containe {
+    font-family: 'Poppins';
+}
+
+.background {
+    background-image: url(/images/notoai.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center center;
+    z-index: -1;
+    filter: blur(11px);
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.214); /* Semi-transparent black overlay */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.navigation {
+    background-color: #004f4d;
+}
+
+.navigation_options a{
+    text-decoration: none;
+    color: #ffb63e;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.navigation_options a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.landing {
+    background-image: url(/images/lain.jpg);
+    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.text h1{
+    color: #ff8000;
+}
+
+.text a{
+    color: #ffc073; 
+    text-decoration: none;
+    transition: font-size 0.4s ease-out;
+}
+
+.text a:hover {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.image img {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ff8000;
+}
+
+.information_header{
+    background-color: #003232;
+    color: white;
+    border-radius: 10px;
+}
+
+.grids {
+    gap: 20px;
+}
+
+.grid_items {
+    border-radius: 10px;
+    color: #ffffff;
+    background-image: linear-gradient(to bottom, #300a2b, #490832, #620234, #7b0030, #910728);
+}
+
+.history_text {
+    background-color: #003232;
+    border-radius: 10px;
+    color: white;
+}
+
+.gallery {
+    background-image: linear-gradient(to bottom, #003232, #003939, #00403f, #004846, #004f4d);
+}
+
+.gallery_items {
+    gap: 20px;
+    max-width: fit-content; 
+    margin-inline: auto;
+}
+
+.web img{
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffb63e;
+    box-shadow: 3px 3px 0px #e64137;
+}
+
+.web img:hover{
+    animation: boxShadow 0.1s ease-in;
+    box-shadow: 7px 7px 0px #e64137;
+}
+
+@keyframes boxShadow{
+    0% { box-shadow: 3px 3px 0px #e64137; }
+    100% { box-shadow: 7px 7px 0px #e64137; }
+}
+
+.webrings h2 {
+    background-color: #e64137;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.webring_url {
+    background-color: #001d23;
+}
+
+.footer {
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px){	
+    .iframe {
+        scale: 80%;
+    }
+}

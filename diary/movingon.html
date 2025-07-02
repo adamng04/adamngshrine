@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam is moving on...</title>
+    <meta name="description" content="For how long?">
+    <link rel="icon" href="images/logo-01-01.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        
+.container {
+    font-family: 'MS Gothic Regular', monospace;
+    padding-top: 10px;
+    color: white;
+    opacity: 1;
+}
+
+.background {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center center;
+    z-index: -1;
+}
+
+.titlebox {
+    animation-iteration-count: infinite;
+    font-family: 'Courier New' sans-serif;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes textflicker {
+    from {
+      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+/*https://codesandbox.io/p/sandbox/github/D3nn7/crt-css?file=%2Fsrc%2Fstyle.css%3A13%2C23*/
+
+.navigation {
+    background-color: rgba(0, 0, 0, 0.70);
+    border: 2px solid #009479;
+    overflow: scroll;
+    z-index: 1;
+    max-height: 500px;
+    border-radius: 2px;
+}
+
+.diary {
+    background-color: rgba(0, 0, 0, 0.70);
+    border: 2px solid #009479;
+    max-height: 500px;
+    overflow: scroll;
+    z-index: 1;
+    overflow-wrap: break-word;
+    border-radius: 2px;
+}
+
+
+.diary p {
+    font-size: 14px;
+    letter-spacing: 1.1px;
+    text-shadow: 0px 0px 1px #009479;
+}
+
+.separation {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 2px;
+    border-radius: 20px;
+    background-color:#9c9c9cdf;
+}
+
+.links a{
+    color: white;
+    padding-bottom: 10px;
+}
+
+.main a{
+    color: #ff8000;
+}
+
+.lists a{
+    font-size: 18px;
+}
+
+.navigation_mobile {
+    overflow: hidden;
+    border: 1px solid #009479;
+    border-radius: 1px;
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navigation_mobile #links {
+    display: none;
+    height: 120px;
+    overflow: scroll;
+}
+
+.navigation_mobile a{
+    color: #fdbe72;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navigation_mobile a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navigation_mobile a.icon:hover {
+    background-color: #414141;
+}
+
+#links {
+    background-color: rgb(0, 0, 0);
+}
+
+#links a{
+    text-decoration: underline;
+}
+
+#links a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.miscs {
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    border: thin solid #ffc073;
+    text-align: start;
+    box-shadow: 0 0 10px #004f4d;
+    height: auto;
+    color: white;
+    word-wrap: break-word;
+    width: 878px;
+}
+
+#statuscafe {
+    border-radius: 2px;
+    border: thin solid #009479;
+    text-align: start;
+    box-shadow: 0 0 10px #004f4d;
+}
+
+@media only screen  and  (max-width:576px){
+    .navigation {
+        background-color: rgba(0, 0, 0, 0.70);
+        border: 2px solid #adbdba;
+        overflow: scroll;
+        z-index: 1;
+        height: 200px;
+        border-radius: 2px;
+    }
+
+    .links a{
+        font-size: 12px;
+    }
+
+    .miscs {
+        max-height: 100%;
+    }
+}
+
+aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  float: left;
+  box-shadow: inset 5px 0 5px -5px #009479;
+  font-style: italic;
+  color: #009479;
+}
+
+aside p{
+  margin: 0.5rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="title row justify-content-center">
+            <div class="titlebox col-xl-6 justify-content-center d-flex">
+                <a style=" text-decoration: none;" href=""><i><h1 style="font-family: 'Times New Roman', Times, serif; color: white;">Moving on.</h1></i></a>
+            </div>
+            <div class="links col-xl-8 d-flex gap-3 justify-content-center">
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About me</a>
+                <a href="/blog.html">Blogs</a>
+                <a href="/index/AUportal.html">AU portal</a>
+                <a href="/links.html">links</a>
+            </div>
+            <div class="links col-xl-8 d-grid gap-0 justify-content-center">
+                <a href="/diary/diary.html" style="color: #009479;"><p class="my-0"><i class="fa-solid fa-arrow-left"></i> back to diary</p></a>
+                <a href="#beatles" style="color: #fdbe72;" class="d-block d-xl-none d-lg-none d-md-none">beatles top 3 list</a>
+                <a class="d-flex" href="https://adamngshrine.atabook.org/">Sign my guestbook!</a>
+            </div>
+        </div>
+        <div class="main row m-0 gap-3 justify-content-center">
+            <div class="navigation col-lg-3 col-xl-2 col-md-10 p-2 d-none d-xl-flex d-lg-flex d-md-flex"> 
+                <div class="information p-1">
+                    <p style="text-shadow: 0px 0px 7px white;">Dates</p>
+                </div>
+                <div class="lists p-1">
+                    <a href="#feb62024">06/02/2024</a>
+                    <a href="#jan12025">1/1/2025</a>
+                    <a href="#dec272024">27/12/2024</a>
+                    <a href="#dec232024">23/12/2024</a>
+                    <a href="#dec212024">21/12/2024</a>
+                    <a href="#dec202024">20/12/2024</a>
+                    <a href="#dec192024">19/12/2024</a>
+                    <a href="#dec182024">18/12/2024</a>
+                    <a href="#dec172024">17/12/2024</a>
+                    <a href="#dec152024">15/12/2024</a> 
+                </div>
+            </div>
+            <div class="navigation_mobile col-xl-9 col-lg-8 col-md-10 justify-content-center align-items-center mx-auto d-block d-xl-none d-lg-none d-md-none">
+                <a style="font-size: 17px; font-family: 'Merriweather', sans-serif;" class="active d-flex gap-1 align-items-center"><img src="/images/logo-01-01.png" width="20px">Dates</a>
+                <div id="links">
+                    <a href="#feb62024">06/02/2024</a>
+                    <a href="#jan12025">1/1/2025</a>
+                    <a href="#dec272024">27/12/2024</a>
+                    <a href="#dec232024">23/12/2024</a>
+                    <a href="#dec212024">21/12/2024</a>
+                    <a href="#dec202024">20/12/2024</a>
+                    <a href="#dec192024">19/12/2024</a>
+                    <a href="#dec182024">18/12/2024</a>
+                    <a href="#dec172024">17/12/2024</a>
+                    <a href="#dec152024">15/12/2024</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="diary col-lg-8 col-xl-6 col-md-12 p-2">
+                <details class="p-2 my-0" style="text-align: center;">
+                    <summary><i style="font-family: 'Times New Roman', Times, serif; text-decoration: underline;"><h5>What am I moving on from?</h5></i></summary>
+                    <p>Anything, really. Socials, communities, video games, friendships... whatever I try to move on belongs here, and what I've done afterwards to make sure I don't depress myself also goes here.</p>
+                    <p>They say nothing lasts forever, and it's the hardest thing I must do. Setting a firm goal is also quite whimsy of me, so I just let myself unconsciously decide, and then try to ask myself "Was it because I rashly rage-quitted, disappointed, depressed, or something I've been thinking about, but is afraid to do so because of my friends?"</p>
+                    <p>Why isn't this part of the diary? Because it's a phase, it has an end unlike my diary, and I think it's the most significant phase than most. Anyway, enjoy. I will allow you to see this page.</p>
+                    <p>Why? It reflects a guy who really, really wants to live peacefully, like all of us do. It's a common thing!</p>
+                    <br>
+                </details>
+                <p style="text-align: center;">────── ⋆⋅☆⋅⋆ ────── </p>
+                <div class="content p-2">
+                    <h1 id="feb62025">February 6, 2025</h1>
+                    <div class="separation"></div>
+                    <p>I was willing to cut off my friends for good, for my own sake.</p>
+                    <p>It was so close, but deep within, I had to talk. Because if I left without telling anyone, they'd be confused. But at that time, I felt like i've been lost all respect from many people, I simply cannot think of a better way to delete social media.</p>
+                    <p>But despite my self-harm and self-hatred, they chose to remain friends, because they still believe in me not being a fully shitty person, just a lil' iffy at times. I amplified such trivial problem to such self disdain I didn't want to look at my friends in the eye. I don't know how long I'll have to go through this again.</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="jan12025">January 1, 2025</h1>
+                    <p style="color: #ff8000;">Weather: Moody, sun is completely null</p>
+                    <div class="separation"></div>
+                    <h5 style="color: #ff8000;">Happy new year.</h5>
+                    <p>Old friendships are gone, new friendships are made.</p>
+                    <p>I got to see the fireworks. Even tho it was half-eclipsed by tall ass buildings, I still got a glimpse of the sight I've missed for 12 years. I had joy playing chess with friends, drinking, and just having fun with people in general. All those blissful moments was common for my friends, but if only they knew how rare it is for me. Another new year present is my internship course invitation! After an entirety of December sitting ducks, I got to join the program and I'm both scared and excited. Many things are happening at once, and I don't know what else awaits me from now on.</p>
+                    <p>Speaking of moving on, I spent some moments for myself, come to realize that leaving Discord forever is not a better option, and to really move on, I have to detach myself from many, many communities that I spent little time with. I always try to engage, but it almost went nowhere, like being thrown in a group of friends who are already set in stone with their members and interests. So I kept around 4 servers remaining, and from now on I won't hesitate to leave if it doesn't interest me anymore. I gotta grow up more, honestly...</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec272024">December 27, 2024</h1>
+                    <p style="color: #ff8000;">Weather: Sunny, monsoon late afternoon.</p>
+                    <div class="separation"></div>
+                    <h5 style="color: #ff8000;">Chapter 1: Calm before the storm</h5>
+                    <p>I like having fun.</p>
+                    <p>Especially getting into the Doom territory, playing games and reading wikipedia pages. Getting Game Pass is a mixed bag though. Microsoft Store/Xbox Store doesn't grant me as much indie games like Steam, but offering a cheap subscription for broke ass college student like me to power through actually good AAA games is a blessing in on itself. It's kinda sad though, how far behind I am in gaming, and many other things, not because society keeps changing, but more like I refuse to keep up.</p>
+                    <p>But getting AAA games on my laptop is a joy never to be obtained again, playing Doom Eternal for the first time, I felt like "This is it! This is the gamer feeling that people have been doing for the last 3 decades!" I'm trying to get through these games as much as possible, they seem like a joy to power through. Next on the list should be the Halo series. And for that, I have to consult the nerds of Halo to guide me through.</p>
+                    <h5 style="color: #ff8000;">Chapter 2: The raging storm</h5>
+                    <p>I spent an unhealthy amount of money on Christmas Eve, and it was a blissful day with my friends. Yes, 13 years without any, 13 years doing thing by myself, I had friends joining me on Christmas Eve, and finally, getting to watch New Year firework after a long, long time.</p>
+                    <p>But it had to be ruined by the brutal truth I faced behind the joy. Career choices, market orientations, all twisted by the sheer mention and unbelieveable usage of AI. I got furious, questioning why I had to think about it. Can't my joy last a little bit longer? I decided it's high time I did something about it, maybe a message, perhaps. Doubt anyone would care to read, they'll think it's the same narrative. Who cares, my imposter syndrome won't stop me from speaking the truth.</p>
+                    <p>People deserve the truth, even if they don't want to hear it. People deserve to know they don't have to bury themselves in denial. They should know that they're helpless, and from that, voicing their concerns. They have to realize it's a dead end, so they can open a path for themselves. It's the only way it's resolved, facing the truth.</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec232024">December 23, 2024</h1>
+                    <div class="separation"></div>
+                    <h5>On the verge of relapsing</h5>
+                    <p>It felt too appealing to let go of what makes me a wreck I am today. Fucking hell, I don't wanna relapse, it feels too pleasant, just full of escapism. Everyday I opened it, sat there, doing nothing with it, and then question what purpose was there to have it open? Was I stalling to have a chance to talk to people, only realizing I have nothing to do except yapping nonsensical stuff which goes nowhere?</p>
+                    <p>I hate it, why has it come to the point where leaving socials is equally difficult as quitting drinking? I have legit no productivity points sitting there and not engaging in particularly ANYTHING at all. I yearned to talk too much, but all I have is personal rants, really. There's nothing else coming from me except personal problems and couple games I play because I don't have a huge library of games and finance for it. It really sucks spending your life learning nothing because you have cant spend for it.</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec212024">December 21, 2024</h1>
+                    <p style="color: #ff8000;">Weather: slept all day long, dunno.</p>
+                    <div class="separation"></div>
+                    <h5 style="color: #ff8000;">Tomorrow, a brief return.</h5>
+                    <p>After a week of absence, tomorrow I'll probably come back. But don't get me wrong, I'll probably ask each of them for other places to talk because hell I don't wanna keep using Discord to relapse into doomscrolling. Maybe left a couple servers, cleaning up my list once and for all. I can just read the news instead of using any SNS to be informed (except reddit, the meme channels are the most informed, somehow, unironically.) The goal for tomorrow is just gonna be brief, straight to the point problem solving. I hope it goes well. Funny enough I got to return on a Sunday, which is nice because everyone seems to have a break. Well, it's Christmas season, almost everyone SHOULD be having a break already....</p>
+                    <p>I don't know how to explain to them, really. Although I think it wouldn't be such a big deal. "I left because of stress" is a common thing among all of us, so it's a nothingburger for the majority of every community. But thinking of leaving for longer than a week is kinda scary. After all, I gotta keep my friendships intact.</p>
+                    <div style="color: grey; font-size: 14px;" class="p-2">
+                        <p >P/s: Lmao, my oomf found this page. So let me add a lil details:</p>
+                        <ul>
+                            <li>I don't think Discord is an enemy, it shoulda been "I keep talking about it like a horrible thing I cannot get over with" or something :P</li>
+                            <li>Yes I did include Rev 1, I probably will put Happiness is a Warm Gun top 2, and Blackbird in honorables.</li>
+                            <li>DID YOU KNOW I actually listened to some Anthology/Outtakes? Because the goddamn track called Revolution 9 I hopped into the White Album rabbit hole and found Super Deluxe, and then it goes on to many, many things I did not know, like Paul is Dead theories, circlejerk subreddits, stolen bass, etc. It's been like this for a week and I kept on finding new shit from them, but it was kinda funny nonetheless.</li>
+                        </ul>
+                        <p style="color: grey; font-size: 12px;">I also listened to Paul's Ram btw</p>
+                        <p style="color: grey; font-size: 12px;" class="my-0">Uncle Albert/Admiral Halsey > Long Haired Lady > The Back Seat Of My Car</p>
+                        <p style="color: grey; font-size: 12px;">Honorable Mentions: Eat At Home</p>
+                        <p style="color: grey; font-size: 12px;">oh and also HALLELUJAH OHHHH MY SWEET LORD HAAAAARE KRISHNAAAAA IIIII LIKE TO BE A PIRATE IT'S PIRATE LIFE FOR ME.</p>
+                    </div>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec202024">December 20, 2024</h1>
+                    <p style="color: #ff8000;">Weather: HERE COMES THE SUN</p>
+                    <div class="separation"></div>
+                    <h5 style="color: #ff8000;">Part 5, Chapter 1: Short response</h5>
+                    <p>Sorry for the mental breakdance yesterday.</p>
+                    <p>I was having absolutely no place to rant to, and fortunately, because of that, I've come to a conclusion to just stop using Discord on a regular basis. I've calmed down, realizing it's too essential to quit fully. I still need to get back there, read some infos, chattin with people, and dip for another year. It's a perfect strategy. Another strat I have in mind, is saying stuff that I never do until the deadline. If I can repeat myself "I'm going to install Discord, it would cause a Newton's Third Law so it never happens".</p> 
+                    <p>Yeah, I keep talking about Discord as an enemy I never ever forget, because it is. It enables me to see a lot of people, but it also makes me realize how narrow-minded I am to be able to talk to people... And I don't want to force myself to fit in, either. I just want to feel that certain things are worth getting along to. I really am suffering from the "Having difficulty making friends with established groups" thing, which was proven to be universal.</p>
+
+                    <h5 style="color: #ff8000;">Part 5, Chapter 2: Fuck that willful ignorance attitude, if you're not in their shoes.</h5>
+                    <aside class="my-4">
+                        <p>content warning: if you say doomposting one more time i will destroy you on a daily basis and send you to the grinch.</p>
+                    </aside>
+                    <p>Part of the internet, especially socials discussion, is mostly filled with AI now. It's such a shitty situation in which I can't fathom moving on from this, or trying to ignore the inevitable day of a information nuclear bomb heading our way. Even after all that, the most repetitive, annoying, self-defeating, willfully ignorant statement I've ever heard in my entire life keeps on living, that being <i>"Something we have to adapt with time"</i>. Like shut up dude. You listened to both side of the story, saw what happened for the last 2 years, and decided to claim you're a centrist by saying ignorant shit equivalent to "it's gonna be fine, it's gonna be regulated, we're gonna be fine".</p> 
+
+                    <p>Yes we know there's more to AI that helped society as a whole, but Generative AI is weaponized into oblivion that you don't even realize it's fooling people who look at things at a glance. They had to spend time decoding the fakes, which is going to be a useless effort months from now. Weaponizing information for some reason became obscenely simple you don't require a Photoshop 10 hour course to pull fake tricks like everyone elses. Once the meme phase is over, the misinformation phase will kick in like an Interstellar wave. It's 2024, things are advanced, information is getting weaponized so easily by regular human beings with lesser budget than a print. This requires all of us to stop being a bunch of tech illiterates and stop using bullshits generators for bullshit information, which is used to keep bullshittifying the world.</p>
+                    
+                    <p>It's not only about losing the spirit of art, or what it means to be human. It's about producing an exact copy of your work, fooling everyone. Companies love it so much they decided not to give you any loyalty because surprise surprise, they cannot be copyrighted. Again, the real threat of all this is just malforming information, ruining research en masse, and nobody will ever believe anything, ANYTHING, even in real fucking life. It's just a matter of time.</p>
+                    <p>Generative AI "getting better" isn't something you can brush off and simply say "I can adapt to this", no you dumbass, you will adapt to misinformation so bad you can't even tell anymore. It will not benefit anyone, not even artists, hell not even anyone who just takes things for granted. Being "substantially creative by pressing one button for a piece of anime" won't generate money to pay the bills, bucko. At worst you'll just contribute to the mass that loves making shit up and be happy.</p>
+                    
+                    <p>Yeah call me a doomposter whatever you want, just ask an affected industry and you'll still think they're overreacting, you utter moron. Stop repeating yourself and look outside for once. Is all of this happening exactly what you blindly envisioned months ago? Or what you envisioned was wanting to abuse these so-called tools for your own benefit?</p>
+
+                    <p style="color: grey;">P/s: Btw, you can just post a real image and call it AI, see how many people are fooled. You can then call yourself a piece of shit.</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec192024">December 19, 2024</h1>
+                    <div class="separation"></div>
+                    <p>Ah fuck it's happening again fuck.<p>
+                    <p>....</p>
+                    <p>God damnit why did it take so long for me to admit that the whole thing here was essentially my own fault?</p>
+                    <p>I was the one insisting on moving on because I was an annoyance to literally everyone for half of the month</p>
+                    <p>I was the one babycrying about people not giving a shit about me when I can just easily come up to them and have fun</p>
+                    <p>It was so easy for others, why wasn't it for me? Why am i so goddamn fucking pathetic?</p>
+                    <p>I was the one pushing myself away, nobody was doing shit to me, nobody even had a slight hatred of me, and yet I left because I thought they hurt me?</p>
+                    <p>It wasn't anybody's fault, it was my fault</p>
+                    <p>It was my fault</p>
+                    <p>It was MY fault</p>
+                    <p style="font-size: 20px;">IT WAS MY GODDAMN FAULT</p>
+                    <h3 style="font-weight: bolder;">IT WAS MY FUCKING GODDAMN FAULT</h3>
+                    <br>
+                    <h2 style="font-weight: bolder;">AND I BLAMED IT ON OTHERS??? HOW PATHETIC CAN I BE? HOW PATHETIC HAVE I BEEN, FOR THE LAST 7 YEARS ON DISCORD, TO REALIZE I'M STILL THE SAME, UNREPENTANT, PIECE OF UTTER SHIT? AND I GET TO SOMEHOW LIVE? I MUST HAVE BEEN THE BIGGEST BALLS ON THIS PLANET TO LIVE</h2>
+                    <p>...</p>
+                    <p>im really tired from all this</p>
+                    <p>i really need to rethink how this happened</p>
+                    <p>im not going back there, really, ive hurt a lot of people, and i didn't know it. i have no rights to keep coming back there. im sorry</p>
+                    <p>to all my friends there, one day i'll probably come back to tell yall to, yknow, talk somewhere else. im tired of discord, im tired of it all. it's legit been the worst influence to my whole teenager year, and i just didn't realize it. i clinged on to it like an addict, and i've hurt people because im addicted to talking without knowing any better. i seriously just want to socialize, but i've been a dumbass at it since the beginning.</p>
+                    <pIve</p>
+                </div>
+                <div class="content p-2">
+                    <h1 id="dec182024">December 18, 2024</h1>
+                    <p style="color: #ff8000;">Weather: Cool, cloudly, never seen the sun in weeks.</p>
+                    <div class="separation"></div>
+                    <p><i class="titlebox" style="font-size: 16px;">Part 3, Chapter 1: Although it's about moving on, it's not entirely all-encompassing.</i><p>
+                    <p>When I talked about moving on days earlier, it was more or less about from communities. Discord is still a pivotal communication tool that shaped beautiful memories I've made or received for 6 years, but it also overwhelmed me with many many utter shit moments that I wish I'd left earlier. Who knows how long I'll be away for, maybe a month, or a year even. I dunno how that'd affect some friends I haven't told yet. I just think announcing something and never do it afterward is kind of a pussy move, so I'd rather just walk the walk.</p>
+                    <p>Though, I really never want to leave other socials, like Reddit, the recent circlejerk forums are really amusing it really cured the feeling of doomscrolling (there were minor exceptions tho). Twatter is getting boring everyday, and it's heartbreaking, especially to artists who just want to settle somewhere without Yi Long Ma becoming a sad man. Youtube is also unamusing, with a new swathe of R18 AI-generated adverts in the middle of a Beatles mix, or in a coffee shop where it accidentally popped up, people looking at me weirdly, ruining my entire day. I think this is what happens if you don't have personalized ads on, you're just there with enshittified ads of all time. Socials nowadays really is over-saturated beyond comprehension, and the simplification of generative AI will just make it 100x worse.</p>
+                    <p>The unfortunate truth is that these socials are too reliable to move on. It's really impossible to ask these socials to change itself, given how far it's gone down the corporate abyss.</p>
+                    <div class="separation"></div>
+                    <p><i class="titlebox" style="font-size: 16px;">Part 3, Chapter 2: Old, but timeless music, can ease my soul during trying times.</i><p>
+                    <p>I did mention the Beatles before, mainly because this week I fell into their rabbit hole (I know, im 60 years too late, you can throw rocks at me). The reason was because I just finished Cowboy Bebop, when the iconic phrase came on: "You're gonna carry that weight"</p>
+                    <p>My bff asked if I've ever listened to the Beatles, I said somewhat. So he just held my hand and dragged me down their rabbit hole, and the rest is history. I get why people said that the Beatles is timeless. Their music transcends time, just about almost everything post-1966 screams modern, experimental, psychedelic, anything that sounds unusual, ethereal, and calm, comforting. The melodies aren't always classy, nor are they designed for boomer music. They made them to be unforgettable, hell even nowadays <a target="_blank" href="https://youtu.be/QjvzCTqkBDQ?t=988">women in their 70s still scream when Paul came on stage lol.</a> And yes, I will have a hot take about NUMBAH 9, BUT I just like when Lennon was on shrooms and asked if Yoko was fine making an avant-garde song for the band that did I WANNA HOLD YOUR HAAAAAAND 4 years ago. It was surreal and terrifying, despite being experimental, Dadaism type shit, it really is better than what Dadaisms produced in it's time.</p>
+                    <p style="font-size: 10px">I will listen more pls don't flame me it's only been a week</p>
+                    <a class="brian justify-content-center" target="_blank" href="/diary/diaryimages/18122024brianepstein.jpg"><img style="border: 1px solid rgba(255,255,255,0.57); border-radius: 1px;" src="/diary/diaryimages/18122024brianepstein.jpg" alt="brian" width="30%"></a>
+                    <p class="my-2" style="font-size: 10px; color: grey;">p/s: jahn beet wif</p>
+                    <style>
+                        @media only screen  and  (max-width:576px){
+                        .brian img{
+                            width: 100%;
+                        }
+                    }
+                    </style>
+                </div>
+                <br>
+                <div class="content p-2">
+                    <h1 id="dec172024">December 17, 2024</h1>
+                    <p style="color: #ff8000;">Weather: Frustratingly cold.</p>
+                    <div class="separation"></div>
+                    <i><p>Moving on pt.2</p></i>
+                    <p>Family matters suck, but not having social media stress is more refreshing than ever. I'm 21 next year, maybe it's high time I asserted myself that I don't need extra reprimands for simple tasks.</p>
+                    <p>That aside, I've returned to Minecraft, and it may turn that into a lengthy gameplay without falling into the iconic <b class="titlebox"><i>2 weeks phase</i></b> that some people have suffered. I chose to follow a format I long abandoned: Evolution, which means changing versions throughout the time. I figured Alpha was a good starting point, since it gave you a barebone world with barely anything to do, so the primary goal as of then was just mine, craft and build.</p>
+                    <div class="separation"></div>
+                    <div class="d-flex row gap-3">
+                        <p class="m-0" style="font-size: 12px;">My base after 3 days of mountain moving and deforestation (you may not see it, but most trees behind my house are chopped, since there were no leaf decay in Alpha 1.2.6)</p>
+                        <a target="_blank" href="/diary/diaryimages/2024-12-16_22.46.31.png"><img style=" border: 1px solid rgba(255,255,255,0.57); border-radius: 1px;" src="/diary/diaryimages/2024-12-16_22.46.31.png" alt="house" width="100%" title="the house adam built"></a>
+                        <p class="m-0" style="font-size: 12px;">Berohine gonna come and get you muahahahahahahah, also look, alpha bridge</p>
+                        <a target="_blank" href="/diary/diaryimages/2024-12-17_14.07.46.png"><img style=" border: 1px solid rgba(255,255,255,0.57); border-radius: 1px;" src="/diary/diaryimages/2024-12-17_14.07.46.png" alt="herobrine" width="100%" title="berohine gonna get you muahaahahahaha"></a>
+                    </div>
+                    <div class="separation"></div>
+                    <p>To be fair, I have no nostalgic values towards Alpha, so my 10th Minecraft anniversary wouldn't really be grandeur or anything. What matters for me is making memorable things, not nitpicking palettes and complex patterns. If anyone thinks I'm bashing complexity in art, I don't, I am playing a video game, it's synonymous to a simple life, so massive creativity is just null at this point. (Is that why a lot of nostalgic content popped up recently? Are we realizing playing a complex building mind game is tiresome and revert back to simplicity? If so just play FPS games, the only brain you need is KILL.)</p>
+                    <p>Anyway, uh, yes i play old minecraf because it's a preference, not nostalgia. It's somewhat a cold take but I have not seen anyone say anything similar so it doesn't matter much anyway. ¯\_(ツ)_/¯</p>
+                    <p>I'll just plug my <a target="_blank" href="https://www.reddit.com/user/mccoolr/">Reddit</a> here, it will contain more updates to my world progress from now on.</p>
+                    <p>P/s: wtf lol. guess what made this "1.8GB-TGA-compressed-to-12mb-png" abomination of an image</p>
+                    <a target="_blank" href="/diary/diaryimages/minecraftfile3.png"><img style=" border: 1px solid rgba(255,255,255,0.57); border-radius: 1px;" src="/diary/diaryimages/minecraftfile3.png" alt="herobrine" width="70%" title="berohine gonna get you muahaahahahaha"></a>
+                </div>
+                <br>
+                <div class="content p-2">
+                    <h1 id="dec152024">December 15, 2024</h1>
+                    <p style="color: #ff8000;">Weather: Finally raining</p>
+                    <div class="separation"></div>
+                    <i><p>Moving on.</p></i>
+                    <p>I think it's time I opened my eyes and started to believe that, I'm just not cut out for some places. It's hard to move on from a community that makes the best memories for me, but in the end, attempts to prolong friendships never went well, and the best choice I had was to simply let go. There are places I chose to stay, simply because my friendship works, but not all of them work the same way. Sometimes I got into a strange community with a lot of welcoming people, but watching me try to socialize is kind of a challenge, and after a year of no progress, it's best to move on.</p>
+                    <p>Discord has been the hardest socialization challenge for me, and well, while it's been somewhat manageable, at some point I ran out of things to say. That feeling is frightening, because it's a sign of a friendship you could not hold onto very long. Maybe clinging on to one place is not a healthy thing to do, and it's cruel to just ditch it away, but in the end, it'll probably be the best for my wellbeing.</p>
+                    <p>Maybe it's time to learn to move on with a conviction that nothing lasts forever, and I'll have to accept that. I won't delete discord anyway, as the pattern goes, I'll reinstall it anyway. So I'll keep it there, as a challenge to get over the temptation of opening the same damn app expecting myself to have a topic to talk, which fails miserably. Maybe once a while I'll visit it when I need to. That's not quite really moving on, isn't it?</p>
+                    <p style="font-size: 14px; color: grey; text-shadow: none">December 16: Made a few changes (crossed out) to a few words because it seemed grammatically obscured. My point still stands, I just made it less confusing.</p>
+                </div>
+                <div class="separation"></div>
+                <div class="separation"></div>
+            </div>
+            <div class="miscs col-1 p-2 m-0">
+                <h5 class="m-0 p-2" style="text-align: center;">status.cafe</h5>
+                <div class="p-2 mx-auto" id="statuscafe">
+                    <div id="statuscafe-username"></div>
+                    <br>
+                    <div id="statuscafe-content"></div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="footer">
+        <footer class="d-flex justify-content-center">
+            <p style="color: white;">
+                copyright CC BY-SA 4.0 adamngshrine
+            </p>
+        </footer>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+    <script src="https://status.cafe/current-status.js?name=adamng074" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>  
+</body>
+</html>

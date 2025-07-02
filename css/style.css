@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+body {
+    background-size: cover !important;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+}
+
+p {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+div h2 {
+    color: #ffc073;
+    font-family: 'Merriweather', sans-serif;
+}
+
+li {
+    color: #ffc073;
+    font-family: 'Courier New', Courier, monospace
+}
+
+div h3 {
+    color: #ffc073;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div h5 {
+    color: #ffc073;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.active {
+    background-color: #1d1d1d;
+}
+
+
+.navigation_mobile {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fbbd71;
+    box-shadow: 0 0 10px #004f4d;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navigation_mobile #links {
+    display: none;
+}
+
+.navigation_mobile a{
+    color: #fdbe72;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navigation_mobile a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navigation_mobile a.icon:hover {
+    background-color: #414141;
+}
+
+
+#links {
+    background-color: rgb(0, 0, 0);
+}
+
+#links a{
+    text-decoration: underline;
+}
+
+#links a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.navbar a:nth-child(2){
+    color: #009479;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.background {
+    background-image: radial-gradient(circle, #001d23, #011e24, #011f25, #022027, #022128, #061f28, #0a1d27, #0e1b25, #12151e, #120e15, #0c070b, #000000);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center center;
+    z-index: -1;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.673); /* Semi-transparent black overlay */
+    z-index: -1; /* Place the overlay behind the content */
+    opacity: 0.8;
+    animation: opacityChange 4s;
+    
+}
+
+@keyframes opacityChange {
+    0% { opacity: 1; }
+   100% { opacity: 0.8; }
+}
+
+.navigation_title a {
+    text-decoration: none;
+    color: #ffc073;
+    font-size: 25px;
+    font-family: 'Merriweather', sans-serif;
+    margin-top: 5px;
+    text-shadow: 0 0 10px #ffc073;
+    transition: rotate 0.1s ease-in;
+}
+
+.navigation_title a:hover {
+    color: #009479;
+    text-shadow: 0 0 10px #009479;
+    rotate: 1deg;
+}
+
+.links {
+    position: relative;
+    border-radius: 5px;
+    background-clip: padding-box;
+    padding: 2px;
+    /* just to show box-shadow still works fine */
+    box-shadow: 0 1px 6px #009378, inset 0 0 6px #009378;
+    background-color: rgb(0, 0, 0);
+}
+
+.links::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* control the border thickness */
+    background: linear-gradient(1980deg, #fdbe72, #ff8000,#dd5928,#009479);
+    mask: linear-gradient(#fff 0px 0px) content-box, linear-gradient(#111111 0px 0px);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+.linkmain {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.links a{
+    color: #ffc073;
+    text-shadow: 0px 0px 2px #ffc073;
+    text-decoration: none;
+    font-size: 20px;
+    transition: scale 0.1s ease;
+}
+
+.links a:hover{
+    color: #ffffff;
+    text-shadow: 0px 0px 2px #009479;
+    text-decoration: none;
+    scale: 1.1;
+}
+
+.links a:active{
+    color: #00ddb4;
+    scale: 1.0;
+}
+
+.main_barleft {
+    overflow-wrap: break-word;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-style: outset;
+    border-width: 3px;
+    border-color: #009479;
+    text-align: start;
+    box-shadow: 0 0 10px #004f4d;
+}
+
+.main_barright {
+    overflow-wrap: break-word;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-style: outset;
+    border-width: 3px;
+    border-color: #009479;
+    text-align: start;
+    box-shadow: 0 0 10px #004f4d;
+}
+
+
+#clock {
+    margin-bottom: 20px;
+}
+
+#date-time {
+    color: #ffc073;
+    font-size: 13px;;
+}
+
+#time-wrapper {
+    color: #ffc073;
+    font-size: 13px;
+}
+
+.article {
+    overflow: scroll;
+    max-height: 300px;
+    border-style: solid;
+    border-color: #ffc073;
+    box-shadow: 0 0 10px #004f4d;
+    border-width: thin;
+    border-radius: 5px;
+}
+
+.status_time {
+    font-family: 'Courier New', Courier, monospace;
+    color: #009479;
+}
+
+.webring_main {
+    background-color: rgba(186, 173, 158, 0.457)
+}
+.navlink iframe{
+    border-radius: 10px;
+}
+
+/*https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css*/
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #ffc073, #dd5928);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 4s ease-in-out infinite;
+    background-size: 400% 100%;
+    font-family: monospace;
+}
+
+.rainbow:last-child {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.content img {
+    object-fit: contain;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: orange;
+}
+
+.gallery_items {
+    z-index: 1;
+    color: #2c2620;
+}
+
+.web {
+    margin-bottom: 40px;
+}
+
+.webimage {
+    display: inline-block;
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffc073;
+    box-shadow: 0 0 10px #004f4d;
+    width: 80%;
+}
+
+.webimage img {
+    width: 100%;
+    display: block;
+    transition: transform .4s ease-out, rotate .4s ease;
+}
+
+.webimage img:hover{
+    transform: scale(1.03);
+    transform-origin: 50% 50%;
+    rotate: 0.5deg;
+}
+
+#statuscafe a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffc073;
+    text-shadow: 0 0 10px  #ffc073;
+}
+
+#statuscafe a:hover{
+    text-decoration: none;
+    font-size: 20px;
+    color: #009479;
+    text-shadow: 0 0 10px #009479;
+}
+
+#statuscafe {
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #ffc073;
+    text-align: start;
+    box-shadow: 0 0 10px #004f4d;
+    height: auto;
+    color: white;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
+
+.stickers img {
+    image-rendering: optimizeQuality;
+}
+
+#lastfm-widget {
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #ffc073;
+    box-shadow: 0 0 10px #004f4d;
+    height: auto;
+    color: #ffc073;
+}
+
+#lastfm-widget a{
+    font-size: 12px;
+    color: #ffffff;
+    text-shadow: 0px 0px 3px #ffffff;
+}
+
+.villain{
+    color: #75fa69;
+    background: linear-gradient(to left, #ecdad1, #00ddb4);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.1s ease-in-out;
+}
+
+.villain:hover{
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.titlebox {
+    animation-iteration-count: infinite;
+    font-family: 'Courier New' sans-serif;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes textflicker {
+    from {
+      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+
+@keyframes colorChange {
+    100% { opacity: 1; }
+    50% { color: rgb(255, 255, 255); }
+    110% { color: white; }
+}
+
+@media only screen  and  (max-width:576px){
+    .navigation_logo {
+        justify-content: center;
+        display: flex;
+    }
+
+    .navigation_title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main_barleft {
+        max-height: 200px;
+        background-color: rgb(0, 0, 0);
+        overflow: scroll;
+    }
+    .mood img{
+        scale: 70%;
+    }
+
+}
+
+@media only screen  and  (max-width:768px){ 
+    .main_barleft {
+        max-height: 200px;
+        background-color: rgb(0, 0, 0);
+        overflow: scroll;
+    }
+
+    .mood img{
+        margin-top: 0px;
+    }
+}
+
+@media only screen  and  (max-width:992px){
+
+    .main_barleft {
+        max-height: 200px;
+        background-color: rgb(0, 0, 0);
+        overflow: scroll;
+    }
+    .links a{
+        font-size: 20px;
+    }
+
+    .linkmain {
+        padding: 0 12px 0;
+    }
+
+    .navigation {
+        scale: 80%;
+    }
+
+    .mood img{
+        scale: 70%;
+    }
+}

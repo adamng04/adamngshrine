@@ -1,0 +1,265 @@
+.container {
+    position: relative;
+    z-index: 1;
+    top: 1px;
+    border: 3px solid #ffc073;
+    border-radius: 10px;
+    overflow: hidden;
+    scale: 90%;
+    font-family: 'MS Gothic Regular', monospace;
+}
+
+body {
+    cursor: wait;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.639); /* Semi-transparent black overlay */
+    z-index: -1; /* Place the overlay behind the content */
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+
+    margin:-1px;
+    padding:1px;
+    border-radius: 10px;
+}
+
+.scanlines {
+    overflow: hidden;
+    position: relative;
+}
+.scanlines:before,
+.scanlines:after {
+    display: block;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+}
+.scanlines:before {
+    width: 100%;
+    height: 2px;
+    z-index: 2147483649;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0.15;
+    animation: scanline 6s linear infinite;
+    background-size: cover;
+}
+.scanlines:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483648;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(0, 0, 0, 0.3) 91%
+    );
+    background-size: 100% 4px;
+    animation: scanlines 1s steps(60) infinite;
+}
+
+/* ANIMATE UNIQUE SCANLINE */
+@keyframes scanline {
+    0% {
+        transform: translate3d(0, 200000%, 0);
+    }
+}
+@keyframes scanlines {
+    0% {
+        background-position: 0 50%;
+    }
+}
+div {
+    margin: 0;
+    padding: 0;
+}
+div.scanlines {
+    position: absolute;
+}
+
+div .background {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left top, #212121, #383f4d, #40637c, #338ba7, #00b6c8, #00c6bf, #44d4ad, #79df95, #a6ce69, #cbba4f, #e8a14c, #fb875f); /* Semi-transparent black overlay */
+    z-index: -1; /* Place the overlay behind the content */
+    opacity: 0.4;
+    animation: rainbow_animation 40s ease-in-out infinite;
+    background-size: 1000% 300%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+body {
+    position: relative;
+    background: #1b1b1b;
+}
+
+.navigation_mobile {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fbbd71;
+    box-shadow: 0 0 10px #004f4d;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    filter: invert(1);
+}
+
+.navigation_mobile #links {
+    display: none;
+}
+
+.navigation_mobile a{
+    color: #fdbe72;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navigation_mobile a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navigation_mobile a.icon:hover {
+    background-color: #414141;
+}
+
+
+#links {
+    background-color: rgb(0, 0, 0);
+}
+
+#links a{
+    text-decoration: underline;
+}
+
+#links a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+/*https://codepen.io/ynef/pen/yvvyGv*/
+
+#help {
+    border-radius: 100px;
+    background-color: #00b6c8;
+    box-shadow: 0px 0px 10px #00b6c8;
+}
+
+i {
+    font-size: 40px;
+    color: #e8a14c;
+}
+
+:root a{
+    color: wheat;
+    text-decoration: none;
+}
+
+
+.name {
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textStretch 1s alternate-reverse infinite ease-in-out;
+    animation-iteration-count: infinite;
+    position: relative;
+    font-size: 18px;
+    font-weight: bolder;
+    rotate: 5deg;
+}
+
+@keyframes textStretch {
+    0% {letter-spacing: 0.5px; top: -50px;}
+    100% {letter-spacing: 10px; top: -30px; rotate: 6deg; scale: 110%;} 
+}
+
+
+.links {
+    scale: 1.0;
+    transition: scale 0.1s ease-out, rotate 0.1s ease-out;
+}
+
+.links a:hover {
+    color: white;
+    scale: 2;
+    rotate: 20deg;
+}
+
+.profile_box_all a{
+    border: 1px solid #00c6bf;
+    border-radius: 5px;
+    position: relative;
+    animation: objectMove 1s alternate infinite ease-in-out;
+    animation-iteration-count: infinite;
+    left: -50px;
+    transition: all 0.1s ease-out;
+}
+
+.profile_box_all a:hover {
+    border: 3px solid #e3e3e3;
+    border-radius: 40px;
+}
+
+.profile_box_all a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.profile_box_all a:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.profile_box_all a:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+@keyframes objectMove {
+    0% {left: -50px;}
+    100% {left: 50px;} 
+}
+
+.profile_box p{
+    font-size: 18px ;
+}
+
+
