@@ -20,7 +20,10 @@ h1 {
 }
 
 span {
-    padding: 2px 4px; background: rgb(47, 47, 47); color: rgb(205, 205, 205); border-radius: 4px;
+    padding: 2px 4px; 
+    background: rgb(122, 122, 122); 
+    color: rgb(250, 250, 250); 
+    border-radius: 4px;
 }
 
 .nav_logo {
