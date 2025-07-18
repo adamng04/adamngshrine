@@ -38,9 +38,10 @@ a:hover{
 
 .landing {
     background-image: url(/images/lain.jpg);
-    background-size: cover; /* Stretch and scale the image to cover the container */
+    background-size: 100% 120%; /* Stretch and scale the image to cover the container */
     background-repeat: no-repeat; /* Prevent repeating the image */
     background-position: center;
+    backdrop-filter: blur(5px);
 }
 
 .text h1{
@@ -59,12 +60,13 @@ p{
 
 .grids {
     gap: 20px;
+    width: 76%;
 }
 
 .grid_items {
     border-radius: 10px;
     color: #ffffff;
-    height: 260px;
+    height: 280px;
     border: 1px solid #004f4d;
 }
 
@@ -74,12 +76,15 @@ p{
     align-items: center;
     justify-content: space-between;
     grid-gap: 40px;
-    padding: 10px 16%;
-    background-color: #003232;
+    padding: 10px 16px;
+    border: 1px solid #003232;
+    border-radius: 20px;
+    width: 60%;
+    margin: 10px auto;
 }
 
-.history_text {
-    color: white;
+.history_text p{
+    color: #007575;
 }
 
 .grid_items h4,p{
@@ -115,10 +120,15 @@ p{
     100% { box-shadow: 7px 7px 0px #e64137; }
 }
 
-.webrings h2 {
-    background-color: #e64137;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.webrings {
+    background-color: #e64037;
+    width: 60%;
+    padding: 20px;
+    margin: 10px auto;
+    border: 3px solid #3ce8a9;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
 }
 
 .webring_url {
@@ -130,8 +140,19 @@ p{
     background-color: #001d23;
 }
 
-@media only screen and (max-width: 768px){	
+@media only screen and (max-width: 448px){	
     .iframe {
         scale: 80%;
+    }
+
+    .history {
+        display: flex;
+        flex-direction: column  ;
+        align-items: center;
+        width: 90%;
+    }
+
+    .webrings {
+        width: 90%;
     }
 }
