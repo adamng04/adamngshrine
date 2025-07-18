@@ -141,7 +141,7 @@ div h5 {
 }
 
 .links a:hover{
-    color: #009479;
+    color: #ffffff;
     text-shadow: 0px 0px 2px #009479;
     text-decoration: none;
 }
@@ -255,6 +255,33 @@ div h5 {
     background-clip: text;
     color: transparent;
     background-size: 40% 100%;
+}
+
+.titlebox {
+    animation-iteration-count: infinite;
+    font-family: 'Courier New' sans-serif;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes textflicker {
+    from {
+      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+
+@keyframes colorChange {
+    100% { opacity: 1; }
+    50% { color: rgb(255, 255, 255); }
+    110% { color: white; }
 }
 
 @keyframes rainbow_animation {
