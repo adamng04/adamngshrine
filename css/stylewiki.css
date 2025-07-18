@@ -50,15 +50,16 @@ span {
 .container {
     margin: 20px auto;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 18% 82%;
 }
 
 .sidebar {
     width: 90%;
-    padding: 0 20px;
+    padding-left: 30px;
     position: sticky;
     top: 20px;
-    max-height: 200px;
+    max-height: 300px;
+    overflow: hidden;
 }
 
 .sidebar_header p{
@@ -146,6 +147,17 @@ span {
     margin: 4px 10px;
 }
 
+sup{
+    font-size: 10px;
+}
+
+#col {
+    margin: 0;
+    column-count: 2;
+    column-gap: 20px;
+    column-rule: 1px solid #ccc;
+}
+
 @media only screen and (max-width: 448px){
     .infobox {
         float: none;
@@ -167,7 +179,6 @@ span {
     .nav_mobile {
         display:block;
         margin: 0;
-        width: 90%;
     }
 
     #main_title {
@@ -183,6 +194,10 @@ span {
     }
 
     .notification {
+        width: 100%;
+    }
+
+    .main, .nav_mobile {
         width: 100%;
     }
 }
