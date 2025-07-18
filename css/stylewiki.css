@@ -79,6 +79,10 @@ span {
     width: 90%;
 }
 
+.nav_mobile {
+    display: none;
+}
+
 .main_title {
     width: 100%;
     display: flex;
@@ -91,4 +95,29 @@ span {
 .main_content p{
     font-size: 18px;
     line-height: 28px;
+}
+
+@media only screen and (max-width: 448px){
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        font-family: 'Times New Roman', Times, serif;
+        width: 100%;
+}
+    .container {
+        display: block;
+        margin: 0;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav_mobile {
+        display:block;
+        margin: 0;
+        width: 90%;
+    }
 }
