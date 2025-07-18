@@ -5,8 +5,27 @@
     border: 3px solid #ffc073;
     border-radius: 10px;
     overflow: hidden;
+    transform: translateY(-5px);
     scale: 90%;
+    height: 100%;
     font-family: 'MS Gothic Regular', monospace;
+    animation: scroller 2s linear;
+}
+
+@keyframes scroller {
+    0% {
+        transform: translateY(80em);
+        width: 0%;
+    }
+
+    40% {
+        transform: translateY(-5px);
+        width: 0%;
+    }
+    100% {
+        width: 60%;
+        
+    }
 }
 
 body {
@@ -192,6 +211,14 @@ i {
     text-decoration: none;
 }
 
+.logo img {
+    animation: rotate 500s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 .name {
     letter-spacing: 0.2px;
@@ -262,4 +289,9 @@ i {
     font-size: 18px ;
 }
 
-
+.travisscott {
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    width: 100%;
+}
