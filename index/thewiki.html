@@ -45,6 +45,7 @@
             <div class="sidebar_contents">
                 <a href="#links">Links</a>
                 <a href="#terminology">Terminology</a>
+                <a href="#others">Antithesis</a>
                 <a href="#contacts">Contacts</a>
                 <a href="">References</a>
             </div>
@@ -54,12 +55,23 @@
                 <h1 style="font-weight: lighter;">Guide to the Supervillains</h1>
                 <p style="color: #4a20e1;">Only in English. Sorry.</p>
             </div>
-            <div class="main_content">
+            <div class="main_content_container">
                 <a href="/index/AUportal.html">return to AUportal</a> 
                 <p>From adamngshrine, edited in July 18, 2025.</p>
-                <p><b>The Guide to the Supervillains</b> is adamng04's comprehensive guide to understand the concepts of Touhou Supervillain and everything else in it. This page was created to preserve the achievements of the shmup community without relying on external websites (although it's better than this one, which is purely static) in case they burst into flame.</p>
-                <p>"Supervillain" is a derivative of the word "superplayer". The term "superplayer" was coined by <a href="https://en.touhouwiki.net/wiki/ZUN">ZUN</a> in his 4th Touhou installment, <a href="https://en.touhouwiki.net/wiki/Lotus_Land_Story">Lotus Land Story</a>, after you defeated <a href="https://en.touhouwiki.net/wiki/Mugetsu">Mugetsu</a> and <a href="https://en.touhouwiki.net/wiki/Gengetsu">Gengetsu</a> in the unlockable Extra stage.</p>
-                <p>By 2025, there are approximately 10 certified supervillains, equivalent to the amount of Touhou fans who have actually played the game.</p>
+                <div class="infobox">
+                    <div class="infobox_title">Guide to the Supervillains</div>
+                    <div class="infobox_image">
+                        <div style="background-color: #e0e0e0; padding: 2px; color: #666; border: 1px solid #ccc;">
+                            <img src="/images/supervillain.jpg" alt="supervillain" width="100px">
+                        </div>
+                        <p style="margin: 2px 0; font-size: 14px; line-height: 22px; background-color: #d9d9f8;">The supervillain icon from <a href="https://discord.com/">Discord</a>, being the representative of the supervillain status</p>
+                    </div>
+                </div>
+                <div class="main_content">
+                    <p><b>The Guide to the Supervillains</b> is adamng04's comprehensive guide to understand the concepts of Touhou Supervillain and everything else in it. This page was created to preserve the concept from the shmup community without relying on external websites (although it's better than this one, which is purely static) in case they burst into flame.</p>
+                    <p>"Supervillain" is derivative of the word "superplayer". The term "superplayer" was coined by <a href="https://en.touhouwiki.net/wiki/ZUN">ZUN</a> in his 4th Touhou installment, <a href="https://en.touhouwiki.net/wiki/Lotus_Land_Story">Lotus Land Story</a>, after you defeated <a href="https://en.touhouwiki.net/wiki/Mugetsu">Mugetsu</a> and <a href="https://en.touhouwiki.net/wiki/Gengetsu">Gengetsu</a> in the unlockable Extra stage.</p>
+                    <p>By 2025, there are approximately 10 certified supervillains, equivalent to the amount of Touhou fans who have actually played the game.</p>
+                </div>
             </div>
             <div class="main_title">
                 <h1 style="font-weight: lighter;">Links</h1>
@@ -77,13 +89,29 @@
                 <p>Most supervillains exhibit the usage of the <img style="transform: translatey(3px);" src="/images/supervillain.jpg" alt="supervillain" width="20px"> <span>:supervillain:</span> emoji when talking about their routes for a specific LNN. Or, in some cases, the non-supervillains can use the emoji to express surprises, shock, and horror at the routes they just witnessed.</p>
                 <p>There are arguments that being a supervillain does not mean players need an LNN. They just need to do mind-boggling strategy and other players will call you a supervillain.</p>
             </div>
+            <div class="main_title" id="others">
+                <h1 style="font-weight: lighter;">The antithesis to Supervillain</h1>
+            </div>
+            <div class="main_content">
+                <div class="notification" style="width: 70%; margin: 0;">
+                    <p>This section is <i>under construction</i>. Feel free to contribute by <a href="https://github.com/adamng04/adamngshrine">going to my Github</a> and have fun.</p>
+                </div>
+            </div>
             <div class="main_title" id="contacts">
                 <h1 style="font-weight: lighter;">Contacts</h1>
             </div>
             <div class="main_content">
                 <p>If contributors find more supervillains, contact adamng04 via discord</p>
             </div>
-        </div>
+            <div class="footer" style="text-align: end;">copyright CC BY-SA 4.0 adamngshrine</div>
+        </div>    
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerText = document.querySelector('.footer');
+        const currentYear = new Date().getFullYear();
+        footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+        });
+</script>
 </html>
