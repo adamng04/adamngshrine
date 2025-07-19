@@ -93,11 +93,12 @@ span {
 .sidebar_contents a {
     text-decoration: none;
     color: #6f4af6;
+    padding: 2px 0;
+    width: 70%;
 }
 
 .sidebar_contents a:hover {
     color: #ea7908;
-    width: 70%;
 }
 
 .main {
