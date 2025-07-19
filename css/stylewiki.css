@@ -66,7 +66,7 @@ span {
 }
 
 .sidebar {
-    width: 90%;
+    width: 80%;
     padding-left: 30px;
     position: sticky;
     top: 20px;
@@ -92,7 +92,7 @@ span {
 
 .sidebar_contents a {
     text-decoration: none;
-    color: #653df4;
+    color: #6f4af6;
 }
 
 .sidebar_contents a:hover {
@@ -139,6 +139,10 @@ span {
     margin: 16px 0;
     justify-content: space-between;
     border-bottom: 1px solid gray;
+}
+
+.main_container{
+    margin: 20px 0;
 }
 
 .main_content p{
