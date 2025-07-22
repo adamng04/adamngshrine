@@ -228,6 +228,7 @@ div h5 {
 
 .article {
     overflow: scroll;
+    overflow-x: hidden;
     max-height: 300px;
     border-style: solid;
     border-color: #ffc073;
@@ -306,13 +307,12 @@ div h5 {
 .webimage img {
     width: 100%;
     display: block;
-    transition: transform .4s ease-out, rotate .4s ease;
+    transition: transform .4s ease-out;
 }
 
 .webimage img:hover{
     transform: scale(1.03);
     transform-origin: 50% 50%;
-    rotate: 0.5deg;
 }
 
 #statuscafe a{
