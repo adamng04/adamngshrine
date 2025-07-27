@@ -211,6 +211,38 @@ div h5 {
     box-shadow: 0 0 10px #004f4d;
 }
 
+@font-face {
+    font-family: 'PixelOperator';
+    src: url('../fonts/PixelOperatorHB.ttf') format('truetype');
+    font-weight: normal;
+}
+
+.undertalecorner {
+    border: 6px solid white;
+    background-color: black;
+    display: flex;
+    padding: 12px 0;
+    gap: 20px;
+    margin: 10px 0;
+    width: 70%;
+}
+
+.undertalecorner img {
+    border: none;
+    width: 16%;
+}
+
+.undertalecorner a{
+    font-family: 'PixelOperator', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    height: fit-content;
+    &:hover {
+        color: #f9ff10;
+    }
+}
 
 #clock {
     margin-bottom: 20px;
@@ -430,6 +462,18 @@ div h5 {
     }
     .mood img{
         scale: 70%;
+    }
+
+    .undertalecorner {
+        width: 100%;
+    }
+
+    .undertalecorner img{
+        width: 20%;
+    }
+
+    .undertalecorner a {
+        font-size: 14px;
     }
 
 }
