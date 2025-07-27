@@ -10,8 +10,26 @@
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-image: url(/images/undertalebg.png);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.741);
+    pointer-events: none;
+    z-index: -1;
 }
 
 a {
@@ -22,6 +40,10 @@ a {
     }
 }
 
+span {
+    color:#eb2727; 
+    text-shadow: none;
+}
 
 .nav {
     display: flex;
@@ -44,17 +66,6 @@ a {
     margin: 0;
 }
 
-.nav_logo_title p:nth-child(2) {
-    margin: -2px 0;
-    font-size: 8px;
-    font-style: italic;
-}
-
-.nav_logo_title p {
-    margin: 0;
-    font-size: 18px;
-}
-
 .nav_options a{
     margin: 0 6px;
     font-size: 18px;
@@ -64,6 +75,7 @@ a {
     margin: 0 auto;
     padding: 10px;
     width: 80%;
+    z-index: 1;
 }
 
 .header {
@@ -76,11 +88,11 @@ a {
     font-family: 'PixelOperator', Arial, Helvetica, sans-serif;
     font-weight: bold;
     user-select: none;
+    color: white;
 }
 
 .header_text {
     font-size: 30px;
-    color: #fff;
 }
 
 .header_image{
