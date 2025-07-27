@@ -16,7 +16,12 @@ body {
 
 a {
     color: #f9ff10;
+    &:hover {
+        color: #eb2727;
+        text-shadow: none;
+    }
 }
+
 
 .nav {
     display: flex;
@@ -56,7 +61,7 @@ a {
 }
 
 .container {
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 10px;
     width: 80%;
 }
@@ -70,7 +75,7 @@ a {
     margin: 30px 0;
     font-family: 'PixelOperator', Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-bottom: 100px;
+    user-select: none;
 }
 
 .header_text {
@@ -106,10 +111,14 @@ a {
     font-size: 40px;
     text-align: center;
     color: #f9ff10;
+    text-shadow: 1px 1px 0 #4a4b03;
+    border-top: 1px solid rgb(120, 120, 120);
+    padding-top: 20px;
 }
 
 iframe {
     border: 2px solid white;
+    border-radius: 2px;
     &:hover {
         border: 2px solid #f9ff10;
     }
