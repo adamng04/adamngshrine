@@ -2,7 +2,7 @@
     position: relative;
     z-index: 1;
     top: 1px;
-    border: 3px solid #ffc073;
+    border: 3px solid #e7d1d1;
     border-radius: 10px;
     overflow: hidden;
     transform: translateY(-5px);
@@ -10,6 +10,7 @@
     height: 100%;
     font-family: 'MS Gothic Regular', monospace;
     animation: scroller 2s linear;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes scroller {
@@ -35,20 +36,10 @@ body {
 .container::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.639); /* Semi-transparent black overlay */
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.537); /* Semi-transparent black overlay */
     z-index: -1; /* Place the overlay behind the content */
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-
-    margin:-1px;
-    padding:1px;
+    filter: blur(10px);
     border-radius: 10px;
 }
 
@@ -73,11 +64,8 @@ body {
     background-size: cover;
 }
 .scanlines:after {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2147483648;
+    inset: 0;
+    z-index: 2;
     background: linear-gradient(
         to bottom,
         transparent 60%,
@@ -167,6 +155,12 @@ body {
     display: block;
 }
 
+svg {
+    color: white;
+    scale: 0.7;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(5638%) hue-rotate(322deg) brightness(96%) contrast(90%);
+}
+
 .navigation_mobile a.icon {
     background: black;
     display: block;
@@ -212,7 +206,7 @@ i {
 }
 
 .logo img {
-    animation: rotate 500s linear infinite;
+    animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
@@ -248,7 +242,7 @@ i {
 
 .links a:hover {
     color: white;
-    scale: 2;
+    scale: 1.5;
     rotate: 20deg;
 }
 
@@ -294,6 +288,14 @@ i {
     bottom: 0;
     right: 1px;
     width: 100%;
+    opacity: 1;
+    animation: travisscott 2s linear;
+}
+
+@keyframes travisscott {
+    0% {opacity: 0;}
+    98% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 .box {
