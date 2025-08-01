@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const footerText = document.querySelector('.footer');
+    const currentYear = new Date().getFullYear();
+    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+});
 //thanks vision, and free websites
 /**
  * Format the relative time between the given Date and the current time.
@@ -180,10 +185,3 @@ window.addEventListener('load', () => {
         button()
     })
 })
-
-// https://www.shecodes.io/athena/6402-world-clock-with-javascript-and-html-css
-document.addEventListener('DOMContentLoaded', function() {
-    const footerText = document.querySelector('.footer');
-    const currentYear = new Date().getFullYear();
-    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
-});
