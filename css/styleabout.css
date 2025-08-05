@@ -54,7 +54,7 @@ div h5 {
     border-style: solid;
     border-width: 3px;
     border-color: #fbbd71;
-    box-shadow: 0 0 10px #004f4d;
+    box-shadow: 0 0 8px #004f4d;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -105,25 +105,11 @@ div h5 {
 }
 
 .links {
-    position: relative;
-    border-radius: 5px;
     background-clip: padding-box;
-    padding: 2px;
-    /* just to show box-shadow still works fine */
     box-shadow: 0 1px 6px #009378, inset 0 0 6px #009378;
     background-color: rgb(0, 0, 0);
-}
-
-.links::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 2px; /* control the border thickness */
-    background: linear-gradient(1980deg, #fdbe72, #ff8000,#dd5928,#009479);
-    mask: linear-gradient(#fff 0px 0px) content-box, linear-gradient(#111111 0px 0px);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+    border: 3px solid;
+    border-image: linear-gradient(1980deg, #fdbe72, #ff8000, #dd5928, #009479) 1;
 }
 
 .linkmain {
@@ -220,7 +206,7 @@ div h5 {
     border-style: outset;
     border-width: 3px;
     border-color: #009479;
-    box-shadow: 0 0 10px #004f4d;
+    box-shadow: 0 0 8px #004f4d;
 }
 
 .main_barright {
@@ -231,7 +217,7 @@ div h5 {
     border-width: 3px;
     border-color: #009479;
     text-align: start;
-    box-shadow: 0 0 10px #004f4d;
+    box-shadow: 0 0 8px #004f4d;
 }
 
 .rainbow_text_animated {
