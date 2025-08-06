@@ -82,35 +82,6 @@ addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Variables
-var player;
-
-// YouTube API callback function
-function onYouTubeIframeAPIReady() {
-  // Create the YouTube player
-  player = new YT.Player('player', {
-    videoId: 'BHOevX4DlGk',
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-}
-
-// Function called when the player is ready
-function onPlayerReady(event) {
-  event.target.setVolume(20);
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 function play(){
     let audio = document.getElementById("audio");
     audio.play();
@@ -126,3 +97,13 @@ window.addEventListener('load', () => {
         button()
     })
 })
+
+const scanlines = document.querySelector('.scanlines');
+const background = document.querySelector('.background');
+
+function updateBackgroundHeight() {
+    background.style.minHeight = `${scanlines.offsetHeight}px`;
+}
+
+window.addEventListener('load', updateBackgroundHeight);
+window.addEventListener('resize', updateBackgroundHeight);

@@ -12,19 +12,19 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-
-    
+    <div class="scanlines">
+        <div class="background"></div>
+    </div>
     <div class="container">
         <div class="title">
             <div class="title-logo">
-                <a href="index.html"><img src="images/logo-01-01.png" alt="" width="40px"></a>
-                <a href="index.html">Welcome to Adamng's Shrine</a>
+                <img src="images/logo-01-01.png" alt="" width="40px">
+                <h4>Welcome to Adamng's Shrine</h4>
             </div>
             <img class="title-gif" src="images/springmode.gif" alt="gif" width="300px">
         </div>
         <div class="nav-mobile">
-            <a style="font-size: 17px; font-family: 'Merriweather', sans-serif;" class="active"><img src="/images/logo-01-01.png" width="20px">
-                Welcome to Adamng's Shrine</a>
+            <a style="font-size: 17px; font-family: 'Merriweather', sans-serif;" class="active"><img src="/images/logo-01-01.png" width="20px">Welcome to Adamng's Shrine</a>
                 <div id="links">
                     <a class="button active" onclick="showSection('index')">home</a>
                     <a class="button" onclick="showSection('about')">about me</a>
@@ -38,7 +38,6 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-        <p style="color: white; text-align: center;">Everything created on the website will be the result of my journey learning web development.</p>
         <div class="main">
             <div class="nav">
                 <a class="button active" onclick="showSection('index')">home</a>
@@ -48,7 +47,7 @@
                 <a class="titlebox" style="color: white;" href="diary/diary.html">dear diary</a>
                 <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
                 <a href="links.html">links</a>
-                <div class="tapir" style="width: 176px;background-color: #000000;display: block;padding: 10px;border: 1px solid;margin: 0 auto;font-family: 'times';font-size: 12pt; border: 1px solid white; border-radius: 4px; box-shadow: 0 0 10px #004f4d; background-color: rgba(47, 47, 47, 0.7);">
+                <div class="tapir">
                     <p style="color: white !important; font-family: 'Times New Roman', Times, serif;" style="margin: 0">This page is protected by a</p>
                     <h1 class="title" style="margin: 0; color: white;">TAPIR</h1>
                     <img class="image" style="max-width: 160px;border: 1px solid" alt="TAPIR" src="https://i.ibb.co/10FV850/tapir.jpg">
@@ -98,16 +97,15 @@
                 </div>
             </div>
             <div id="index" class="content active">
-                <div class="about-introduction">
+                <div class="webring_main">
                     <img src="/images/avatar.jpg" alt="avatar" width="14%">
                     <small>socials avatar</small>
                     <h3>Hi. It's Adam</h3>
-                    <p>This is the 4th iteration of the website, this time with other elements from the AU portal.</p>
-                    <p>This website was inspired by old-style, retro, y2k web designs. There are various ways to build your own personal webpage, but this particular style has more personalities than the average modern designs today.</p>
-                    <p>If you look around, there are a few links to my deepest darkest secrets, so tread lightly.</p>
+                    <p>This marks the 4th iteration of the website, with other elements from various AU portals. Reminder: Everything created on the website will be the result of my journey learning web development. This website was inspired by old-style, retro, y2k web designs. The choice of primary colors for this website was inspired by the vertical scrolling shooter game <span style="color: #ff8000;">Zero</span><span style="color: #009479;">Ranger</span>.</p>
+                    <p>If you look around, there are a few links to my deepest darkest secrets, so tread lightly :)</p>
                 </div>
                 <div class="journey" style="margin: var(--margin-default);">
-                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">status.cafe</h3>
+                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">status.cafe:</h3>
                 </div>
                 <div class="statuscafe" id="statuscafe">
                     <div id="statuscafe-username"></div>
@@ -116,25 +114,7 @@
                 <div class="journey" style="margin: var(--margin-default);">
                     <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">Recent Web creations:</h3>
                 </div>
-                <div class="updates webring_main">
-                    <a href="https://thsupervillain.adamngshrine.com/" class="update-block">
-                        <div class="images">
-                            <img src="/images/siteupdate2/supervillain1.png" alt="supervillain1">
-                        </div>
-                        <div class="subtitle" style="list-style: none;">
-                            <h3>Touhou Project Community's Supervillain List</h3>
-                            <p>A sarcastic attempt at appealing to the "supervillain status" of the Touhou community without making it serious.</p>
-                        </div>
-                    </a>
-                    <a href="https://thsupervillain.adamngshrine.com/normalnb" class="update-block">
-                        <div class="images">
-                            <img src="/images/siteupdate2/supervillain2.png" alt="supervillain2">
-                        </div>
-                        <div class="subtitle">
-                            <h3>Touhou Project Normal No Miss No Bomb List</h3>
-                            <p>A homage to Maribel Hearn's LNN List, but with Normal runs. This is more serious list because I'm archiving replays self-hosted on my PC.</p>
-                        </div>
-                    </a>
+                <div class="updates">
                     <a href="https://thsupervillain.adamngshrine.com/records" class="update-block">
                         <div class="images">
                             <img src="/images/siteupdate2/supervillain3.png" alt="supervillain3">
