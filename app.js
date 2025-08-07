@@ -97,13 +97,3 @@ window.addEventListener('load', () => {
         button()
     })
 })
-
-const scanlines = document.querySelector('.scanlines');
-const background = document.querySelector('.background');
-
-function updateBackgroundHeight() {
-    background.style.minHeight = `${scanlines.offsetHeight}px`;
-}
-
-window.addEventListener('load', updateBackgroundHeight);
-window.addEventListener('resize', updateBackgroundHeight);

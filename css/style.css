@@ -9,6 +9,7 @@ h3, h4 {
     font-family: 'Merriweather', sans-serif;
     font-weight: normal;
     margin: 10px 0;
+    text-shadow: 1px 1px 8px #ff9327;
 }
 
 body {
@@ -79,7 +80,7 @@ div.scanlines {
 
 .background {
     width: 99vw;
-    min-height: 274vh;
+    min-height: 290vh;
     border: none;
 }
 
@@ -94,7 +95,6 @@ div.scanlines {
     z-index: -1; /* Place the overlay behind the content */
     opacity: 0.4;
 }
-
 
 .container {
     position: relative;
@@ -150,11 +150,12 @@ div.scanlines {
     grid-column: 1;
     grid-row: 1;
     background-color: black;
-    border: 2px solid #009479;
+    border: 2px solid #3c5853;
     border-radius: 4px;
-    box-shadow: 0 0 2px #004f4d;
+    box-shadow: 1px 1px 2px #004f4d;
     a {
         color: #ffc073;
+        text-shadow: 1px 1px 8px #ffc073;
         text-decoration: none;
         padding: 2px 2px; 
         transition: all 0.1ms ease;
@@ -166,6 +167,7 @@ div.scanlines {
         }
         &:active {
             color: #009479;
+            text-shadow: 1px 1px 8px #009479;
             scale: 1.0;
         }
     }
@@ -174,8 +176,8 @@ div.scanlines {
 .miscs {
     grid-column: 1;
     grid-row: 2;
-    background-color: black;
-    border: 2px solid #009479;
+    background-color: rgba(158, 158, 158, 0.142);
+    border: 2px solid #3c5853;
     border-radius: 4px;
     box-shadow: 0 0 2px #004f4d;
     padding: 10px;
@@ -184,8 +186,8 @@ div.scanlines {
 .content {
     grid-column: 2;
     grid-row: 1 / span 2;
-    background-color: black;
-    border: 2px solid #009479;
+    background-color: rgba(158, 158, 158, 0.142);
+    border: 2px solid #3c5853;
     border-radius: 4px;
     box-shadow: 0 0 2px #004f4d;
     padding: 12px 20px;
@@ -199,6 +201,7 @@ div.scanlines {
    box-shadow: 0 0 4px #5e5e5e;
    border-radius: 4px;
    border: 1px solid white;
+   box-shadow: 1px 1px 10px #004f4d;
    padding: 8px;
    margin: 12px 0;
    p {
@@ -216,6 +219,7 @@ div.scanlines {
     border: 1px solid #fbbd71;
     border-radius: 4px;
     background-color: rgba(47, 47, 47, 0.7);
+    box-shadow: 1px 1px 10px #004f4d;
     box-shadow: 0 0 2px #004f4d;
     margin: 12px 0;
 }
@@ -493,12 +497,16 @@ div.scanlines {
     margin: var(--default-margin);
 }
 
-.bottom {
-    margin: 10px 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.desktop-visible {
+    display: block;
+    background-color: #002d2b;
+    box-shadow: 0 0 4px #5e5e5e;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+.mobile-visible {
+    display: none;
 }
 
 .tapir {
@@ -515,6 +523,11 @@ div.scanlines {
     border: 1px solid white; 
     border-radius: 4px; 
     box-shadow: 0 0 10px #004f4d; 
+}
+
+.list a{
+    color: #ffc073;
+    text-decoration: underline;
 }
 
 
@@ -542,6 +555,14 @@ div.scanlines {
     }
 }
 
+.bottom {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media only screen  and  (max-width:768px){ 
     .main {
         grid-template-columns: 1fr;
@@ -549,8 +570,45 @@ div.scanlines {
         width: 100%;
     }
 
-    pre {
-        display: none;
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contacts {
+        width: 50%;
+        justify-content: start;
+        text-align: left;
+        h3 {
+            border-bottom: 2px solid;
+            border-image: linear-gradient(-90deg, #002d2b, #009479, #fdbe72, #009479,#002d2b) 1;
+            padding-bottom: 4px;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .desktop-visible pre {
+        display: none !important;
+        background-color: #002d2b;
+        box-shadow: 0 0 4px #5e5e5e;
+        border-radius: 4px;
+        border: 1px solid white;
+    }
+    
+    .mobile-visible {
+        background-color: #002d2b;
+        box-shadow: 0 0 4px #5e5e5e;
+        border-radius: 4px;
+        border: 1px solid white;
+        pre{
+            display: block;
+            width: 90%;
+            font-size: 12px;
+        }
     }
 
     .updates {
