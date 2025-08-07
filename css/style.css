@@ -59,7 +59,7 @@ div.scanlines {
 
 .background {
     width: 99vw;
-    min-height: 290vh;
+    min-height: 296vh;
     border: none;
 }
 
@@ -512,7 +512,11 @@ div.scanlines {
 
 .contacts {
     text-align: end;
-    width: 30%;
+    width: 40%;
+    small a{
+        color: #ff7373;
+        font-size: 14px;
+    }
     h3 {
         border-bottom: 2px solid;
         border-image: linear-gradient(-90deg, #fdbe72 , #009479, #002a28, #002d2b) 1;
