@@ -97,3 +97,48 @@ window.addEventListener('load', () => {
         button()
     })
 })
+
+function updateScanlineHeight() {
+    const scanlines = document.querySelector('.scanlines');
+        if (!scanlines) return;
+        const fullHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+    );
+    
+    scanlines.style.height = fullHeight + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', updateScanlineHeight);
+window.addEventListener('resize', updateScanlineHeight);
+
+function myFunction() {
+    var x = document.getElementById("links");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+            
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+            
+    // Show the selected section
+    document.getElementById(sectionId).classList.add('active');
+            
+    // Add active class to the clicked button
+    event.target.classList.add('active');
+}

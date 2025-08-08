@@ -2,6 +2,7 @@
 
 :root {
     --margin-default: 20px 0;
+    --border-radius: 4px;
 }
 
 h3, h4 {
@@ -22,14 +23,16 @@ body {
 }
 
 .scanlines {
-    overflow: hidden;
-    position: relative;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     background-size: auto;
     background-repeat: repeat;
-    background-attachment: scroll;
-    margin: 0; /* Remove default margins */
-    min-height: 90vh;
+    pointer-events: none;
+    z-index: 2;
 }
 .scanlines:before,
 .scanlines:after {
@@ -44,7 +47,7 @@ body {
     background: linear-gradient(
         to bottom,
         transparent 60%,
-        rgba(0, 0, 0, 0.04) 91%
+        rgba(0, 0, 0, 0.044) 91%
     );
     background-size: 90% 4px;
 }
@@ -70,7 +73,7 @@ div.scanlines {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000d13; /* Semi-transparent black overlay */
+    background-color: #5c7d8d1b; /* Semi-transparent black overlay */
     z-index: -1; /* Place the overlay behind the content */
     opacity: 0.4;
 }
@@ -130,7 +133,7 @@ div.scanlines {
     grid-row: 1;
     background-color: black;
     border: 2px solid #3c5853;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     box-shadow: 1px 1px 2px #004f4d;
     a {
         color: #ffc073;
@@ -157,7 +160,7 @@ div.scanlines {
     grid-row: 2;
     background-color: rgba(158, 158, 158, 0.142);
     border: 2px solid #3c5853;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
     padding: 10px;
 }
@@ -167,7 +170,7 @@ div.scanlines {
     grid-row: 1 / span 2;
     background-color: rgba(158, 158, 158, 0.142);
     border: 2px solid #3c5853;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
     padding: 12px 20px;
     color:rgb(241, 241, 241);
@@ -178,7 +181,7 @@ div.scanlines {
 .about-introduction {
    background-color: #002d2b;
    box-shadow: 0 0 4px #5e5e5e;
-   border-radius: 4px;
+   border-radius: var(--border-radius);
    border: 1px solid white;
    box-shadow: 1px 1px 10px #004f4d;
    padding: 8px;
@@ -196,7 +199,7 @@ div.scanlines {
 .webring_main {
     padding: 10px;
     border: 1px solid #fbbd71;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background-color: rgba(47, 47, 47, 0.7);
     box-shadow: 1px 1px 10px #004f4d;
     box-shadow: 0 0 2px #004f4d;
@@ -261,7 +264,7 @@ div.scanlines {
 
 .miscs-section{
     border: 1px solid #ffc073;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
     margin: 20px 0;
     padding: 4px;
@@ -425,7 +428,7 @@ div.scanlines {
     opacity: 0.9;
     margin: 0;
     border: 2px solid rgb(79, 79, 79);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.737);
     transition: all 0.3s ease;
@@ -480,7 +483,7 @@ div.scanlines {
     display: block;
     background-color: #002d2b;
     box-shadow: 0 0 4px #5e5e5e;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     border: 1px solid white;
 }
 
@@ -500,7 +503,7 @@ div.scanlines {
     font-family: 'times';
     font-size: 12pt; 
     border: 1px solid white; 
-    border-radius: 4px; 
+    border-radius: var(--border-radius); 
     box-shadow: 0 0 10px #004f4d; 
 }
 
@@ -578,14 +581,14 @@ div.scanlines {
         display: none !important;
         background-color: #002d2b;
         box-shadow: 0 0 4px #5e5e5e;
-        border-radius: 4px;
+        border-radius: var(--border-radius);
         border: 1px solid white;
     }
     
     .mobile-visible {
         background-color: #002d2b;
         box-shadow: 0 0 4px #5e5e5e;
-        border-radius: 4px;
+        border-radius: var(--border-radius);
         border: 1px solid white;
         pre{
             display: block;
