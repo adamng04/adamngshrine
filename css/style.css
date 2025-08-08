@@ -91,7 +91,7 @@ div.scanlines {
     margin: var(--margin-default);
     border-bottom: 2px solid ;
     border-image: linear-gradient(45deg, #fdbe72, #ff8000, #009479) 1;
-    font-size: 30px;
+    font-size: 1.875rem;
     display: flex;
     justify-content: space-between;
     transition: all 0.3s ease-in-out;
@@ -117,7 +117,7 @@ div.scanlines {
 
 .main {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 13.75rem 1fr;
     grid-template-rows: auto 1fr;
     gap: 20px;
 }
@@ -128,24 +128,24 @@ div.scanlines {
     justify-content: left;
     padding: 10px;
     gap: 4px;
-    font-size: 22px;
+    font-size: 1.375rem;
     grid-column: 1;
     grid-row: 1;
     background-color: black;
     border: 2px solid #3c5853;
     border-radius: var(--border-radius);
-    box-shadow: 1px 1px 2px #004f4d;
+    box-shadow: 0 0 2px #004f4d;
     a {
         color: #ffc073;
         text-shadow: 1px 1px 8px #ffc073;
         text-decoration: none;
         padding: 2px 2px; 
-        transition: all 0.1ms ease;
+        transition: all 0.2s ease;
         cursor: pointer;
         &:hover {
             color: #ffffff;
             background-color: #181818;
-            border-left: 2px solid gray;
+            border-left: 3px solid gray;
         }
         &:active {
             color: #009479;
@@ -171,10 +171,11 @@ div.scanlines {
     background-color: rgba(158, 158, 158, 0.142);
     border: 2px solid #3c5853;
     border-radius: var(--border-radius);
+    box-sizing: border-box;
     box-shadow: 0 0 2px #004f4d;
     padding: 12px 20px;
     color:rgb(241, 241, 241);
-    font-size: 18px;
+    font-size: 1rem;
     display: none;
 }
 
@@ -200,7 +201,6 @@ div.scanlines {
     padding: 10px;
     border: 1px solid #fbbd71;
     border-radius: var(--border-radius);
-    background-color: rgba(47, 47, 47, 0.7);
     box-shadow: 1px 1px 10px #004f4d;
     box-shadow: 0 0 2px #004f4d;
     margin: 12px 0;
@@ -245,7 +245,7 @@ div.scanlines {
     color: #fdbe72;
     padding: 10px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1rem;
     display: block;
 }
 
@@ -278,7 +278,7 @@ div.scanlines {
 
 #date-time {
     color: #ffc073;
-    font-size: 13px;;
+    font-size: 0.8rem;
 }
 
 .article {
@@ -296,7 +296,7 @@ div.scanlines {
 
 .thankyou p {
     color: #ffc073;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .navlink iframe{
@@ -337,14 +337,14 @@ div.scanlines {
 
 #statuscafe a{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #ffc073;
     word-break: break-all;
 }
 
 #statuscafe a:hover{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #009479;
     text-shadow: 0 0 10px #009479;
 }
@@ -382,7 +382,7 @@ div.scanlines {
 }
 
 #lastfm-widget a{
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #ffffff;
     text-shadow: 0px 0px 3px #ffffff;
 }
@@ -468,7 +468,7 @@ div.scanlines {
 
 .subtitle {
     margin: 10px 10px;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--p-color);
     text-align: center;
     line-height: 1.4;
@@ -499,7 +499,7 @@ div.scanlines {
     display: block;
     padding: 10px;
     border: 1px solid;
-    margin: 0 auto;
+    margin: 10px auto;
     font-family: 'times';
     font-size: 12pt; 
     border: 1px solid white; 
@@ -518,7 +518,7 @@ div.scanlines {
     width: 40%;
     small a{
         color: #ff7373;
-        font-size: 14px;
+        font-size: 0.8rem;
     }
     h3 {
         border-bottom: 2px solid;
@@ -529,10 +529,10 @@ div.scanlines {
         list-style: none;
         margin: 6px 0;
         color: white;
-        font-size: 20px;
+        font-size: 1.25rem;
         a{
             text-decoration: underline;
-            font-size: 20px;
+            font-size: 1.25rem;
             color: white;
             &:hover {
                 color: #ffc073;
@@ -549,6 +549,7 @@ div.scanlines {
     justify-content: space-between;
 }
 
+
 @media only screen  and  (max-width:768px){ 
     .main {
         grid-template-columns: 1fr;
@@ -562,8 +563,25 @@ div.scanlines {
         justify-content: center;
     }
 
+    .nav-mobile {
+        top: 1.2rem 0;
+        a {
+            font-size: 1.4rem;
+        }
+    }
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .avatar {
+        min-width: 100px;
+        display: block;
+    }
+
     .contacts {
-        width: 50%;
+        width: 100%;
         justify-content: start;
         text-align: left;
         h3 {
@@ -575,6 +593,14 @@ div.scanlines {
             padding: 0;
             margin: 0;
         }
+    }
+
+    .scanlines {
+        display: none;
+    }
+
+    .stickers img, .stickers input {
+        width: 30%;
     }
 
     .desktop-visible pre {
@@ -593,7 +619,7 @@ div.scanlines {
         pre{
             display: block;
             width: 90%;
-            font-size: 12px;
+            font-size: 0.75rem;
         }
     }
 
