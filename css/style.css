@@ -546,6 +546,7 @@ div.scanlines {
         border-bottom: 2px solid;
         border-image: linear-gradient(-90deg, #fdbe72 , #009479, #002a28, #002d2b) 1;
         padding-bottom: 4px;
+        color: white !important;
     }
     li {
         list-style: none;
