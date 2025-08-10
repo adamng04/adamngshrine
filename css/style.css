@@ -572,6 +572,10 @@ div.scanlines {
     justify-content: space-between;
 }
 
+small a {
+    color: #009479;
+}
+
 .webringdump {
     display: flex;
     flex-direction: column;
