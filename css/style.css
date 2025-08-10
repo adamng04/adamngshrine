@@ -572,6 +572,11 @@ div.scanlines {
     justify-content: space-between;
 }
 
+.webringdump {
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media only screen  and  (max-width:768px){ 
     .main {
