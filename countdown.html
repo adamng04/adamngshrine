@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Adamng's Shrine Countdown thing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="The #danmaku supervillain ranking of all time">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
+    <link rel="icon" href="images/supervillain.jpg" type="image/x-icon" />
+    <title>countdown to touhou 20</title>
+    <style>
+
+        @font-face {
+            font-family: Minecraft;
+            src: url(/fonts/MinecraftRegular-Bmg3.otf);
+        }
+
+        .background {
+            background-image: url("/images/kakidan9.jpg");
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: repeat;
+            background-position: center center;
+            z-index: -1;
+            filter: brightness(14%) blur(1px);
+        }
+
+        body {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Minecraft', Arial, Helvetica, sans-serif;
+        }
+        .demo {
+            margin: 10px auto;
+            width: 60%;
+            text-align: center;
+            border: 3px solid;
+            color: white;
+            border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1 stretch;
+            background-position: center center;
+            outline: 2px solid #790000;
+            background-size: 24% 100%;
+            background-repeat: repeat;
+            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 4s linear infinite;
+            position: relative;
+
+            h3 { font-size: 2rem; font-weight: normal; }
+                #demo { font-size: 2rem; }
+                > * { position: relative; z-index: 2; text-shadow: 1px 1px 2px black; }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(0.4px);
+            background: rgba(15, 15, 15, 0.6);
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+        @keyframes slideshow {
+            0%, 33.33% { background-image: url('/images/kakidan7.gif?t=1'); }
+            33.34%, 66.66% { background-image: url('/images/kakidan5.gif?t=2'); }
+            66.67%, 100% { background-image: url('/images/kakidan6.gif?t=3'); }
+        }
+
+        @keyframes animateborder {
+            0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1; }
+            25% { border-image: linear-gradient(90deg, #ea2929, #e9ac57) 1; }
+            50% { border-image: linear-gradient(180deg, #ea2929, #e9ac57) 1; }
+            75% { border-image: linear-gradient(270deg, #ea2929, #e9ac57) 1; }
+        }
+
+        @keyframes gygas_animation {
+            0% { background-position: 0 0; }
+            100% { background-position: 200% 100%; }
+        }
+        small {
+            color: white;
+            a {
+                color:#e9ac57;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .demo {
+                width: 95%;
+                h3 { font-size: 24px; }
+                #demo { font-size: 30px; }
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="demo">
+      <h3>Time until Fossilized Wonders</h3>
+      <p id="demo"></p>
+    </div>
+    <small>background image by <a href="https://twitter.com/Kourihase/status/1921173352053371096/photo/1">Kourihase</a></small>
+    <small style="margin: 10px 0;"><a href="/">back to supervillain list</a></small>
+
+    <script>
+        (function() {
+        'use strict';
+  
+        const countDownDate = new Date("2025-08-17T01:00:00").getTime();
+        let interval = null;
+  
+        function updateCountdown() {
+            const element = document.getElementById("demo");
+            if (!element) {
+            clearInterval(interval);
+        return;
+        }
+    
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+    
+        if (distance < 0) {
+        element.innerHTML = "EXPIRED";
+        clearInterval(interval);
+        return;
+        }
+    
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        element.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  
+  // Start immediately when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+        updateCountdown();
+        interval = setInterval(updateCountdown, 1000);
+        });
+    } else {
+        updateCountdown();
+        interval = setInterval(updateCountdown, 1000);
+    }
+  
+  // Clean up on page unload
+    window.addEventListener('beforeunload', function() {
+        if (interval) clearInterval(interval);
+    });
+  
+    })();
+    </script>
+</body>
+</html>
