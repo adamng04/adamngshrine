@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const footerText = document.querySelector('.footer');
-    const currentYear = new Date().getFullYear();
-    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
-});
 //thanks vision, and free websites
 /**
  * Format the relative time between the given Date and the current time.
@@ -169,3 +164,9 @@ async function loadArticles(endpoint = 'update.json') {
 }
 
 loadArticles();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const footerText = document.querySelector('.footer');
+    const currentYear = new Date().getFullYear();
+    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+});
