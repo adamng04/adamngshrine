@@ -25,6 +25,7 @@
 :root {
     --margin-default: 20px 0;
     --border-radius: 4px;
+    --border-image: linear-gradient(90deg, #fdbe72, #ff8000, #009479) 1;
 }
 
 h3, h4 {
@@ -44,62 +45,6 @@ body {
     height: 100%;
 }
 
-.scanlines {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-size: auto;
-    background-repeat: repeat;
-    pointer-events: none;
-    z-index: 2;
-}
-.scanlines:before,
-.scanlines:after {
-    display: block;
-    pointer-events: none;
-    content: "";
-    position: absolute;
-}
-.scanlines:after {
-    inset: 0;
-    z-index: 2;
-    background: linear-gradient(
-        to bottom,
-        transparent 60%,
-        rgba(0, 0, 0, 0.044) 91%
-    );
-    background-size: 90% 4px;
-}
-
-div {
-    margin: 0;
-    padding: 0;
-}
-div.scanlines {
-    position: absolute;
-}
-
-.background {
-    width: 99vw;
-    min-height: 296vh;
-    border: none;
-}
-
-.background::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #5c7d8d1b; /* Semi-transparent black overlay */
-    z-index: -1; /* Place the overlay behind the content */
-    opacity: 0.4;
-}
-
 .container {
     position: relative;
     z-index: 1;
@@ -108,11 +53,12 @@ div.scanlines {
     filter: blur(0.2px);
 }
 
+
 .title {
     font-family: 'Merriweather', sans-serif;
     margin: var(--margin-default);
     border-bottom: 2px solid ;
-    border-image: linear-gradient(45deg, #fdbe72, #ff8000, #009479) 1;
+    border-image: var(--border-image);
     font-size: 1.875rem;
     display: flex;
     justify-content: space-between;
@@ -199,7 +145,9 @@ div.scanlines {
     color:rgb(241, 241, 241);
     font-size: 1rem;
     display: none;
+    position: relative;
 }
+
 
 .about-introduction {
    background-color: #002d2b;

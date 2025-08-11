@@ -98,23 +98,6 @@ window.addEventListener('load', () => {
     })
 })
 
-function updateScanlineHeight() {
-    const scanlines = document.querySelector('.scanlines');
-        if (!scanlines) return;
-        const fullHeight = Math.max(
-        document.body.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.clientHeight,
-        document.documentElement.scrollHeight,
-        document.documentElement.offsetHeight
-    );
-    
-    scanlines.style.height = fullHeight + 'px';
-}
-
-document.addEventListener('DOMContentLoaded', updateScanlineHeight);
-window.addEventListener('resize', updateScanlineHeight);
-
 function myFunction() {
     var x = document.getElementById("links");
     if (x.style.display === "block") {
@@ -142,3 +125,47 @@ function showSection(sectionId) {
     // Add active class to the clicked button
     event.target.classList.add('active');
 }
+
+async function loadArticles(endpoint = 'update.json') {
+  const container = document.getElementById('articles-container');
+  
+  try {
+    const posts = await fetch(endpoint).then(r => r.ok ? r.json() : Promise.reject(r));
+    
+    if (!Array.isArray(posts) || !posts.length) {
+      container.innerHTML = '<div class="empty">No articles available</div>';
+      return;
+    }
+    
+    container.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    
+    posts.forEach(p => {
+      if (!p) return;
+      
+      const article = document.createElement('article');
+      article.setAttribute('data-time', p.timestamp || '');
+      
+      const userDiv = document.createElement('div');
+      userDiv.className = 'status_username';
+      const username = document.createElement('h3');
+      username.textContent = p.username || 'Anonymous'; // Safe - uses textContent
+      userDiv.appendChild(username);
+      
+      const content = document.createElement('p');
+      content.className = 'status_content';
+      content.textContent = p.content || ''; // Safe - uses textContent
+      
+      article.append(userDiv, content);
+      fragment.appendChild(article);
+    });
+    
+    container.appendChild(fragment);
+    
+  } catch (error) {
+    console.error('Failed to load:', error);
+    container.innerHTML = '<div class="error">Failed to load articles</div>';
+  }
+}
+
+loadArticles();

@@ -18,98 +18,77 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-    <div class="scanlines">
-        <div class="background"></div>
-    </div>
     <div class="container">
         <div class="title">
             <div class="title-logo">
-                <img src="images/logo-01-01.png" alt="" width="40px">
+                <img src="images/logo-01-01.png" alt="Adamng's Shrine Logo" width="40">
                 <h4>Welcome to Adamng's Shrine</h4>
-                <span style="color: gray; font-size: 12px;">version 4.3.2</span>
+                <span class="version">version 4.3.3</span>
             </div>
-            <img class="title-gif" src="images/springmode.gif" alt="gif" width="26%">
+            <img class="title-gif" src="images/springmode.gif" alt="Spring mode animation" width="26%">
         </div>
-        <div class="nav-mobile">
-            <a style="font-size: 1rem; font-family: 'Merriweather', sans-serif;" class="active">Welcome to Adamng's Shrine</a>
-                <div id="links">
-                    <a class="button active" onclick="showSection('index')">home</a>
-                    <a class="button" onclick="showSection('about')">about me</a>
-                    <a href="/index/weebcorner.html">weeb corner</a>
-                    <a href="https://blog.adamngshrine.com/">blogs</a>
-                    <a href="index/AUportal.html">au portal</a>
-                    <a class="titlebox" style="color: white;" href="diary/diary.html">dear diary</a>
-                    <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
-                    <a href="#contacts">contacts</a>
-                </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-        <div class="main">
-            <div class="nav">
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile">
+            <a class="site-title active">Welcome to Adamng's Shrine</a>
+            <div id="links">
                 <a class="button active" onclick="showSection('index')">home</a>
                 <a class="button" onclick="showSection('about')">about me</a>
                 <a href="/index/weebcorner.html">weeb corner</a>
                 <a href="https://blog.adamngshrine.com/">blogs</a>
                 <a href="index/AUportal.html">au portal</a>
-                <a class="titlebox" style="color: white;" href="diary/diary.html">dear diary</a>
+                <a class="titlebox" href="diary/diary.html">dear diary</a>
+                <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
+                <a href="#contacts">contacts</a>
+            </div>
+            <button class="icon" onclick="myFunction()" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+
+        <div class="main">
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <a class="button active" onclick="showSection('index')">home</a>
+                <a class="button" onclick="showSection('about')">about me</a>
+                <a href="/index/weebcorner.html">weeb corner</a>
+                <a href="https://blog.adamngshrine.com/">blogs</a>
+                <a href="index/AUportal.html">au portal</a>
+                <a class="titlebox" href="diary/diary.html">dear diary</a>
                 <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
                 <a href="#contacts">contacts</a>
                 <div class="tapir">
-                    <p style="color: white !important; font-family: 'Times New Roman', Times, serif;" style="margin: 0">This page is protected by a</p>
-                    <h1 class="title" style="margin: 0; color: white;">TAPIR</h1>
+                    <p style="color: white !important; font-family: 'Times New Roman', Times, serif; margin: 0">This page is protected by a</p>
+                    <h3 class="title" style="margin: 0; color: white;">TAPIR</h3>
                     <img class="image" style="max-width: 160px;border: 1px solid" alt="TAPIR" src="https://i.ibb.co/10FV850/tapir.jpg">
                     <p style="color: white !important; font-family: 'Times New Roman', Times, serif;" class="description">Tapirs have changed very little over the past 20 million years.</p>
                     <small>
                         <a style="color: white !important; font-family: 'Times New Roman', Times, serif; line-height: 10px;" href="https://hekate.neocities.org">Want your own? Visit hekate.neocities.org!</a>
                     </small>
                 </div>
-            </div>
+            </nav>
+
             <div class="miscs">
-                <div class="guestbooks" style="width: 90%;">
-                    <a target="_blank" style="font-size: 16px; border: 1px dashed rgb(83, 83, 83); color: white;" href="https://adamngshrine.atabook.org/">New: Sign my guestbook!</a>
+                <div class="guestbooks">
+                    <a target="_blank" class="guestbook-link" href="https://adamngshrine.atabook.org/">New: Sign my guestbook!</a>
                 </div>
                 <div class="kofi webring_main">
                     <h3>My ko-fi is online!</h3>
-                    <a href="https://ko-fi.com/adamng04"><img src="/images/support_me_on_kofi_beige.png" alt="kofi" width="100%"></a>
+                    <a href="https://ko-fi.com/adamng04"><img src="/images/support_me_on_kofi_beige.png" alt="Support me on Ko-fi" width="100%"></a>
                 </div>
                 <div class="mood webring_main">
                     <h3>I'm feeling</h3>
-                    <a href="https://www.imood.com/users/adamng04"><img style="margin-top: -20px;" src="https://moods.imood.com/display/uname-adamng04/imood.gif" alt="The current mood of adamng04 at www.imood.com" border="0" width="50%"></a>
+                    <a href="https://www.imood.com/users/adamng04"><img class="mood-image" src="https://moods.imood.com/display/uname-adamng04/imood.gif" alt="The current mood of adamng04" width="50%"></a>
                 </div>
                 <div class="hotlink webring_main">
                     <h3>hotlink my site!</h3>
-                    <a href="https://adamngshrine.pages.dev/"><img src="/images/button.png" alt="button88x31"></a>
-                    <textarea style="margin: 10px 0; color: white; background-color: black;"><a href="https://adamngshrine.pages.dev/"><img src="https://adamngshrine.pages.dev/images/button.png" alt="button88x31"></a></textarea>
+                    <a href="https://adamngshrine.pages.dev/"><img src="/images/button.png" alt="Adamng's Shrine button 88x31"></a>
+                    <textarea class="hotlink-code" readonly><a href="https://adamngshrine.pages.dev/"><img src="https://adamngshrine.pages.dev/images/button.png" alt="button88x31"></a></textarea>
                 </div>
                 <h3>Web updates!</h3>
-                <div class="article webring_main">
-                <article class="p1 mx-2 my-2" data-time="1754549208">
-                    <div class="status_username">
-                        <h3>adamng04</h3>
-                    </div>
-                    <p class="status_content">
-                        Revamped html page, currently version 4.2
-                    </p>
-                </article>
-                <article class="p1 mx-2 my-2" data-time="1751730153">
-                    <div class="status_username">
-                        <h3>adamng04</h3>
-                    </div>
-                    <p class="status_content">
-                        Added more contents, like the normal No Miss No Bomb chart. Slowly removing Bootstrap codes and replacing with pure html/css.
-                    </p>
-                </article>
-                <article class="p1 mx-2 my-2" data-time="1744631291">
-                    <div class="status_username">
-                        <h3>adamng04</h3>
-                    </div>
-                    <p class="status_content">
-                        Improved page codes.
-                    </p>
-                </article>
-            </div>
+                <div class="article" id="articles-container">
+                    <!-- Articles will be loaded here via JavaScript -->
+                </div>
                 <div class="dimdenmoonwidget" style="margin: 20px 0; background-color: rgba(47, 47, 47, 0.7);">
                     <iframe width="190" height="160" &styleUrl=URL src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>
                 </div>
@@ -117,42 +96,45 @@
                     <iframe class="my-4 mx-1" width="170" height="170" style="scale: 0.96; border: 2px solid white;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
                 </div>
             </div>
-            <div id="index" class="content active">
+
+            <!-- Home Section -->
+            <main id="index" class="content active">
                 <div class="introduction">
-                    <img class="avatar" style="outline: 2px dashed #3c5853; outline-offset: 0.3rem;" src="/images/avatar.jpg" alt="avatar" width="14%">
+                    <img class="avatar" src="/images/avatar.jpg" alt="Adam's avatar" width="14%">
                     <small>socials avatar</small>
                     <h3>Hi. It's Adam</h3>
-                    <p>This marks the 4th iteration of the website, with other elements from various AU portals. Reminder: Everything created on the website will be the result of my journey learning web development. This website was inspired by old-style, retro, y2k web designs. The choice of primary colors for this website was inspired by the vertical scrolling shooter game <span style="color: #ff8000;">Zero</span><span style="color: #009479;">Ranger</span>.</p>
+                    <p>This marks the 4th iteration of the website, with other elements from various AU portals. Reminder: Everything created on the website will be the result of my journey learning web development. This website was inspired by old-style, retro, y2k web designs. The choice of primary colors for this website was inspired by the vertical scrolling shooter game <span class="zero">Zero</span><span class="ranger">Ranger</span>.</p>
                     <p>If you look around, there are a few links to my deepest darkest secrets, so tread lightly :)</p>
                     <small>accessible via <a href="https://adamngshrine.com">adamngshrine.com</a> and <a href="https://adamngshrine.pages.dev">adamngshrine.pages.dev</a></small>
-
                 </div>
-                <div class="journey" style="margin: var(--margin-default);">
-                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">status.cafe:</h3>
+                
+                <div class="journey">
+                    <h3 class="section-header">status.cafe:</h3>
                 </div>
                 <div class="statuscafe" id="statuscafe">
                     <div id="statuscafe-username"></div>
                     <div id="statuscafe-content"></div>
                 </div>
-                <div class="journey" style="margin: var(--margin-default);">
-                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">Recent Web creations:</h3>
+                
+                <div class="journey">
+                    <h3 class="section-header">Recent Web creations:</h3>
                 </div>
                 <div class="updates">
                     <a href="https://thsupervillain.adamngshrine.com/records" class="update-block">
                         <div class="images">
-                            <img src="/images/siteupdate2/supervillain3.png" alt="supervillain3">
+                            <img src="/images/siteupdate2/supervillain3.png" alt="Shmup Personal Achievements screenshot">
                         </div>
                         <div class="subtitle">
-                            <h3>My shmup Personal Achievements</h3>
+                            <h4>My shmup Personal Achievements</h4>
                             <p>Where I keep most replays of my past Touhou runs, without fear of missing one or relying on other websites.</p>
                         </div>
                     </a>
                     <a href="https://adamngshrine.com/index/undertalecorner" class="update-block">
                         <div class="images">
-                            <img src="/images/siteupdate2/undertalecorner.png" alt="undertalecorner">
+                            <img src="/images/siteupdate2/undertalecorner.png" alt="Undertale/Deltarune Corner screenshot">
                         </div>
                         <div class="subtitle">
-                            <h3>Undertale/Deltarune Corner</h3>
+                            <h4>Undertale/Deltarune Corner</h4>
                             <p>A small corner dedicated to Undertale, where I yap about both games and post my music covers.</p>
                         </div>
                     </a>
@@ -161,39 +143,44 @@
                 <div class="sticker webring_main">
                     <p>Psst, have you tried clicking on ANY of these stickers?</p>
                     <div class="stickers">
-                        <img src="stickers/133.gif" title="sys32" width="8%" height="10%">
-                        <a href="https://www.mozilla.org/en-US/firefox/new/"><img src="stickers/27.gif" title="get firefox now" width="8%" height="80%"></a>
-                        <img src="stickers/firefox4.gif" title="tested on firefox!" width="8%" height="80%">
-                        <a href="https://en.wikipedia.org/wiki/Responsive_web_design"><img src="stickers/responsivesite.jpg" title="Responsive!" width="8%" height="80%"></a>
-                        <img src="stickers/bestviewwithpc.gif" title="butbetteronpc" width="8%" height="80%">
-                        <img src="stickers/vsc.png" title="VSC!" width="8%" height="80%">
-                        <audio id="audio" src="sound/duvet.mp3"></audio>
-                        <audio id="reisen" src="sound/reisen.mp3"></audio>
-                        <input style="position: relative; top: -2px;" type="image" src="stickers/reisenbanner.png" so id="reisen2" width="8%" height="80%">
-                        <img style="cursor: pointer;" src="stickers/lain.gif" title="lain" width="8%" height="80%"  onclick="play()">
-                        <img src="stickers/abyl.png" title="works on any browsers" width="8%" height="80%">
-                        <img src="stickers/88x31webdesign.gif" title="works on any browsers" width="8%" height="80%">
+                        <img src="stickers/133.gif" title="sys32" width="8%" height="10%" alt="sys32 sticker">
+                        <a href="https://www.mozilla.org/en-US/firefox/new/"><img src="stickers/27.gif" title="get firefox now" width="8%" height="80%" alt="Get Firefox Now"></a>
+                        <img src="stickers/firefox4.gif" title="tested on firefox!" width="8%" height="80%" alt="Tested on Firefox">
+                        <a href="https://en.wikipedia.org/wiki/Responsive_web_design"><img src="stickers/responsivesite.jpg" title="Responsive!" width="8%" height="80%" alt="Responsive Design"></a>
+                        <img src="stickers/bestviewwithpc.gif" title="but better on pc" width="8%" height="80%" alt="Best viewed with PC">
+                        <img src="stickers/vsc.png" title="VSC!" width="8%" height="80%" alt="Visual Studio Code">
+                        <audio id="audio" src="sound/duvet.mp3" preload="none"></audio>
+                        <audio id="reisen" src="sound/reisen.mp3" preload="none"></audio>
+                        <button class="sticker-button" id="reisen2" onclick="playReisen()" title="Play Reisen sound">
+                            <img src="stickers/reisenbanner.png" width="100%" height="100%" alt="Reisen banner">
+                        </button>
+                        <img class="clickable-sticker" src="stickers/lain.gif" title="lain" width="8%" height="80%" alt="Lain" onclick="play()">
+                        <img src="stickers/abyl.png" title="works on any browsers" width="8%" height="80%" alt="Works on any browser">
+                        <img src="stickers/88x31webdesign.gif" title="web design" width="8%" height="80%" alt="88x31 web design">
                     </div>
                 </div>
+                
                 <div class="webring_main">
                     <h3>fav hotlinks!</h3>
                     <div class="webring_url">
                         <a href="https://notbyai.fyi/"><img src="images/Created-By-Human-Not-By-AI-Badge-white.png" alt="Written By Human, Not By AI"></a>
-                        <a class="" href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
-                        <a target="_blank" href="https://epic1.neocities.org"><img alt="Visit my webpage!" src="https://epic1.neocities.org/button.gif" style="image-rendering: pixelated"></a>
-                        <a href="https://excessiveclownery.neocities.org/"><img src="https://excessiveclownery.neocities.org/Buttons/DaCircus.png"></a>
-                        <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
-                        <a href="https://kitsunezero4.neocities.org"><img src="/images/kitsune.png"></a>
-                        <a target="_blank" href="https://melonking.net"><img alt="Visit Melonking.Net!" src="https://melonking.net/images/badges/MELON-BADGE-2.GIF" style="image-rendering: pixelated"></a>
-                        <a href="https://thelibraryoflotus.neocities.org/"><img src="https://thelibraryoflotus.neocities.org/images/libraryoflotus.gif" alt="Library of Lotus"/></a>
+                        <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif" alt="Dimden's website"></a>
+                        <a target="_blank" href="https://epic1.neocities.org"><img alt="Visit my webpage!" src="https://epic1.neocities.org/button.gif" class="pixelated"></a>
+                        <a href="https://excessiveclownery.neocities.org/"><img src="https://excessiveclownery.neocities.org/Buttons/DaCircus.png" alt="Excessive Clownery"></a>
+                        <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"></a>
+                        <a href="https://kitsunezero4.neocities.org"><img src="/images/kitsune.png" alt="Kitsune Zero"></a>
+                        <a target="_blank" href="https://melonking.net"><img alt="Visit Melonking.Net!" src="https://melonking.net/images/badges/MELON-BADGE-2.GIF" class="pixelated"></a>
+                        <a href="https://thelibraryoflotus.neocities.org/"><img src="https://thelibraryoflotus.neocities.org/images/libraryoflotus.gif" alt="Library of Lotus"></a>
                     </div>
                 </div>
+                
                 <div class="thankyou">
-                    <img src="stickers/21.png" alt="helpme" title="helpme" width="40%">
-                    <p>thanks for the gif, <a href="https://blinkies.cafe/" style="color: #ffc073;">blinkie maker!</a></p>
+                    <img src="stickers/21.png" alt="Help me" title="Help me" width="40%">
+                    <p>thanks for the gif, <a href="https://blinkies.cafe/" class="blinkie-link">blinkie maker!</a></p>
                 </div>
-                <div class="journey" style="margin: var(--margin-default);">
-                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">webring dumps:</h3>
+                
+                <div class="journey">
+                    <h3 class="section-header">webring dumps:</h3>
                 </div>
                 <div class="webringdump">
                     <div class="webringdump-section">
@@ -203,22 +190,24 @@
                             <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="137,36,211,58" alt="random" title="random">
                             <area href="https://baccyflap.com/noai/?nxt&s=ags" target="_top" shape="rect" coords="218,36,292,58" alt="next" title="next">
                         </map>
-                        <img usemap="#w95widget" src="https://baccyflap.com/noai/w95widget.gif" alt="a gray Windows 95 style dialog box titled 'The No AI Webring' with a little icon showing a computer chip in a rubbish bin. beside it are three clickable buttons, labeled Previous, Random... and Next">
+                        <img usemap="#w95widget" src="https://baccyflap.com/noai/w95widget.gif" alt="No AI Webring - Windows 95 style dialog box">
                     </div>
                     
                     <div class="webringdump-section">
-                        <img src="https://willascool.neocities.org/radioring.png" usemap="#radioring">
                         <map name="radioring">
-                        <area target="_blank" alt="Back" title="Back" href= "https://shinee.nekoweb.org" coords="0,0,21,26" shape="rect">
-                        <area target="_blank" alt="Next" title="Next" href="https://willascool.neocities.org/Radioringsites/Webring10" coords="246,0,267,27" shape="rect">
-                        <area target="_blank" alt="Index" title="Index" href="https://willascool.neocities.org/radioring" coords="21,0,246,26" shape="rect">
+                            <area target="_blank" alt="Back" title="Back" href="https://shinee.nekoweb.org" coords="0,0,21,26" shape="rect">
+                            <area target="_blank" alt="Next" title="Next" href="https://willascool.neocities.org/Radioringsites/Webring10" coords="246,0,267,27" shape="rect">
+                            <area target="_blank" alt="Index" title="Index" href="https://willascool.neocities.org/radioring" coords="21,0,246,26" shape="rect">
+                        </map>
+                        <img src="https://willascool.neocities.org/radioring.png" usemap="#radioring" alt="Radio Ring navigation">
                     </div>
                 </div>
-                
-            </div>
-            <div id="about" class="content">
-                <div class="journey" style="margin: var(--margin-default);">
-                    <h3 style="border-left: 3px solid gray; padding: 0 10px; background-color: #414141;">My Web Development History:</h3>
+            </main>
+            
+            <!-- About Section -->
+            <section id="about" class="content">
+                <div class="journey">
+                    <h3 class="section-header">My Web Development History:</h3>
                     <p>(you can click on them! they are not mobile-friendly.)</p>
                 </div>
                 <div class="gallery about-introduction">
@@ -226,25 +215,25 @@
                         <div class="web">
                             <h4>May 2023 - The beginning.</h4>
                             <div class="webimage">
-                                <a href="firstweb.html" target="_blank"><img src="images/webdev1.png" alt="" width="70%"></a>
+                                <a href="firstweb.html" target="_blank"><img src="images/webdev1.png" alt="First website version" width="70%"></a>
                             </div>
                         </div>
                         <div class="web">
                             <h4>August 2023 - The second attempt of making a website.</h4>
                             <div class="webimage">
-                                <a href="secondweb.html" target="_blank"><img src="images/webdev2.png" alt="" width="70%"></a>
+                                <a href="secondweb.html" target="_blank"><img src="images/webdev2.png" alt="Second website version" width="70%"></a>
                             </div>
                         </div>
                         <div class="web">
                             <h4>October 2024 - The first revamp demo.</h4>
                             <div class="webimage">
-                                <a href="thirdwebv1.html" target="_blank"><img src="images/thirdwebv1.png" alt="" width="70%"></a>
+                                <a href="thirdwebv1.html" target="_blank"><img src="images/thirdwebv1.png" alt="Third website version" width="70%"></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="desktop-visible">
-                    <pre style="color: #ffc073;" class="col-xl-12 d-none d-xl-flex d-lg-flex d-md-flex">
+                <div class="system-info">
+                    <pre class="ascii-art desktop-visible">
      ⣤⣴⣾⣿⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡄
  ⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢰⣦⣄⣀⣀⣠⣴⣾⣿⠃ > OS: Windows 11 IoT LTSC [64-bit]
  ⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⠀ > Packages: choco, scoop
@@ -256,10 +245,8 @@
  ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
  ⢠⣿⡿⠿⠛⠉⠉⠉⠛⠿⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀
  ⠘⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⠿⠛⠀⠀⠀
-                        </pre>
-                </div>
-                <div class="mobile-visible">
-                    <pre style="color: #ffc073;" class="d-block d-xl-none d-lg-none d-md-none">
+                    </pre>
+                    <pre class="ascii-art mobile-visible">
        ⣤⣴⣾⣿⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡄
    ⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢰⣦⣄⣀⣀⣠⣴⣾⣿⠃   
    ⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⠀    
@@ -271,36 +258,37 @@
    ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
    ⢠⣿⡿⠿⠛⠉⠉⠉⠛⠿⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀
    ⠘⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⠿⠛⠀⠀⠀
-  
+
  > OS: Windows 11 IoT LTSC [64-bit]
  > Packages: choco, scoop
  > Shell: Powershell v5.1
  > CPU: 12th Gen Intel i5 12450H @ 2.4Ghz
  > GPU: NVIDIA GeForce RTX 4050 Laptop
-                        </pre>
+                    </pre>
                 </div>
-            </div>
+            </section>
         </div>
-        <div class="bottom about-introduction">
+        
+        <footer class="bottom about-introduction">
             <div class="bottom-logo">
-                <img style="border: 1px solid orange; border-radius: 4px;" src="/images/kys.jpg" alt="kys" width="20%">
-                <p style="color: white; margin: 0;" class="footer"></p>
-                <a style="color: orange; margin: 0;" href="https://git.gay/adamng04/adamngshrine">git repo</a>
+                <img class="footer-image" src="/images/kys.jpg" alt="Footer image" width="20%">
+                <p class="footer-text"></p>
+                <a class="git-link" href="https://git.gay/adamng04/adamngshrine">git repo</a>
             </div>
             <div class="contacts">
                 <h3 id="contacts">main contacts</h3>
                 <ul>
                     <li><a href="mailto:sirdadamnguyen@gmail.com">email</a></li>
                     <li><a href="https://bsky.app/profile/adamngshrine.com">bluesky</a></li>      
-                    <li><i>discord: adamng074</i></li>
-                    <small><a href="links.html">more links (warning: if youre unimmune to epileptic effects, do NOT view this page)</a></small>
+                    <li><span class="discord-handle">discord: adamng074</span></li>
                 </ul>
+                <small><a href="links.html" class="epilepsy-warning">more links (warning: if you're unimmune to epileptic effects, do NOT view this page)</a></small>
             </div>
-        </div>
+        </footer>
     </div>
 
     <script src="https://status.cafe/current-status.js?name=adamng074" defer></script>
-    <script src="app.js" type="text/javascript"></script>
+    <script src="app.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 </html>
