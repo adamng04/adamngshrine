@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Adamng's Shrine Countdown thing" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="The #danmaku supervillain ranking of all time">
+    <meta property="og:description" content="countdown to touhou 20">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
     <link rel="icon" href="images/supervillain.jpg" type="image/x-icon" />
     <title>countdown to touhou 20</title>
@@ -40,7 +40,8 @@
         }
         .demo {
             margin: 10px auto;
-            width: 60%;
+            width: 56%;
+            height: 30%;
             text-align: center;
             border: 3px solid;
             color: white;
@@ -49,38 +50,47 @@
             outline: 2px solid #790000;
             background-size: 24% 100%;
             background-repeat: repeat;
-            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 4s linear infinite;
+            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 14s linear infinite;
             position: relative;
 
-            h3 { font-size: 2rem; font-weight: normal; }
-                #demo { font-size: 2rem; }
+            .demoinfo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            h3 { font-size: 1.4rem; font-weight: normal; margin: 10px 0; }
+                #demo { font-size: 4rem; margin: 4px 0; }
                 > * { position: relative; z-index: 2; text-shadow: 1px 1px 2px black; }
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            backdrop-filter: blur(0.4px);
-            background: rgba(15, 15, 15, 0.6);
-            pointer-events: none;
-            z-index: 1;
-        }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                backdrop-filter: blur(0.5px);
+                background: rgba(15, 15, 15, 0.6);
+                pointer-events: none;
+                z-index: 1;
+            }
     }
 
         @keyframes slideshow {
-            0%, 33.33% { background-image: url('/images/kakidan7.gif?t=1'); }
-            33.34%, 66.66% { background-image: url('/images/kakidan5.gif?t=2'); }
-            66.67%, 100% { background-image: url('/images/kakidan6.gif?t=3'); }
+            0%, 33.33% { background-image: url('/images/kakidan7.gif?v=1'); }
+            33.34%, 66.66% { background-image: url('/images/kakidan5.gif?v=2'); }
+            66.67%, 100% { background-image: url('/images/kakidan6.gif?v=3'); }
         }
 
         @keyframes animateborder {
-            0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1; }
-            25% { border-image: linear-gradient(90deg, #ea2929, #e9ac57) 1; }
-            50% { border-image: linear-gradient(180deg, #ea2929, #e9ac57) 1; }
-            75% { border-image: linear-gradient(270deg, #ea2929, #e9ac57) 1; }
+            0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1; box-shadow: 0 -5px 14px #e9ac57, 0 5px 14px #ea2929; }
+            25% { border-image: linear-gradient(90deg, #ea2929, #e9ac57) 1; box-shadow: 5px 0px 14px #e9ac57, -5px 0px 14px #ea2929; }
+            50% { border-image: linear-gradient(180deg, #ea2929, #e9ac57) 1; box-shadow: 0 5px 14px #e9ac57, 0 -5px 14px #ea2929; }
+            75% { border-image: linear-gradient(270deg, #ea2929, #e9ac57) 1; box-shadow: -5px 0 14px #e9ac57, 5px 0 14px #ea2929; }
         }
 
         @keyframes gygas_animation {
@@ -89,13 +99,18 @@
         }
         small {
             color: white;
-            a {
-                color:#e9ac57;
+        }
+        a {
+            color:#e9ac57;
+            margin: 0 4px;
+            &:hover {
+                color: white;
             }
         }
         @media screen and (max-width: 600px) {
             .demo {
                 width: 95%;
+                height: 16%;
                 h3 { font-size: 24px; }
                 #demo { font-size: 30px; }
                 }
@@ -105,17 +120,23 @@
 <body>
     <div class="background"></div>
     <div class="demo">
-      <h3>Time until Fossilized Wonders</h3>
-      <p id="demo"></p>
+        <div class="demoinfo">
+            <h3>Time until Fossilized Wonders</h3>
+            <p id="demo"></p>
+        </div>
     </div>
-    <small>background image by <a href="https://twitter.com/Kourihase/status/1921173352053371096/photo/1">Kourihase</a></small>
-    <small style="margin: 10px 0;"><a href="/">back to supervillain list</a></small>
+    br
+    <small>background image by<a href="https://twitter.com/Kourihase/status/1921173352053371096/photo/1">Kourihase</a></small>
+    <div style="margin: 10px 0;">
+        <a href="/">return to home</a>
+    </div>
+        
 
     <script>
         (function() {
         'use strict';
   
-        const countDownDate = new Date("2025-08-17T01:00:00").getTime();
+        const countDownDate = new Date("2025-08-17T01:30:00").getTime();
         let interval = null;
   
         function updateCountdown() {
