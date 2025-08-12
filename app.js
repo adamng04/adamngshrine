@@ -121,7 +121,7 @@ function showSection(sectionId) {
     event.target.classList.add('active');
 }
 
-async function loadArticles(endpoint = 'update.json') {
+async function loadArticles(endpoint = '/json/update.json') {
   const container = document.getElementById('articles-container');
   
   try {

@@ -1,0 +1,46 @@
+[
+    {
+        "image": {
+            "src": "/index/weebimages/frieren-anime.jpg",
+            "alt": "frieren"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/frieren-anime.jpg",
+                    "alt": "frieren"
+                },
+                "name": {
+                    "title": "Sousou no Frieren",
+                    "author": "Kanehito Yamada/Madhouse - 2020"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Watching. - Score: --/10",
+            "comment": "N/A"
+        }
+    },
+    {
+        "image": {
+            "src": "/index/weebimages/killlakill-anime.jpg",
+            "alt": "kill la kill"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/killlakill-anime.jpg",
+                    "alt": "kill la kill"
+                },
+                "name": {
+                    "title": "Kill la Kill",
+                    "author": "Kazuki Nakashima/TRIGGER - 2013"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Watched. - Score: 10/10",
+            "comment": "This anime awakened something in me when I was young. I forgot how to articulate this series, but I remember it was peak, and it's all."
+        }
+    }
+]
