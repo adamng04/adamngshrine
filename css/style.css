@@ -24,7 +24,7 @@
 :root {
     --margin-default: 20px 0;
     --border-radius: 4px;
-    --border-image: linear-gradient(90deg, #fdbe72, #ff8000, #009479) 1;
+    --border-image: linear-gradient(270deg, #fdbe72, #ff8000, #009479) 1;
 }
 
 h3, h4 {
@@ -39,7 +39,7 @@ body {
     background-size: cover !important;
     image-rendering: pixelated;
     background-repeat: no-repeat;
-    background-color: #000000;
+    background: radial-gradient(#0c221c, #010504);
     margin: 0;
     height: 100%;
 }
@@ -73,14 +73,9 @@ body {
 
     .title-logo {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .title-gif {
-        padding: 10px 0;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
     }
 }
 
@@ -229,6 +224,7 @@ body {
     box-shadow: 1px 1px 10px #004f4d;
     box-shadow: 0 0 2px #004f4d;
     margin: 12px 0;
+    background-color: #10181d;
 }
 
 .webring_url {
@@ -242,8 +238,12 @@ body {
     }
 }
 
+.footer-image {
+    border: 1px solid #ffc073;
+}
+
 .version {
-    font-size: 10px;
+    font-size: 14px;
     color: gray;
 }
 
@@ -263,9 +263,6 @@ body {
 }
 
 .article {
-    overflow: scroll;
-    overflow-x: hidden;
-    max-height: 300px;
     border-style: solid;
     border-color: #ffc073;
     box-shadow: 0 0 2px #004f4d;
@@ -273,6 +270,18 @@ body {
     border-radius: 5px;
     color: white;
     padding: 8px;
+    > h3 {
+        border-bottom: 1px solid;
+        padding: 2px 0;
+    }
+}
+
+#articles-container {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 200px;
+    background-color: #10181d;
+    padding: 2px;
 }
 
 .thankyou {
@@ -328,7 +337,7 @@ body {
     border-color: #ffc073;
     text-align: start;
     box-shadow: 0 0 2px #004f4d;
-    background-color: rgba(47, 47, 47, 0.7);
+    background-color: #10181d;
     padding: 8px;
     height: auto;
     color: white;
