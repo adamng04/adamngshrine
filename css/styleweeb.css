@@ -68,10 +68,13 @@ h4 {
         text-align: center;
         background-color: var(--container-color);
         border-left: 1px solid #061624;
+        border: 1px solid rgba(173, 173, 173, 0.578);
         padding: 10px;
         color: white;
         &:hover {
             background-color: #436d87;
+            border: 1px solid;
+            border-image: linear-gradient(145deg, #ffc073, #009479, #ffc073) 1;
             &:active {
                 background-color: #112634;
             }
@@ -94,10 +97,6 @@ h4 {
     flex-direction: column;
     background-color: var(--container-color);
     border-radius: 4px;
-}
-
-.anime {
-    background-color: #173d48;
 }
 
 .image {
@@ -128,6 +127,8 @@ h4 {
     margin: 0 10px;
     transform: translateY(-30px);
     background-color: #112634;
+    border: 1px solid;
+    border-image: linear-gradient(145deg, #fdbe72, #009479, #009479, #fdbe72) 1;
     color: rgb(204, 204, 204);
     font-size: 14px;
     line-height: 1.5;
