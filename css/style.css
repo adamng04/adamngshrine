@@ -613,10 +613,6 @@ small {
         }
     }
 
-    .scanlines {
-        display: none;
-    }
-
     .stickers {
         img, input {
             width: 30%;
