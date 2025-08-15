@@ -50,7 +50,7 @@
             outline: 2px solid #790000;
             background-size: 24% 100%;
             background-repeat: repeat;
-            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 14s linear infinite;
+            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 6s linear infinite;
             position: relative;
 
             .demoinfo {
@@ -87,10 +87,10 @@
         }
 
         @keyframes animateborder {
-            0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1; box-shadow: 0 -5px 14px #e9ac57, 0 5px 14px #ea2929; }
-            25% { border-image: linear-gradient(90deg, #ea2929, #e9ac57) 1; box-shadow: 5px 0px 14px #e9ac57, -5px 0px 14px #ea2929; }
-            50% { border-image: linear-gradient(180deg, #ea2929, #e9ac57) 1; box-shadow: 0 5px 14px #e9ac57, 0 -5px 14px #ea2929; }
-            75% { border-image: linear-gradient(270deg, #ea2929, #e9ac57) 1; box-shadow: -5px 0 14px #e9ac57, 5px 0 14px #ea2929; }
+            0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1;}
+            25% { border-image: linear-gradient(90deg, #ea2929, #e9ac57) 1;}
+            50% { border-image: linear-gradient(180deg, #ea2929, #e9ac57) 1;}
+            75% { border-image: linear-gradient(270deg, #ea2929, #e9ac57) 1;}
         }
 
         @keyframes gygas_animation {
@@ -125,8 +125,6 @@
             <p id="demo"></p>
         </div>
     </div>
-    br
-    <small>background image by<a href="https://twitter.com/Kourihase/status/1921173352053371096/photo/1">Kourihase</a></small>
     <div style="margin: 10px 0;">
         <a href="/">return to home</a>
     </div>
