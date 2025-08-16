@@ -107,6 +107,12 @@
                 color: white;
             }
         }
+
+        body .winamp {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
         @media screen and (max-width: 600px) {
             .demo {
                 width: 95%;
@@ -118,23 +124,28 @@
     </style>
 </head>
 <body>
+    
     <div class="background"></div>
+    <div class="winamp">
+        <div id="app"></div>
+    </div>
+    
     <div class="demo">
         <div class="demoinfo">
             <h3>Time until Fossilized Wonders</h3>
             <p id="demo"></p>
         </div>
     </div>
+    <p style="color: white;">Now with Webamp! (which you can listen to the assorted touhou playlist)</p>
     <div style="margin: 10px 0;">
         <a href="/">return to home</a>
     </div>
-        
 
     <script>
         (function() {
         'use strict';
   
-        const countDownDate = new Date("2025-08-17T10:00:00+09:00").getTime();
+        const countDownDate = new Date("2025-08-17T12:00:00+09:00").getTime();
         let interval = null;
   
         function updateCountdown() {
@@ -178,6 +189,86 @@
     });
   
     })();
+    </script>
+
+    <script type="module">
+      import Webamp from "https://unpkg.com/webamp@^2";
+      const webamp = new Webamp({
+        initialTracks: [
+          {
+            metaData: {
+              artist: "Halozy",
+              title: "Little★Summer Party",
+            },
+            url: "/sound/countdown/【Halozy】 Little★Summer Party [YChor8cYiKE].mp3",
+          },
+          {
+            metaData: {
+              title: "【東方MV】MY Heart Rate（Vo：あよ）【森羅万象公式】",
+            },
+            url: "/sound/countdown/【東方MV】MY Heart Rate（Vo：あよ）【森羅万象公式】 [iPnidktJioo].mp3",
+          },
+          {
+            metaData: {
+              title: "Moonlight Widia",
+              artist: "【東方Vocal】Riverside",
+            },
+            url: "/sound/countdown/Riverside｜Moonlight Windia.mp3",
+          },
+          {
+            metaData: {
+              title: "Uchouten Dreamers",
+              artist: "【Shinra-bansho Official】",
+            },
+            url: "/sound/countdown/【東方ヴォーカルPV】有頂天ドリーマーズ（Vo：あやぽんず＊).mp3",
+          },
+          {
+            metaData: {
+              title: "Witches night",
+              artist: "Liz Triangle",
+            },
+            url: "/sound/countdown/【東方PV】Witches night【Liz Triangle】 [sNFMaLbyUY0].mp3",
+          },
+          {
+            metaData: {
+              title: "Psycho Lily",
+              artist: "Akatsuki Records",
+            },
+            url: "/sound/countdown/【東方ヴォーカルPV】サイコ･リリイ【暁Records公式】 [3Pysaq7s_oY].mp3",
+          },
+          {
+            metaData: {
+              title: "Metamorphosis",
+              artist: "Akatsuki Records",
+            },
+            url: "/sound/countdown/【東方ヴォーカルPV】Metamorphosis【暁Records公式】 [n_wk1yGsgMg].mp3",
+          },
+          {
+            metaData: {
+              title: "Necromantic (Acoustic ver.)",
+              artist: "Akatsuki Records",
+            },
+            url: "/sound/countdown/Necromantic (Acoustic ver.) [Qup0D-baVhI].mp3",
+          },
+          {
+            metaData: {
+              title: "New World Felt",
+              artist: "FELT",
+            },
+            url: "/sound/countdown/【東方ボーカル】 New World 【FELT】 [9m3qeiAgZvA].mp3",
+          },
+          {
+            metaData: {
+              title: "Miracle∞Hinacle",
+              artist: "IOSYS",
+            },
+            url: "/sound/countdown/【Touhou IOSYS PV】Miracle∞Hinacle.mp3",
+          },
+        ],
+      });
+
+      // Returns a promise indicating when it's done loading.
+      webamp.renderWhenReady(document.getElementById("app"));
     </script>
 </body>
 </html>
