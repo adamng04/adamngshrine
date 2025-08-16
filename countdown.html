@@ -50,7 +50,7 @@
             outline: 2px solid #790000;
             background-size: 24% 100%;
             background-repeat: repeat;
-            animation: slideshow 12s infinite, gygas_animation 40s reverse linear infinite, animateborder 6s linear infinite;
+            animation: slideshow 31.5s infinite, gygas_animation 40s reverse linear infinite, animateborder 3s linear infinite;
             position: relative;
 
             .demoinfo {
@@ -81,9 +81,14 @@
     }
 
         @keyframes slideshow {
-            0%, 33.33% { background-image: url('/images/kakidan7.gif?v=1'); }
-            33.34%, 66.66% { background-image: url('/images/kakidan5.gif?v=2'); }
-            66.67%, 100% { background-image: url('/images/kakidan6.gif?v=3'); }
+            0%, 12.70%       { background-image: url('/images/kakidan7.gif?t=1'); }
+            12.71%, 25.40%   { background-image: url('/images/kakidan5.gif?t=2'); }
+            25.41%, 38.10%   { background-image: url('/images/kakidan6.gif?t=3'); }
+            38.11%, 50.80%   { background-image: url('/images/kakidan8.gif?t=4'); }
+            50.81%, 63.50%   { background-image: url('/images/kakidan9.gif?t=5'); }
+            63.51%, 76.20%   { background-image: url('/images/kakidan10.gif?t=6'); }
+            76.21%, 92.06%   { background-image: url('/images/kakidan12.gif?t=7'); } /* 5s */
+            92.07%, 100%     { background-image: url('/images/kakidan14.gif?t=8'); } /* 2.5s */
         }
 
         @keyframes animateborder {
@@ -111,7 +116,7 @@
         body .winamp {
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
         }
         @media screen and (max-width: 600px) {
             .demo {
@@ -249,6 +254,13 @@
               artist: "Akatsuki Records",
             },
             url: "/sound/countdown/Necromantic (Acoustic ver.) [Qup0D-baVhI].mp3",
+          },
+          {
+            metaData: {
+              title: "Lost in the Abyss",
+              artist: "FELT",
+            },
+            url: "/sound/countdown/【東方ボーカル】 Lost in the Abyss 【FELT】【Subbed】 [LLNdqKq3c5U].mp3",
           },
           {
             metaData: {
