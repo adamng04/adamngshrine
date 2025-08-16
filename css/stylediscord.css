@@ -5,7 +5,7 @@
 }
 
 .background {
-    background-image: url(/images/serverbg.png);
+    background-image: url(https://media.adamngshrine.com/images/serverbg.png);
     position: fixed;
     top: 0;
     left: 0;
@@ -83,7 +83,7 @@
     left: 15px;
     border-radius: 10px;
     border-width: 0.5cap;
-    background-image: url(/images/avatar.jpg);
+    background-image: url(https://media.adamngshrine.com/images/avatar.jpg);
     background-size: contain;
     z-index: 1;
     border-style: solid;
