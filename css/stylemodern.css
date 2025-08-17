@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px rgb(67, 67, 67);
+  background: #0e1313;
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(140deg, rgb(218, 216, 72), #f8a149, #ff9327, #98c6bd, rgb(153, 153, 153)); 
+  border-radius: 18px;
+  box-shadow: 0 2px 3px rgb(0, 0, 0);
+  &::before {
+    box-shadow: 0 2px -3px rgb(0, 0, 0);
+  }
+}
+
+:root a {
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Raleway';
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        margin: 0 10px;
+        padding: 12px;
+    }
+
+    .nav-options a{
+        color: #002d2b;
+        &:hover {
+            background-color: #009479;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
+.nav, .header, .main, .footer {
+    margin: 20px 0;
+}
+
+.header-button {
+    width: fit-content;
+    margin: 4em auto;
+    text-align: center;
+    a {
+        background-color: #009479;
+        padding: 20px;
+        color: white;
+        &:hover {
+            background-color: #004d49;
+        }
+    }
+}
+
+.header-text {
+    text-align: center
+}
+
+.middle {
+    text-align: center;
+}
+
+.main-statement {
+    padding: 60px 0;
+    background-color: #004d49;
+    color: white;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.closing {
+    padding: 60px 0;
+    background-color: #e64037;
+    color: #0e1313;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.newsletter {
+    width: 90%;
+    margin: 0 auto;
+    input {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.form-control {
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    border: none;
+}
+
+.separator {
+    height: 1px;
+    border: 1px solid black;
+    background-color: #0e1313;
+}
+
+.main-text-image {
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .text {
+        width: 44%;
+        h1 {
+            color: #ff8000;
+            margin-bottom: 20px 0;
+        }
+    }
+    p {
+        font-size: 20px;
+    }
+    .image {
+        width: 50%;
+        img{
+            border-radius: 10px;
+            border: 6px double #ff8000;
+            box-shadow: 8px 8px 1px #004d49;
+        }
+    }
+}
+
+.reminder {
+    margin: 100px 0;
+}
+
+.contacts {
+    text-align: end;
+    width: 40%;
+
+    a {
+     padding: 0 ;
+    }
+    
+    small a {
+        color: #ff7373;
+        font-size: 0.8rem;
+    }
+    
+    h3 {
+        border-bottom: 2px solid;
+        border-image: linear-gradient(-90deg, #fdbe72 , #009479, #002a28, #0e1313) 1;
+        padding-bottom: 4px;
+        color: white !important;
+    }
+
+    
+    li {
+        list-style: none;
+        text-align: end;
+        margin: 6px 0;
+        color: white;
+        font-size: 1.2rem;
+        
+        a {
+            text-decoration: underline;
+            font-size: 1.2rem;
+            color: white;
+            
+            &:hover {
+                color: #ffc073;
+            }
+        }
+    }
+}
+
+.bottom {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0e1313;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .main-text-image {
+        margin: 20px 0;
+        display: block;
+        box-sizing: border-box;
+        .text {
+            width: 100%;
+        }
+        .image {
+            width: 90%;
+            justify-content: start;
+        }
+    }
+
+    .main-text-image:nth-child(2)  {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start !important;
+    }
+
+    .newsletter input{
+        width: 95%;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contacts {
+        width: 100%;
+        justify-content: start;
+        text-align: left;
+        
+        h3 {
+            border-bottom: 2px solid;
+            border-image: linear-gradient(-90deg, #002d2b, #009479, #fdbe72, #009479,#002d2b) 1;
+            padding-bottom: 4px;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

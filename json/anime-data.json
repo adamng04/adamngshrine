@@ -1,0 +1,90 @@
+[
+    {
+        "image": {
+            "src": "/index/weebimages/mushishi-anime.jpg",
+            "alt": "mushishi"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/mushishi-anime.jpg",
+                    "alt": "mushishi"
+                },
+                "name": {
+                    "title": "Mushi-Shi",
+                    "author": "Artland - 2005"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Finished. - Score: 10/10",
+            "comment": "My memory with Mushi-shi was fuzzy. I was given a medium to watch, and the first thing I saw was this anime. The exploration of the supernatural in an uncanny, yet calm and soothing, as if the Mushi themselves also live a life like we do. Ginko, the protagonist, blends himself within the world of two living beings, and crafting life lessons from what he has experienced, even in life and death situations."
+        }
+    },
+    {
+        "image": {
+            "src": "/index/weebimages/killlakill-anime.jpg",
+            "alt": "kill la kill"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/killlakill-anime.jpg",
+                    "alt": "kill la kill"
+                },
+                "name": {
+                    "title": "Kill la Kill",
+                    "author": "TRIGGER - 2013"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Watched. - Score: 10/10",
+            "comment": "This anime awakened something in me when I was young. I forgot how to articulate this series, but I remember it was peak, and it's all."
+        }
+    },
+    {
+        "image": {
+            "src": "/index/weebimages/aot-anime.jpg",
+            "alt": "aot"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/aot-anime.jpg",
+                    "alt": "aot"
+                },
+                "name": {
+                    "title": "Attack on Titans",
+                    "author": "Wit/MAPPA - 2013"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Watched. - Score: 8/10",
+            "comment": "The only I remember from the anime after dropping during Shiganshina arc was Eren glowing up to become The Rumbler and killed 8 billion people on earth. Some said the ending sucks, I thought to myself: 'Maybe not investing in the anime isn't so bad after all'"
+        }
+    },
+    {
+        "image": {
+            "src": "/index/weebimages/frieren-anime.jpg",
+            "alt": "frieren"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/frieren-anime.jpg",
+                    "alt": "frieren"
+                },
+                "name": {
+                    "title": "Sousou no Frieren",
+                    "author": "Madhouse - 2020"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Watching. - Score: --/10",
+            "comment": "N/A"
+        }
+    }
+]

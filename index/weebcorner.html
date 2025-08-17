@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adamng's Shrine's Weeb Corner</title>
+    
+    <meta property="og:title" content="Adamng's Shrine's Weeb Corner">
+    <meta property="og:description" content="All the collections of highly-rated manga/anime I've seen.">
+    <meta property="og:url" content="https://adamngshrine.com/weebcorner.html">
+    
+    <link rel="icon" href="https://media.adamngshrine.com/images/logo-01-01.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styleweeb.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="titlelogo">
+                <img src="https://media.adamngshrine.com/images/logo-01-01.png" alt="logo" width="60px" style="filter: saturate(0.2);">
+                <h4>adam's weeb corner (constantly updating)</h4>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="/">return to home</a>
+            <a href="https://blog.adamngshrine.com/">blogs</a>
+            <a href="/index/AUportal.html">au portal</a>
+            <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
+            <a href="#contacts">contacts</a>
+        </div>
+
+        <h4 class="topratedseries">Top-rated Manga <small style="color: rgb(110, 110, 110);">Some of the best mangas I've read since 2012</small></h4>
+        <div id="manga-container"></div>
+        <h4 class="topratedseries">Top-rated Anime <small style="color: rgb(110, 110, 110);">This list is gonna be a lot longer</small></h4>
+        <div id="anime-container"></div>
+        <div class="bottom">
+            <div class="bottom-logo">
+                <img style="border: 1px solid orange; border-radius: 4px;" src="https://media.adamngshrine.com/images/kys.jpg" alt="kys" width="20%">
+                <p style="color: white; margin: 0;" class="footer"></p>
+                <a style="color: orange; margin: 0;" href="https://git.gay/adamng04/adamngshrine">git repo</a>
+            </div>
+            <div class="contacts">
+                <h3 id="contacts" style="color: white;">main contacts</h3>
+                <ul>
+                    <li><a href="mailto:contact@adamngshrine.com">email</a></li>
+                    <li><a href="https://bsky.app/profile/adamngshrine.com">bluesky</a></li>      
+                    <li><i>discord: adamng074</i></li>
+                    <small><a href="links.html">more links (warning: if youre unimmune to epileptic effects, do NOT view this page)</a></small>
+                </ul>
+            </div>
+        </div>
+        <small style="color: gray; text-align: center;">this page utilizes json to generate entries, site won't work without javascript enabled</small>
+    </div>
+<script src="../manga.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const footerText = document.querySelector('.footer');
+    const currentYear = new Date().getFullYear();
+    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+});
+</script>
+</body>
+</html>
