@@ -11,36 +11,44 @@
     <link rel="icon" href="images/supervillain.jpg" type="image/x-icon" />
     <title>waiting for touhou 21 (or 20.5)</title>
     <style>
-        .background {
-            background-image: url("https://media.adamngshrine.com/images/kakidan9.jpg");
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-repeat: repeat;
-            background-position: center center;
-            z-index: -1;
-            filter: brightness(14%) blur(1px);
-        }
-
         body {
           height: 100vh;
           margin: 0;
           box-sizing: border-box;
           overflow: hidden;
         }
-        .demo {
-            margin: auto;
-            width: 50%;
-            height: 20%;
-            text-align: center;
-            border: 3px solid;
-            color: white;
-            border: 1px solid #e9ac57;
-            background: rgba(0, 0, 0, 0.704);
+
+        #black {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: url("/sound/toyohime.png") center/40% 40% repeat;
             position: relative;
+        }
+
+        #black::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(0.5px);
+            z-index: 0;
+        }
+        
+        .demo {
+            width: 50%;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            border: 2px solid #e9ac57;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.704);
             backdrop-filter: blur(2px);
+            z-index: 10;
+            position: relative;
 
             .demoinfo {
                 display: flex;
@@ -48,12 +56,25 @@
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-                height: 100%;
+                
             }
 
-            h3 { font-size: 1.4rem; font-weight: normal; margin: 10px 0; }
-                #demo { font-size: 4rem; margin: 4px 0; }
-                > * { position: relative; z-index: 2; text-shadow: 1px 1px 2px black; }
+            h1 { 
+                font-size: 1.8rem; 
+                font-weight: normal; 
+                margin: 10px 0; 
+            }
+            
+            p {
+                margin: 15px 0;
+                font-size: 1rem;
+            }
+
+            > * { 
+                position: relative; 
+                z-index: 2; 
+                text-shadow: 1px 1px 2px black; 
+            }
 
             &::before {
                 content: '';
@@ -63,22 +84,13 @@
                 top: 0;
                 left: 0;
                 backdrop-filter: blur(0.5px);
-                background: rgba(15, 15, 15, 0.6);
+                background: rgba(93, 93, 93, 0.368);
                 pointer-events: none;
                 z-index: 1;
             }
-          }
+        }
 
-          #black {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            background-color: #111;
-            z-index: -1;
-          }
-
-          #logo {
+        #logo {
             position: absolute;
             left: 0px;
             top: 0px;
@@ -87,17 +99,15 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            /* Default DVD logo image */
             background-image: url("https://media.adamngshrine.com/images/kakidan9.jpg");
             overflow: hidden;
             transition: filter 0.1s ease;
+            z-index: 5;
         }
 
-        /* Alternative: If you want to use a PNG image instead */
         .png-logo {
             background-image: url("https://media.adamngshrine.com/images/kakidan9.jpg");
         }
-
 
         @keyframes animateborder {
             0%, 100% { border-image: linear-gradient(0deg, #ea2929, #e9ac57) 1;}
@@ -110,9 +120,11 @@
             0% { background-position: 0 0; }
             100% { background-position: 200% 100%; }
         }
+        
         small {
             color: white;
         }
+        
         a {
             color:#e9ac57;
             margin: 0 4px;
@@ -121,56 +133,52 @@
             }
         }
 
+        audio {
+            width: 50%;
+            margin-top: 10px;
+            filter: sepia(1) hue-rotate(200deg) saturate(2);
+        }
+
         body .winamp {
             position: absolute;
             top: 0;
             left: 50%;
         }
+        
         @media screen and (max-width: 600px) {
             .demo {
                 width: 95%;
-                height: 16%;
-                h3 { font-size: 24px; }
-                #demo { font-size: 30px; }
+                padding: 15px;
+                
+                h1 { 
+                    font-size: 1.4rem; 
+                }
+                
+                p {
+                    font-size: 0.9rem;
                 }
             }
+        }
     </style>
 </head>
 <body>
     <div id="black">
-      <div id="logo"></div>
-      <div class="demo">
-        <div class="demoinfo">
-          <h1 style="font-weight: normal;">waiting for th21</h1>
+        <div id="logo"></div>
+        <div class="demo">
+            <div class="demoinfo">
+                <h1 style="font-weight: normal;">countdown is now waiting for th21 (or th20.5)</h1>
+            </div>
+            <div style="margin: 10px 0;">
+                <a href="/">return to home</a>
+            </div>
+            <audio controls loop onloadeddata="this.volume=0.4">
+                <source src="/sound/[東方] A Maiden's Illusionary Funeral ~ Necro-Fantasy - Relaxing Touhou Flute Cover thing. [7kekeZhOQ4o].mp3" type="audio/mpeg">
+            </audio>
         </div>
-        <div style="margin: 10px 0;">
-          <a href="/">return to home</a>
-        </div>
-      </div>
-    </div>
-    <div class="winamp">
-        <div id="app"></div>
     </div>
     
-
-    <script type="module">
-      import Webamp from "https://unpkg.com/webamp@^2";
-      const webamp = new Webamp({
-        initialTracks: [
-          {
-            metaData: {
-              title: "A Maiden's Illusionary Funeral ~ Necro-Fantasy",
-            },
-            url: "/sound/[東方] A Maiden's Illusionary Funeral ~ Necro-Fantasy - Relaxing Touhou Flute Cover thing. [7kekeZhOQ4o].mp3",
-          },
-        ],
-      });
-
-      // Returns a promise indicating when it's done loading.
-      webamp.renderWhenReady(document.getElementById("app"));
-    </script>
-  <script>
-      let x = 0,
+    <script>
+        let x = 0,
             y = 0,
             dirX = 1,
             dirY = 1;
@@ -204,6 +212,6 @@
         }
 
         window.requestAnimationFrame(animate);
-  </script>
+    </script>
 </body>
 </html>
