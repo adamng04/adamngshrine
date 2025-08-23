@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 
 * {
     margin: 0;
@@ -22,18 +24,22 @@ body {
 }
 
 .header {
-    text-align: center;
-    margin: 70px 0;
+    text-align: left;
+    margin: 40px 0;
     color: white;
     
+    
     h1 {
-        font-size: 70px;
+        font-size: 40px;
         font-weight: normal;
         margin: 1px 0;
+        font-family: 'Merryweather';
     }
     
     p {
         font-size: 20px;
+        border-bottom: 1px solid;
+        border-image: linear-gradient(90deg, #fdbe72, #ff8000, #009479, #0f0f0f) 1;
     }
 }
 
@@ -145,6 +151,7 @@ h3 {
 @media screen and (max-width: 768px) {
     .header {
         margin: 40px 0;
+        text-align: center;
         
         h1 {
             font-size: 38px;
@@ -152,6 +159,8 @@ h3 {
         
         p {
             font-size: 16px;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(90deg,#0f0f0f, #fdbe72, #0f0f0f) 1;
         }
     }
     
