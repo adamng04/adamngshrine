@@ -50,16 +50,17 @@
         <div class="main">
             <!-- Desktop Navigation -->
             <nav class="nav">
+                <span class="nav-container"></span>
                 <a class="button active" onclick="showSection('index')">home</a>
                 <a class="button" onclick="showSection('about')">about me</a>
                 <a href="/index/weebcorner.html">weeb corner</a>
                 <a href="https://blog.adamngshrine.com/">blogs</a>
                 <a href="index/AUportal.html">au portal</a>
-                <a class="titlebox" href="diary/diary.html">dear diary</a>
+                <a style="color: white;" class="titlebox" href="diary/diary.html">dear diary</a>
                 <a href="https://thsupervillain.adamngshrine.com/">touhous</a>
                 <a href="#contacts">contacts</a>
                 <a target="_blank" href="https://adamngshrine.atabook.org/">sign my guestbook!</a>
-                <a style="background-color: rgb(69, 71, 73);" href="https://adamngshrine.nekoweb.org/">countdown corner</a>
+                <a href="https://adamngshrine.nekoweb.org/">countdown corner</a>
                 <div class="tapir">
                     <p style="color: white !important; font-family: 'Times New Roman', Times, serif; margin: 0">This page is protected by a</p>
                     <h3 class="title" style="margin: 0; color: white;">TAPIR</h3>
@@ -81,7 +82,7 @@
                     <a href="https://www.imood.com/users/adamng04"><img class="mood-image" src="https://moods.imood.com/display/uname-adamng04/imood.gif" alt="The current mood of adamng04" width="50%"></a>
                 </div>
                 <div class="hotlink webring_main">
-                    <h3>hotlink my site!</h3>
+                    <h3>hotlink button!</h3>
                     <a href="https://adamngshrine.pages.dev/"><img src="https://media.adamngshrine.com/images/button.png" alt="Adamng's Shrine button 88x31"></a>
                     <textarea class="hotlink-code" readonly><a href="https://adamngshrine.pages.dev/"><img src="https://adamngshrine.pages.devhttps://media.adamngshrine.com/images/button.png" alt="button88x31"></a></textarea>
                 </div>
@@ -103,8 +104,8 @@
                     <img class="avatar" src="https://media.adamngshrine.com/images/avatar.jpg" alt="Adam's avatar" width="14%">
                     <small>socials avatar</small>
                     <h3>Hi. It's Adam</h3>
-                    <p>This marks the 4th iteration of the website, with other elements from various AU portals. Reminder: Everything created on the website will be the result of my journey learning web development. This website was inspired by old-style, retro, y2k web designs. The choice of primary colors for this website was inspired by the vertical scrolling shooter game <span class="zero">Zero</span><span class="ranger">Ranger</span>.</p>
-                    <p>If you look around, there are a few links to my deepest darkest secrets, so tread lightly :)</p>
+                    <p style="font-size: 18px;">This marks the 4th iteration of the website, with other elements from various AU portals. Reminder: Everything created on the website will be the result of my journey learning web development. This website was inspired by old-style, retro, y2k web designs. The choice of primary colors for this website was inspired by the vertical scrolling shooter game <span class="zero">Zero</span><span class="ranger">Ranger</span>.</p>
+                    <p style="font-size: 18px;">If you look around, there are a few links to my deepest darkest secrets, so tread lightly :)</p>
                     <small>accessible via <a href="https://adamngshrine.com">adamngshrine.com</a> and <a href="https://adamngshrine.pages.dev">adamngshrine.pages.dev</a></small>
                 </div>
                 
@@ -151,9 +152,7 @@
                         <img src="stickers/vsc.png" title="VSC!" width="8%" height="80%" alt="Visual Studio Code">
                         <audio id="audio" src="sound/duvet.mp3" preload="none"></audio>
                         <audio id="reisen" src="sound/reisen.mp3" preload="none"></audio>
-                        <button class="sticker-button" id="reisen2" onclick="playReisen()" title="Play Reisen sound">
-                            <img src="stickers/reisenbanner.png" width="100%" height="100%" alt="Reisen banner">
-                        </button>
+                        <img class="clickable-sticker" src="stickers/reisenbanner.png" width="8%" height="100%" alt="Reisen banner" onclick="button()">
                         <img class="clickable-sticker" src="stickers/lain.gif" title="lain" width="8%" height="80%" alt="Lain" onclick="play()">
                         <img src="stickers/abyl.png" title="works on any browsers" width="8%" height="80%" alt="Works on any browser">
                         <img src="stickers/88x31webdesign.gif" title="web design" width="8%" height="80%" alt="88x31 web design">

@@ -13,7 +13,7 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(140deg, rgb(218, 216, 72), #f8a149, #ff9327, #98c6bd, rgb(153, 153, 153)); 
+  background: linear-gradient(140deg, rgb(218, 216, 72), #f8a149, #ff9327); 
   border-radius: 18px;
   box-shadow: 0 2px 3px rgb(0, 0, 0);
   &::before {
@@ -32,7 +32,6 @@ h3, h4 {
     font-family: 'Merriweather', sans-serif;
     font-weight: normal;
     margin: 10px 0;
-    text-shadow: 1px 1px 8px #ff9327;
 }
 
 body {
@@ -95,23 +94,24 @@ body {
     font-size: 1.375rem;
     grid-column: 1;
     grid-row: 1;
-    background-color: black;
+    background-color: rgb(31, 31, 31);
     border: 2px solid #3c5853;
     border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
     
+    
     a {
         color: #ffc073;
-        text-shadow: 1px 1px 8px #ffc073;
         text-decoration: none;
         padding: 2px 2px; 
         transition: all 0.2s ease;
         cursor: pointer;
         
         &:hover {
-            color: #ffffff;
-            background-color: #181818;
+            color: #000000;
+            background-color: #ffffff;
             border-left: 3px solid gray;
+            text-shadow: 1px 1px 8px #b1b1b1;
         }
         
         &:active {
@@ -160,7 +160,7 @@ body {
 .miscs {
     grid-column: 1;
     grid-row: 2;
-    background-color: rgba(158, 158, 158, 0.142);
+    background-color: rgb(31, 31, 31);
     border: 2px solid #3c5853;
     border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
@@ -178,7 +178,6 @@ body {
 .content {
     grid-column: 2;
     grid-row: 1 / span 2;
-    background-color: rgba(158, 158, 158, 0.142);
     border: 2px solid #3c5853;
     border-radius: var(--border-radius);
     box-sizing: border-box;
@@ -188,6 +187,7 @@ body {
     font-size: 1rem;
     display: none;
     position: relative;
+    background-color: rgb(31, 31, 31);
 
     &.active {
         display: block;
@@ -217,10 +217,8 @@ body {
 
 .webring_main {
     padding: 10px;
-    border: 1px solid #fbbd71;
+    border: 1px solid #ffc073;
     border-radius: var(--border-radius);
-    box-shadow: 1px 1px 10px #004f4d;
-    box-shadow: 0 0 2px #004f4d;
     margin: 12px 0;
     background-color: #10181d;
 }
@@ -262,7 +260,7 @@ body {
 
 .article {
     border-style: solid;
-    border-color: #ffc073;
+    border: 1px solid #ffc073;
     box-shadow: 0 0 2px #004f4d;
     border-width: thin;
     border-radius: 5px;

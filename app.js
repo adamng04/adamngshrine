@@ -86,12 +86,6 @@ function button(){
     let reisen = document.getElementById("reisen");
     reisen.play();
 }
-window.addEventListener('load', () => {
-    const imageInput = window.document.querySelector('input[type="image"]')
-    imageInput.addEventListener('click', () => {
-        button()
-    })
-})
 
 function myFunction() {
     var x = document.getElementById("links");
