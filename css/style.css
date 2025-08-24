@@ -22,8 +22,6 @@
 }
 
 :root {
-    --margin-default: 20px 0;
-    --border-radius: 4px;
     --border-image: linear-gradient(270deg, #fdbe72, #ff8000, #009479) 1;
 }
 
@@ -35,9 +33,6 @@ h3, h4 {
 }
 
 body {
-    background-size: cover !important;
-    image-rendering: pixelated;
-    background-repeat: no-repeat;
     background: radial-gradient(#0c221c, #010504);
     margin: 0;
     height: 100%;
@@ -52,65 +47,99 @@ body {
 }
 
 .title {
-    font-family: 'Merriweather', sans-serif;
-    margin: var(--margin-default);
-    border-bottom: 2px solid ;
-    border-image: var(--border-image);
-    font-size: 1.875rem;
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.3s ease-in-out;
-    
-    a {
-        color: #ffc073;
-        text-decoration: none;
-        
-        &:hover {
-            color: #009479;
-        }
-    }
+  position: relative;
+  font-family: 'Merriweather', sans-serif;
+  min-height: 10rem;
+  padding: 10px;
+  border-bottom: 2px solid;
+  border-image: var(--border-image);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  overflow: hidden;
 
-    .title-logo {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        justify-content: center;
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: url(https://safebooru.org//samples/2563/sample_e1a161c28054a031ad25e03f011ddea4ed58c70b.jpg?5374068) 0px -120px/100% 280% no-repeat;
+    z-index: 0;
+    border-top-left-radius: 5em;
+    filter: hue-rotate(120deg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: #000000e7;
+      border-top-left-radius: 5em;
+      opacity: 0.6;
+      z-index: 1;
     }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(0.5px);
+    }
+  }
+
+  img,
+  .title-logo {
+    z-index: 2;
+  }
+
+  a {
+    position: relative;
+    z-index: 2;
+    color: #ffc073;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #009479;
+    }
+  }
+
+  .title-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+  }
 }
 
 .main {
     display: grid;
     grid-template-columns: 13.75rem 1fr;
-    grid-template-rows: auto 1fr;
     gap: 20px;
 }
 
 .nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 10px;
-    gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     font-size: 1.375rem;
-    grid-column: 1;
-    grid-row: 1;
     background-color: rgb(31, 31, 31);
     border: 2px solid #3c5853;
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 2px #004f4d;
-    
-    
+    box-shadow: 0 4px 20px #101010;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
     a {
         color: #ffc073;
         text-decoration: none;
-        padding: 2px 2px; 
-        transition: all 0.2s ease;
+        padding: 4px; 
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
         
         &:hover {
             color: #000000;
             background-color: #ffffff;
-            border-left: 3px solid gray;
             text-shadow: 1px 1px 8px #b1b1b1;
         }
         
@@ -120,6 +149,12 @@ body {
             scale: 1.0;
         }
     }
+}
+
+.nav.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.514);
+    background-color: rgba(31, 31, 31, 0.84);
+    backdrop-filter: blur(8px);
 }
 
 .nav-mobile {
@@ -159,10 +194,9 @@ body {
 
 .miscs {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
     background-color: rgb(31, 31, 31);
     border: 2px solid #3c5853;
-    border-radius: var(--border-radius);
     box-shadow: 0 0 2px #004f4d;
     padding: 10px;
 
@@ -177,9 +211,7 @@ body {
 
 .content {
     grid-column: 2;
-    grid-row: 1 / span 2;
     border: 2px solid #3c5853;
-    border-radius: var(--border-radius);
     box-sizing: border-box;
     box-shadow: 0 0 2px #004f4d;
     padding: 12px 20px;
@@ -240,7 +272,7 @@ body {
 
 .version {
     font-size: 14px;
-    color: gray;
+    color: rgb(197, 197, 197);
 }
 
 .footer {
@@ -537,6 +569,7 @@ body {
 
 .bottom {
     margin: 10px 0;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
