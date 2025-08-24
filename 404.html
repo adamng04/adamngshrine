@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page not found.</title>
+    <title>Page not found. Go back?</title>
+    <link rel="icon" href="https://media.adamngshrine.com/images/logo-01-01.png" type="image/x-icon">
     <style>
         .content{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            width: 20vw;
-            margin: auto;
+            width: 30vw;
+            margin: 0 auto;
             word-wrap: break-word;
             position: relative;
             top: 8vw;
+            a {
+                color: white;
+                width: fit-content;
+                &:hover {
+                    color: red;
+                }
+            }
         }
 
         body {
-            background-color: black;
+            background: black;
+        }
+
+        i {
+            color: gray;
         }
 
         p {
@@ -32,8 +40,9 @@
 <body>
     <div class="container">
         <div class="content">
-            <img src="https://media.adamngshrine.com/images/patrick.png" alt="patrick" title="come back later">
-            <p>Page unavailable</p>
+            <img src="https://media.adamngshrine.com/images/patrick.png" alt="patrick" title="come back later" width="60%">
+            <p>Page not available.</p>
+            <p><i>do you really expect anything else besides this emptiness of a page? do you yearn for freedom from eyestrains, content consumption, and the meaninglessness of life? you've come to the right place, just not at a right time. now scram.</i></p>
             <a href="/">Go back to homepage</a>
         </div>
     </div>

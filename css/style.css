@@ -287,12 +287,6 @@ body {
     }
 }
 
-.navlink {
-    iframe {
-        border-radius: 10px;
-    }
-}
-
 .gallery_items {
     z-index: 1;
     color: #2c2620;
@@ -486,14 +480,13 @@ body {
 }
 
 .tapir {
-    width: 176px; 
+    width: 40%; 
     background-image: url(https://media.adamngshrine.com/images/nimi.jpg);
     background-position: center;
     background-size: cover;
     display: block;
     padding: 10px;
     border: 1px solid;
-    margin: 10px auto;
     font-family: 'times';
     font-size: 12pt; 
     border: 1px solid white; 
