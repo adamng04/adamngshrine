@@ -132,12 +132,12 @@ body {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+    cursor: pointer;
     
     a {
         color: #ffcd9e;
         text-decoration: none;
         padding: 4px; 
-        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -378,12 +378,16 @@ body {
     }
 }
 
-.stickers {
+.sticker {
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
+
+}
+
+.stickers {
     img {
         border: none;
-        width: 7%;
+        width: 6%;
     }
 }
 
@@ -435,7 +439,7 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 20px 0;
+    margin: 10px 0;
     gap: 12px;
 }
 
