@@ -23,10 +23,11 @@
 
 :root {
     --border-image: linear-gradient(270deg, #fdbe72, #ff8000, #009479) 1;
+    --background-color: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 50%), linear-gradient(135deg, rgb(31, 31, 31) 0%, rgb(25, 25, 25) 100%);
 }
 
 h3, h4 {
-    color: #ffc073;
+    color: #f2b175;
     font-family: 'Merriweather', sans-serif;
     font-weight: normal;
     margin: 10px 0;
@@ -91,7 +92,7 @@ body {
   a {
     position: relative;
     z-index: 2;
-    color: #ffc073;
+    color: #ffcd9e;
     text-decoration: none;
     transition: color 0.3s ease;
 
@@ -110,8 +111,10 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: 13.75rem 1fr;
+    grid-template-columns: 14rem 1fr;
     gap: 20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .nav {
@@ -120,13 +123,18 @@ body {
     font-size: 1.375rem;
     background-color: rgb(31, 31, 31);
     border: 2px solid #3c5853;
+    border-radius: 0 0 4px 4px;
     box-shadow: 0 4px 20px #101010;
-    margin-bottom: 20px;
+    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 3;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    
     a {
-        color: #ffc073;
+        color: #ffcd9e;
         text-decoration: none;
         padding: 4px; 
         cursor: pointer;
@@ -153,7 +161,7 @@ body {
 
 .nav.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.514);
-    background-color: rgba(31, 31, 31, 0.84);
+    background-color: rgba(31, 31, 31, 0.737);
     backdrop-filter: blur(8px);
 }
 
@@ -194,24 +202,17 @@ body {
 
 .miscs {
     grid-column: 1;
-    grid-row: 1;
-    background-color: rgb(31, 31, 31);
-    border: 2px solid #3c5853;
-    box-shadow: 0 0 2px #004f4d;
-    padding: 10px;
 
     &-section {
         border: 1px solid #ffc073;
         border-radius: var(--border-radius);
         box-shadow: 0 0 2px #004f4d;
-        margin: 20px 0;
-        padding: 4px;
     }
 }
 
 .content {
-    grid-column: 2;
     border: 2px solid #3c5853;
+    border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 0 0 2px #004f4d;
     padding: 12px 20px;
@@ -219,7 +220,7 @@ body {
     font-size: 1rem;
     display: none;
     position: relative;
-    background-color: rgb(31, 31, 31);
+    background: var(--background-color);
 
     &.active {
         display: block;
@@ -230,29 +231,27 @@ body {
         border: 2px solid;
         border-image: linear-gradient(1980deg, #fdbe72, #ff8000, #dd5928, #009479) 1;
     }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 12% 20%, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 30px 30px, 50px 50px;
+    }
 }
 
-.about-introduction {
-   background-color: #002d2b;
-   box-shadow: 0 0 4px #5e5e5e;
-   border-radius: var(--border-radius);
-   border: 1px solid white;
-   box-shadow: 1px 1px 10px #004f4d;
-   padding: 8px;
-   margin: 12px 0;
-   
-   p {
-       margin: 10px 0; 
-       line-height: 24px;
-   }
-}
 
-.webring_main {
+.wrapper {
     padding: 10px;
+    box-sizing: border-box;
     border: 1px solid #ffc073;
-    border-radius: var(--border-radius);
-    margin: 12px 0;
-    background-color: #10181d;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background: var(--background-color);
 }
 
 .webring_url {
@@ -276,7 +275,7 @@ body {
 }
 
 .footer {
-    color: white;
+    color: #daddd5;
 }
 
 @font-face {
@@ -286,18 +285,12 @@ body {
 }
 
 #date-time {
-    color: #ffc073;
+    color: #ffcd9e;
     font-size: 0.8rem;
 }
 
 .article {
-    border-style: solid;
-    border: 1px solid #ffc073;
-    box-shadow: 0 0 2px #004f4d;
-    border-width: thin;
-    border-radius: 5px;
-    color: white;
-    padding: 8px;
+    color: #daddd5;
     > h3 {
         border-bottom: 1px solid;
         padding: 2px 0;
@@ -308,13 +301,13 @@ body {
     overflow: scroll;
     overflow-x: hidden;
     max-height: 200px;
-    background-color: #10181d;
+    background-color: #000000;
     padding: 2px;
 }
 
 .thankyou {
     p {
-        color: #ffc073;
+        color: #ffcd9e;
         font-size: 1rem;
     }
 }
@@ -335,7 +328,7 @@ body {
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
-    border-color: #ffc073;
+    border-color: #ffcd9e;
     box-shadow: 0 0 2px #004f4d;
     width: 50%;
 
@@ -356,18 +349,18 @@ body {
     border-radius: 5px;
     border-style: solid;
     border-width: thin;
-    border-color: #ffc073;
+    border-color: #ffcd9e;
     text-align: start;
     box-shadow: 0 0 2px #004f4d;
     background-color: #10181d;
     padding: 8px;
     height: auto;
-    color: white;
+    color: #daddd5;
 
     a {
         text-decoration: none;
         font-size: 1.25rem;
-        color: #ffc073;
+        color: #ffcd9e;
         word-break: break-all;
 
         &:hover {
@@ -394,10 +387,10 @@ body {
     border-radius: 5px;
     border-style: solid;
     border-width: thin;
-    border-color: #ffc073;
+    border-color: #ffcd9e;
     box-shadow: 0 0 2px #004f4d;
     height: auto;
-    color: #ffc073;
+    color: #ffcd9e;
 
     a {
         font-size: 0.8rem;
@@ -429,7 +422,7 @@ body {
 @keyframes colorChange {
     100% { opacity: 1; }
     50% { color: rgb(255, 255, 255); }
-    110% { color: white; }
+    110% { color: #daddd5; }
 }
 
 .updates {
@@ -449,7 +442,7 @@ body {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.737);
     transition: all 0.3s ease;
-    color: white;
+    color: #daddd5;
     
     &:hover {
         cursor: pointer;
@@ -528,15 +521,14 @@ body {
 
 .list {
     a {
-        color: #ffc073;
+        color: #ffcd9e;
         text-decoration: underline;
     }
 }
 
 .contacts {
     text-align: end;
-    width: 40%;
-    
+    width: 40%;    
     small a {
         color: #ff7373;
         font-size: 0.8rem;
@@ -552,27 +544,29 @@ body {
     li {
         list-style: none;
         margin: 6px 0;
-        color: white;
+        color: #daddd5;
         font-size: 1.25rem;
         
         a {
             text-decoration: underline;
             font-size: 1.25rem;
-            color: white;
+            color: #daddd5;
             
             &:hover {
-                color: #ffc073;
+                color: #ffcd9e;
             }
         }
     }
 }
 
 .bottom {
-    margin: 10px 0;
+    width: 80%;
+    margin: 10px auto;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-color: #daddd5;
     justify-content: space-between;
 }
 
