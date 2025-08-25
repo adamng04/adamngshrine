@@ -221,6 +221,7 @@ body {
     display: none;
     position: relative;
     background: var(--background-color);
+    z-index: 2;
 
     &.active {
         display: block;
@@ -241,6 +242,7 @@ body {
         bottom: 0;
         background-image: radial-gradient(circle at 12% 20%, rgba(255,255,255,0.1) 1px, transparent 1px);
         background-size: 30px 30px, 50px 50px;
+        z-index: -1;
     }
 }
 
@@ -377,8 +379,11 @@ body {
 }
 
 .stickers {
+    width: 80%;
+    margin: 0 auto;
     img {
         border: none;
+        width: 7%;
     }
 }
 
@@ -585,18 +590,19 @@ small {
     .main {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        width: 100%;
+        width: 95%;
     }
 
     .bottom {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 95%;
     }
 
     .nav-mobile {
         top: 1.2rem 0;
-        
+        z-index: 3;        
         a {
             font-size: 1.4rem;
         }
