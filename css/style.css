@@ -199,10 +199,7 @@ body {
     }
 }
 
-
 .miscs {
-    grid-column: 1;
-
     &-section {
         border: 1px solid #ffc073;
         border-radius: var(--border-radius);
@@ -245,7 +242,6 @@ body {
         z-index: -1;
     }
 }
-
 
 .wrapper {
     padding: 10px;
@@ -305,13 +301,6 @@ body {
     max-height: 200px;
     background-color: #000000;
     padding: 2px;
-}
-
-.thankyou {
-    p {
-        color: #ffcd9e;
-        font-size: 1rem;
-    }
 }
 
 .gallery_items {
@@ -407,68 +396,6 @@ body {
     }
 }
 
-.titlebox {
-    animation-iteration-count: infinite;
-    font-family: 'Courier New' sans-serif;
-    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
-    letter-spacing: 0.125em;
-    animation-duration: 0.01s;
-    animation-name: textflicker;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes textflicker {
-    from {
-      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
-    }
-    to {
-      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
-    }
-}
-
-@keyframes colorChange {
-    100% { opacity: 1; }
-    50% { color: rgb(255, 255, 255); }
-    110% { color: #daddd5; }
-}
-
-.updates {
-    width: 100%;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px 0;
-    gap: 12px;
-}
-
-.update-block {
-    opacity: 0.9;
-    margin: 0;
-    border: 2px solid rgb(79, 79, 79);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.737);
-    transition: all 0.3s ease;
-    color: #daddd5;
-    
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-        border: 2px solid rgb(224, 146, 12);
-        background-color: rgb(0, 0, 0);
-        
-        .subtitle h3, p {
-            color: rgb(224, 146, 12);
-        }
-        
-        .images img {
-            border-bottom: 2px solid rgb(224, 146, 12);
-            filter: grayscale(0);
-        }
-    }
-}
-
 .images {
     height: 200px;
     width: 100%;
@@ -487,18 +414,6 @@ body {
     }
 }
 
-.subtitle {
-    margin: 10px 10px;
-    font-size: 1rem;
-    color: var(--p-color);
-    text-align: center;
-    line-height: 1.4;
-    height: 100px;
-
-    p {
-        margin: var(--default-margin);
-    }
-}
 
 .desktop-visible {
     display: block;
@@ -667,11 +582,6 @@ small {
         }
     }
 
-    .updates {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
     .container {
         width: 90%;
         gap: 0;
@@ -701,9 +611,5 @@ small {
     .content {
         grid-column: 1;
         grid-row: 3;
-    }
-
-    .subtitle {
-        height: auto;
     }
 }
