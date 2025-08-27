@@ -137,7 +137,7 @@ body {
     a {
         color: #ffcd9e;
         text-decoration: none;
-        padding: 4px; 
+        padding: 12px; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -380,8 +380,7 @@ body {
 
 .sticker {
     width: 80%;
-    margin: 10px auto;
-
+    margin: 20px auto;
 }
 
 .stickers {
