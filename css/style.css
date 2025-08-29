@@ -249,7 +249,7 @@ body {
     border: 1px solid #ffc073;
     border-radius: 4px;
     margin-bottom: 12px;
-    background: var(--background-color);
+    background: rgb(25, 25, 25);
 }
 
 .webring_url {
@@ -459,7 +459,7 @@ body {
     
     h3 {
         border-bottom: 2px solid;
-        border-image: linear-gradient(-90deg, #fdbe72 , #009479, #002a28, #002d2b) 1;
+        border-image: linear-gradient(-90deg, #fdbe72 , #009479, #002a28, #1a1a1a) 1;
         padding-bottom: 4px;
         color: white !important;
     }
