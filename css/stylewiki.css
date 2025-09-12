@@ -55,8 +55,12 @@ span {
     font-size: 18px;
 }
 
-.nav_options a{
-    margin: 0 6px;
+.nav_options a, .main_container_header_infobox a{
+    margin-right: 6px;
+    color: #3f0eee;
+    &:hover {
+        color: #ea7908;
+    }
 }
 
 .container {

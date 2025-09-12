@@ -33,6 +33,10 @@ h3, h4 {
     margin: 10px 0;
 }
 
+html {
+    overscroll-behavior: none;
+}
+
 body {
     background: radial-gradient(#0c221c, #010504);
     margin: 0;
