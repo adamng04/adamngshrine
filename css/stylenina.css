@@ -15,6 +15,12 @@ a {
     }
 }
 
+.quote {
+    background-color: rgb(48, 48, 48);
+    padding: 2px 10px;
+    border-left: 2px solid orange;
+}
+
 body {
     font-family: 'Inter';
     background: #0f0f0f;
