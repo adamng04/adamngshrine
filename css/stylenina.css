@@ -9,7 +9,7 @@
 }
 
 a {
-    color: white;
+    color: rgb(255, 169, 21);
     &:hover {
         color: aqua;
     }
@@ -23,9 +23,44 @@ body {
     line-height: 1.8;
 }
 
+.button {
+    a {
+        position: relative;
+        display: inline-block;
+        padding: 18px;
+        width: 30%;
+        background: #8c8c8c;  
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(120deg, #FBBC05, #34A853);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        span {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
 .header {
     text-align: left;
-    margin: 40px 0;
+    margin: 10px 0;
     color: white;
     
     
@@ -69,7 +104,6 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    width: 100%;
     overflow: hidden;
 }
 
