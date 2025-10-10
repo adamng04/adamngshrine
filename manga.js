@@ -1,7 +1,6 @@
 let mangaData = [];
 let animeData = [];
 
-// Load CSS file
 function loadCSS() {
     const link = document.createElement('link');
     Object.assign(link, {
@@ -12,7 +11,6 @@ function loadCSS() {
     document.head.appendChild(link);
 }
 
-// Generic JSON loader
 async function loadData(url) {
     try {
         const res = await fetch(url);
@@ -23,7 +21,6 @@ async function loadData(url) {
     }
 }
 
-// Safe DOM helper
 function createEl(tag, className, text) {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -31,7 +28,6 @@ function createEl(tag, className, text) {
     return el;
 }
 
-// XSS-safe renderer (keeps HTML layout)
 function renderList(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return console.error(`Container "${containerId}" not found`);
@@ -40,14 +36,12 @@ function renderList(data, containerId) {
     data.forEach(item => {
         const listItem = createEl('div', 'list-item');
 
-        // Image section
         const imageDiv = createEl('div', 'image');
         const img = document.createElement('img');
         img.src = item.image.src;
         img.alt = item.image.alt;
         imageDiv.appendChild(img);
 
-        // Description section
         const descDiv = createEl('div', 'description');
         const descHeader = createEl('div', 'description-header');
 
@@ -63,7 +57,6 @@ function renderList(data, containerId) {
         descHeader.appendChild(nameDiv);
         descDiv.appendChild(descHeader);
 
-        // Description content section
         const descContent = createEl('div', 'description-content');
 
         const statusDiv = createEl('div', 'status', item.descriptionContent.status);
@@ -74,7 +67,6 @@ function renderList(data, containerId) {
         descContent.appendChild(createEl('h4', null, "Reader's comment:"));
         descContent.appendChild(createEl('p', null, item.descriptionContent.comment));
 
-        // Assemble list item
         listItem.appendChild(imageDiv);
         listItem.appendChild(descDiv);
         listItem.appendChild(descContent);
@@ -83,12 +75,10 @@ function renderList(data, containerId) {
     });
 }
 
-// Single "get by title" for any dataset
 function getByTitle(data, title) {
     return data.find(item => item.description.header.name.title === title);
 }
 
-// Auto-init
 document.addEventListener('DOMContentLoaded', async () => {
     loadCSS();
 
