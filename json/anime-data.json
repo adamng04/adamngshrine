@@ -45,6 +45,28 @@
     },
     {
         "image": {
+            "src": "/index/weebimages/takopi-anime.webp",
+            "alt": "takopi"
+        },
+        "description": {
+            "header": {
+                "image": {
+                    "src": "/index/weebimages/takopi-anime.webp",
+                    "alt": "takopi"
+                },
+                "name": {
+                    "title": "Takopi no Genzai",
+                    "author": "Enishiya - 2025"
+                }
+            }
+        },
+        "descriptionContent": {
+            "status": "Status: Finished. - Score: 10/10",
+            "comment": "I feel like short stories like these are hardly seen by most people, especially this one. This one is brave enough to daringly tackle the absurdity of life under abuse, neglect, and mental fuckups. I went into this series drunk as hell, watching with 5 other homies, and walked out sobbing like a bitch. Would definitely, heavily recommend to others."
+        }
+    },
+    {
+        "image": {
             "src": "/index/weebimages/aot-anime.jpg",
             "alt": "aot"
         },
@@ -55,7 +77,7 @@
                     "alt": "aot"
                 },
                 "name": {
-                    "title": "Attack on Titans",
+                    "title": "Shingeki no Kyoujin",
                     "author": "Wit/MAPPA - 2013"
                 }
             }
