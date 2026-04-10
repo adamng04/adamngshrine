@@ -6,7 +6,7 @@ function loadCSS() {
     Object.assign(link, {
         rel: 'stylesheet',
         type: 'text/css',
-        href: 'styleweeb.css'
+        href: '/styleweeb.css'
     });
     document.head.appendChild(link);
 }
@@ -60,8 +60,6 @@ function renderList(data, containerId) {
         const descContent = createEl('div', 'description-content');
 
         const statusDiv = createEl('div', 'status', item.descriptionContent.status);
-        statusDiv.style.borderBottom = '1px solid gray';
-        statusDiv.style.paddingBottom = '8px';
 
         descContent.appendChild(statusDiv);
         descContent.appendChild(createEl('h4', null, "Reader's comment:"));
