@@ -1,39 +1,55 @@
-function play(){
-    let audio = document.getElementById("audio");
-    audio.play();
+function toggleMenuVisibility(menuId, toggleButtonId) {
+  const menu = document.getElementById(menuId);
+  if (!menu) return;
+  const isOpen = menu.style.display === 'block';
+  menu.style.display = isOpen ? 'none' : 'block';
+
+  const toggleButton = document.getElementById(toggleButtonId);
+  if (toggleButton) {
+    toggleButton.setAttribute('aria-expanded', String(!isOpen));
+  }
 }
 
-function button(){
-    let reisen = document.getElementById("reisen");
-    reisen.play();
+function playAudio(audioId) {
+  const audio = document.getElementById(audioId);
+  if (audio) audio.play();
 }
 
-function myFunction() {
-    var x = document.getElementById("links");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
+function attachActionEvents(elementId, action) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+
+  element.addEventListener('click', action);
+  element.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      action();
     }
+  });
 }
 
-document.querySelectorAll('.button[data-section]').forEach(btn => {
-    btn.addEventListener('click', handleNav);
-    btn.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') handleNav.call(btn, e);
-    });
-});
+function handleNav(event) {
+  if (event) event.preventDefault();
 
-function handleNav() {
-    document.querySelectorAll('.content').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.button').forEach(b => {
-        b.classList.remove('active');
-        b.removeAttribute('aria-current');
-    });
+  const targetSection = document.getElementById(this.dataset.section);
+  if (!targetSection) return;
 
-    document.getElementById(this.dataset.section).classList.add('active');
-    this.classList.add('active');
-    this.setAttribute('aria-current', 'page');
+  document.querySelectorAll('.content').forEach((section) => section.classList.remove('active'));
+  document.querySelectorAll('.button').forEach((button) => {
+    button.classList.remove('active');
+    button.removeAttribute('aria-current');
+  });
+
+  targetSection.classList.add('active');
+  this.classList.add('active');
+  this.setAttribute('aria-current', 'page');
+}
+
+function setContainerMessage(container, className, text) {
+  const message = document.createElement('div');
+  message.className = className;
+  message.textContent = text;
+  container.replaceChildren(message);
 }
 
 async function loadArticles(endpoint = '/json/update.json') {
@@ -43,11 +59,11 @@ async function loadArticles(endpoint = '/json/update.json') {
     const posts = await fetch(endpoint).then(r => r.ok ? r.json() : Promise.reject(r));
     
     if (!Array.isArray(posts) || !posts.length) {
-      container.innerHTML = '<div class="empty">No articles available</div>';
+      setContainerMessage(container, 'empty', 'No articles available');
       return;
     }
     
-    container.innerHTML = '';
+    container.replaceChildren();
     const fragment = document.createDocumentFragment();
     
     posts.forEach(p => {
@@ -74,14 +90,32 @@ async function loadArticles(endpoint = '/json/update.json') {
     
   } catch (error) {
     console.error('Failed to load:', error);
-    container.innerHTML = '<div class="error">Failed to load articles</div>';
+    setContainerMessage(container, 'error', 'Failed to load articles');
   }
 }
 
-loadArticles();
-
 document.addEventListener('DOMContentLoaded', function() {
+    const navButtons = document.querySelectorAll('.button[data-section]');
+    navButtons.forEach((btn) => {
+      btn.addEventListener('click', handleNav);
+      btn.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          handleNav.call(btn, event);
+        }
+      });
+    });
+
+    attachActionEvents('mobile-nav-toggle', () => toggleMenuVisibility('links', 'mobile-nav-toggle'));
+    attachActionEvents('reisen-trigger', () => playAudio('reisen'));
+    attachActionEvents('lain-trigger', () => playAudio('audio'));
+
+    if (document.getElementById('articles-container')) {
+      loadArticles();
+    }
+
     const footerText = document.querySelector('.footer');
-    const currentYear = new Date().getFullYear();
-    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+    if (footerText) {
+      const currentYear = new Date().getFullYear();
+      footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+    }
 });

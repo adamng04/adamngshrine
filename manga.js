@@ -1,6 +1,3 @@
-let mangaData = [];
-let animeData = [];
-
 function loadCSS() {
     const link = document.createElement('link');
     Object.assign(link, {
@@ -31,7 +28,7 @@ function createEl(tag, className, text) {
 function renderList(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return console.error(`Container "${containerId}" not found`);
-    container.innerHTML = '';
+    container.replaceChildren();
 
     data.forEach(item => {
         const listItem = createEl('div', 'list-item');
@@ -73,23 +70,18 @@ function renderList(data, containerId) {
     });
 }
 
-function getByTitle(data, title) {
-    return data.find(item => item.description.header.name.title === title);
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
     loadCSS();
 
     const sections = [
-        { id: 'manga-container', url: '/json/manga-data.json', store: d => mangaData = d },
-        { id: 'anime-container', url: '/json/anime-data.json', store: d => animeData = d }
+        { id: 'manga-container', url: '/json/manga-data.json' },
+        { id: 'anime-container', url: '/json/anime-data.json' }
     ];
 
-    for (const { id, url, store } of sections) {
+    for (const { id, url } of sections) {
         const el = document.getElementById(id);
         if (!el) continue;
         const data = await loadData(url);
-        store(data);
         renderList(data, id);
     }
 });
