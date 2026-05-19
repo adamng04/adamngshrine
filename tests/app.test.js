@@ -63,7 +63,7 @@ describe('app.js', () => {
     await flushAsync();
 
     expect(fetch).toHaveBeenCalled();
-    expect(document.querySelector('.footer').textContent).toContain('2023');
+    expect(document.querySelector('.footer').textContent).toContain(String(new Date().getFullYear()));
     expect(console.error).not.toHaveBeenCalled();
   });
 });
