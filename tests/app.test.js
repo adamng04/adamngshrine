@@ -15,7 +15,7 @@ function setupDom() {
       <img id="lain-trigger" />
       <audio id="reisen"></audio>
       <audio id="audio"></audio>
-      <div id="articles-container"></div>
+      
       <p class="footer"></p>
       <a class="button active" data-section="index"></a>
       <a class="button" data-section="about"></a>

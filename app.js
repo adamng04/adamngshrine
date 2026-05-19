@@ -10,50 +10,22 @@ function setContainerMessage(container, className, text) {
   container.replaceChildren(message);
 }
 
-async function loadArticles(endpoint = '/json/update.json') {
-  const container = document.getElementById('articles-container');
-  
-  try {
-    const posts = await fetch(endpoint).then(r => r.ok ? r.json() : Promise.reject(r));
-    
-    if (!Array.isArray(posts) || !posts.length) {
-      setContainerMessage(container, 'empty', 'No articles available');
-      return;
-    }
-    
-    container.replaceChildren();
-    const fragment = document.createDocumentFragment();
-    
-    posts.forEach(p => {
-      if (!p) return;
-      
-      const article = document.createElement('article');
-      article.setAttribute('data-time', p.timestamp || '');
-      
-      const userDiv = document.createElement('div');
-      userDiv.className = 'status_username';
-      const username = document.createElement('h3');
-      username.textContent = p.username || 'Anonymous'; // Safe - uses textContent
-      userDiv.appendChild(username);
-      
-      const content = document.createElement('p');
-      content.className = 'status_content';
-      content.textContent = p.content || ''; // Safe - uses textContent
-      
-      article.append(userDiv, content);
-      fragment.appendChild(article);
-    });
-    
-    container.appendChild(fragment);
-    
-  } catch (error) {
-    console.error('Failed to load:', error);
-    setContainerMessage(container, 'error', 'Failed to load articles');
-  }
-}
 document.addEventListener('DOMContentLoaded', () => {
-  loadArticles();
-
   const footer = document.querySelector('.footer');
   if (footer) footer.textContent = `© ${new Date().getFullYear()}`;
+  (async () => {
+    try {
+      const res = await fetch('/json/update.json');
+      if (!res || !res.ok) return;
+      await res.json();
+    } catch (err) {
+      if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
+        try {
+          window.dispatchEvent(new ErrorEvent('error', { error: err, message: String(err) }));
+        } catch (dispatchErr) {
+          // last-resort no-op: avoid throwing from the error handler
+        }
+      }
+    }
+  })();
 });
