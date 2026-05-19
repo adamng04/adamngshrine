@@ -51,5 +51,9 @@ async function loadArticles(endpoint = '/json/update.json') {
     setContainerMessage(container, 'error', 'Failed to load articles');
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  loadArticles();
 
-loadArticles();
+  const footer = document.querySelector('.footer');
+  if (footer) footer.textContent = `© ${new Date().getFullYear()}`;
+});
