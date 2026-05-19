@@ -23,7 +23,7 @@
 
         body {
             padding: 0 20px;
-            background: url('https://media.adamngshrine.com/images/divs2.png') center/110% 120% no-repeat;
+            background: url('https://media.adamngshrine.com/images/divs2.png') center/cover no-repeat;
         }
 
         html {
@@ -52,6 +52,29 @@
 
         a:hover {
             color: #1acbab;
+        }
+
+        .webimage {
+            display: inline-block;
+            border: 1px solid black;
+            overflow: hidden;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #ffcd9e;
+            box-shadow: 0 0 2px #004f4d;
+            width: 40%;
+
+            img {
+                width: 100%;
+                display: block;
+                transition: transform .4s ease-out;
+                border: none;
+            }
+
+            img:hover {
+                transform: scale(1.03);
+            }
         }
     </style>
 </head>
@@ -85,6 +108,33 @@
         <div class="list_inside">
             <a href="thewiki.html">The guide to the supervillains</a>
             <a href="thewiki-tec-9.html">The history of Terraria's Tec-9 mod (WIP).</a>  
+        </div>
+    </div>
+    <br>
+    <div class="journey">
+        <h3 class="section-header">My Web Development History:</h3>
+    <p>(you can click on them! they are not mobile-friendly.)</p>
+    </div>
+    <div class="gallery wrapper">
+        <div class="gallery_items">
+            <div class="web">
+                <h4>May 2023 - The beginning.</h4>
+                <div class="webimage">
+                    <a href="firstweb.html" target="_blank" rel="noopener noreferrer"><img src="https://media.adamngshrine.com/images/webdev1.png" alt="First website version" width="70%" loading="lazy"></a>
+                </div>
+            </div>
+            <div class="web">
+                <h4>August 2023 - The second attempt of making a website.</h4>
+                <div class="webimage">
+                    <a href="secondweb.html" target="_blank" rel="noopener noreferrer"><img src="https://media.adamngshrine.com/images/webdev2.png" alt="Second website version" width="70%" loading="lazy"></a>
+                </div>
+            </div>
+            <div class="web">
+                <h4>October 2024 - The first revamp demo.</h4>
+                <div class="webimage">
+                    <a href="thirdwebv1.html" target="_blank" rel="noopener noreferrer"><img src="https://media.adamngshrine.com/images/thirdwebv1.png" alt="Third website version" width="70%" loading="lazy"></a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="separator"></div>

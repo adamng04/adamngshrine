@@ -211,7 +211,6 @@ body {
     padding: 12px 20px;
     color:rgb(241, 241, 241);
     font-size: 1rem;
-    display: none;
     position: relative;
     background: var(--background-color);
     z-index: 2;
@@ -308,29 +307,6 @@ body {
     margin-bottom: 20px;
 }
 
-.webimage {
-    display: inline-block;
-    border: 1px solid black;
-    overflow: hidden;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #ffcd9e;
-    box-shadow: 0 0 2px #004f4d;
-    width: 50%;
-
-    img {
-        width: 100%;
-        display: block;
-        transition: transform .4s ease-out;
-        border: none;
-
-        &:hover {
-            transform: scale(1.03);
-        }
-    }
-}
-
 #statuscafe {
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
@@ -424,7 +400,7 @@ body {
 }
 
 .tapir {
-    width: 40%; 
+    width: fit-content; 
     background-image: url(https://media.adamngshrine.com/images/nimi.jpg);
     background-position: center;
     background-size: cover;
