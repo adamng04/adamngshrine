@@ -51,3 +51,5 @@ async function loadArticles(endpoint = '/json/update.json') {
     setContainerMessage(container, 'error', 'Failed to load articles');
   }
 }
+
+loadArticles();
