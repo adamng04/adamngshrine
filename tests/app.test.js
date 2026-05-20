@@ -62,7 +62,7 @@ describe('app.js', () => {
     document.dispatchEvent(new Event('DOMContentLoaded'));
     await flushAsync();
 
-    expect(fetch).toHaveBeenCalled();
+    expect(fetch).not.toHaveBeenCalled();
     expect(document.querySelector('.footer').textContent).toContain(String(new Date().getFullYear()));
     expect(console.error).not.toHaveBeenCalled();
   });

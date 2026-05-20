@@ -10,22 +10,8 @@ function setContainerMessage(container, className, text) {
   container.replaceChildren(message);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const footer = document.querySelector('.footer');
-  if (footer) footer.textContent = `© ${new Date().getFullYear()}`;
-  (async () => {
-    try {
-      const res = await fetch('/json/update.json');
-      if (!res || !res.ok) return;
-      await res.json();
-    } catch (err) {
-      if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
-        try {
-          window.dispatchEvent(new ErrorEvent('error', { error: err, message: String(err) }));
-        } catch (dispatchErr) {
-          // last-resort no-op: avoid throwing from the error handler
-        }
-      }
-    }
-  })();
+document.addEventListener('DOMContentLoaded', function() {
+  const footerText = document.querySelector('.footer');
+  const currentYear = new Date().getFullYear();
+  footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
 });
