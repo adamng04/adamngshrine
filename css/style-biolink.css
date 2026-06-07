@@ -1,0 +1,242 @@
+
+
+:root {
+  /* colors */
+  --text: #dddddd;
+  --background: #222222;
+  --cardbg: #111111;
+  --cardshadow: #111111;
+  --btncolor: #cc9900; /* buttons main colour */
+  --btncolorhover: #cc3300; /* buttons colour when active */
+  --btnlinkcolor: #000000; /* link label text colour */
+  --btnlinkcolorhover: #ffffff; /* link label text colour when active */
+  --linkcolor: #cc9900; /* used for links (applies to the icons) */
+  --linkcolorhover: #cc3300; /* used for links when active (applies to the icons) */
+
+  /* fonts - the browser will try to use them in order, the first one it finds will be the one displayed */
+  --titlefont: "Arial", serif; /* used for the card title on top */
+  --basefont: "Helvetica", serif; /* used for the description */
+  --linkfont: "Arial", serif; /* used for the links */
+
+  /* card styling */
+  --max-width: 500px; /* width of the box */
+  --cardborder: solid 2px #cc3300; /* style of the border around the card if you want one! the syntax is 'style thickness color' - you need to uncomment a line in the '#card' section below to activate it */
+
+  /* link button styling*/
+  --btnborder: solid 2px #cc3300; /* style of the border around the card if you want one! the syntax is 'style thickness color' - you need to uncomment a line in the '.linkbtn' section below to activate it */
+
+  /* text styling */
+  --text-size: 1.2em; /* increasing this value will make all the text bigger */
+  --alignment: center;
+
+  /* misc */
+  --spacing: 30px; /* defines the base spacing of the elements - a higher value will make things spread out more */
+  --profilepicsize: 150px; /* size of the profile picture */
+  --profilepiccorner: 20%; /* if using a rounded corner profile picture, adjust the corners - values range between 0-50%, where 0 is a sharp square and 50% is a circle */
+
+  /* these next lines allow to use background images
+  you will need to upload the image file to your neocities and then replace 'IMAGE_URL_HERE' by the path to your image, just like we did with the profile picture 
+  you will also need to uncomment lines in the 'body' section and the '#card' sections, respectively */
+  /* --bg-img: url("IMAGE_URL_HERE"); */
+  /* --cardbg-img: url("IMAGE_URL_HERE"); */
+
+  /* don't worry about this*/
+  --half: calc(var(--spacing)/2);
+  --double: calc(var(--spacing) * 2);
+}
+
+* {
+  max-width: 100%;
+  -ms-overflow-style: none;
+}
+
+body {
+  background-color: var(--background);
+
+  /* if you are using a background image, uncomment the next line - this will fill the whole background behind the card */
+  /* background-image: var(--bg-img); */
+
+  /* by default, your background picture will repeat - uncomment the next line if you don't want that */
+  /* background-repeat: no-repeat; */
+}
+
+/* this applies to everything on the page */
+main {
+  /* positioning */
+  max-width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 0 auto;
+
+  /* colours */
+  color: var(--text);
+
+  /* text styling */
+  text-align: var(--alignment);
+  font-family: var(--basefont);
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--text-size);
+  line-height: 1.5em;
+}
+
+/* this affects the title container above the card */
+#name {
+  margin-top: 5vh;
+  text-align: center;
+  text-indent: 0;
+}
+
+/* h1 is a header tag - on this page, it's used for the title above the card */
+h1 {
+  font-family: var(--titlefont);
+}
+
+/* the card block */
+#card {
+  background-color: var(--cardbg);
+  max-width: var(--max-width);
+  padding: var(--spacing);
+  margin: 0 auto;
+  border-radius: 15px; /* this gives the card round corners */
+  box-shadow: 0px 0px 40px 0px var(--cardshadow); /* shadow dropped by the card on the background */
+
+  /* if you are using a background image for the card - uncomment the next line. this will fill the whole card */
+  /* background-image: var(--cardbg-img); */
+
+  /* by default, your background picture will repeat - uncomment the next line if you don't want that */
+  /* background-repeat: no-repeat; */
+
+  /* uncomment the next line if you want a border around the card - the look can be changed in the variables on top of this file */
+  border: var(--cardborder);
+}
+
+/* these apply to the buttons in the list of links */
+.linkbtn {
+  height: var(--double);
+  max-width: 80%;
+  margin: var(--half) auto;
+  border-radius: var(--spacing);
+  background-color: var(--btncolor);
+  color: var(--background);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border: var(--btnborder); /* uncomment if you want a border around the card */
+}
+
+/* this applies to the buttons in the list of links when active */
+.linkbtn:hover {
+  background-color: var(--btncolorhover);
+  color: var(--background);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* these apply to the buttons labels */
+.linkbtn span {
+  font-family: var(--linkfont);
+  color: var(--btnlinkcolor);
+  font-size: 1.5em;
+  transition: 0.5s;
+}
+
+/* these apply to the buttons labels when active */
+.linkbtn:hover span {
+  color: var(--btnlinkcolorhover);
+  letter-spacing: 0.1em; /* this makes the letter spread on hover, remove this line if you don't like that */
+  transition: 0.5s;
+}
+
+/* other links styling */
+a {
+  text-decoration: none;
+  color: var(--linkcolor);
+}
+
+/* other actives links styling */
+a:hover {
+  text-decoration: none;
+  color: var(--linkcolorhover);
+}
+
+/* class styling */
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* profile pic styling, this is what create the mask on the shape */
+.profilepic img {
+  width: var(--profilepicsize);
+  height: var(--profilepicsize);
+  padding: var(--half);
+  object-fit: cover;
+}
+
+.circle img {
+  border-radius: 50%;
+}
+
+.rounded img {
+  border-radius: var(--profilepiccorner);
+}
+
+/* social links icons */
+.icon {
+  color: var(--linkcolor);
+  transition: 0.5s;
+  padding: 3px;
+}
+
+/* social links icons, active */
+.icon:hover {
+  color: var(--linkcolorhover);
+  text-shadow: 0px 0px 15px var(--linkcolorhover); /* glow effect around the icon when hovering */
+  transform: scale(1.1); /* scaling up when hovering */
+  transition: 0.5s;
+}
+
+/* indents the description paragraph */
+#intro p {
+  text-indent: 5%;
+}
+
+/* this affects the block of social links */
+#socials {
+  padding: var(--spacing);
+  text-indent: 0;
+  text-align: center;
+}
+
+/* credits block at the bottom */
+#credits {
+  width: 100vw;
+  font-size: 0.75em;
+  text-align: center;
+  text-indent: 0;
+}
+
+/* template credits block at the bottom right, semi transparent by default */
+#tmplt_credits {
+  width: 100vw;
+  font-size: 0.75em;
+  padding-right: 15px;
+  text-indent: 10px;
+  position: fixed;
+  bottom: 0%;
+  left: 45%;
+  opacity: 0.25;
+}
+
+/* makes the template credits block opaque when active */
+#tmplt_credits:hover {
+  opacity: 1;
+}
