@@ -1,14 +1,11 @@
-
-
 :root {
   /* colors */
-  --text: #dddddd;
-  --background: #222222;
-  --cardbg: #111111;
-  --cardshadow: #111111;
-  --btncolor: #cc9900; /* buttons main colour */
-  --btncolorhover: #cc3300; /* buttons colour when active */
-  --btnlinkcolor: #000000; /* link label text colour */
+  --text: #8d8dfb;
+  --cardbg: #000000e4;
+  --cardshadow: #00d9ff;
+  --btncolor: #cc4400; /* buttons main colour */
+  --btncolorhover: #e09f07; /* buttons colour when active */
+  --btnlinkcolor: #000000a8; /* link label text colour */
   --btnlinkcolorhover: #ffffff; /* link label text colour when active */
   --linkcolor: #cc9900; /* used for links (applies to the icons) */
   --linkcolorhover: #cc3300; /* used for links when active (applies to the icons) */
@@ -20,7 +17,7 @@
 
   /* card styling */
   --max-width: 500px; /* width of the box */
-  --cardborder: solid 2px #cc3300; /* style of the border around the card if you want one! the syntax is 'style thickness color' - you need to uncomment a line in the '#card' section below to activate it */
+  --cardborder: solid 2px #b5b5b5; /* style of the border around the card if you want one! the syntax is 'style thickness color' - you need to uncomment a line in the '#card' section below to activate it */
 
   /* link button styling*/
   --btnborder: solid 2px #cc3300; /* style of the border around the card if you want one! the syntax is 'style thickness color' - you need to uncomment a line in the '.linkbtn' section below to activate it */
@@ -33,13 +30,6 @@
   --spacing: 30px; /* defines the base spacing of the elements - a higher value will make things spread out more */
   --profilepicsize: 150px; /* size of the profile picture */
   --profilepiccorner: 20%; /* if using a rounded corner profile picture, adjust the corners - values range between 0-50%, where 0 is a sharp square and 50% is a circle */
-
-  /* these next lines allow to use background images
-  you will need to upload the image file to your neocities and then replace 'IMAGE_URL_HERE' by the path to your image, just like we did with the profile picture 
-  you will also need to uncomment lines in the 'body' section and the '#card' sections, respectively */
-  /* --bg-img: url("IMAGE_URL_HERE"); */
-  /* --cardbg-img: url("IMAGE_URL_HERE"); */
-
   /* don't worry about this*/
   --half: calc(var(--spacing)/2);
   --double: calc(var(--spacing) * 2);
@@ -52,12 +42,6 @@
 
 body {
   background-color: var(--background);
-
-  /* if you are using a background image, uncomment the next line - this will fill the whole background behind the card */
-  /* background-image: var(--bg-img); */
-
-  /* by default, your background picture will repeat - uncomment the next line if you don't want that */
-  /* background-repeat: no-repeat; */
 }
 
 /* this applies to everything on the page */
@@ -78,6 +62,7 @@ main {
   font-style: normal;
   font-size: var(--text-size);
   line-height: 1.5em;
+  background-image: url("/imagesbackup/art.webp");
 }
 
 /* this affects the title container above the card */
@@ -99,15 +84,8 @@ h1 {
   padding: var(--spacing);
   margin: 0 auto;
   border-radius: 15px; /* this gives the card round corners */
-  box-shadow: 0px 0px 40px 0px var(--cardshadow); /* shadow dropped by the card on the background */
-
-  /* if you are using a background image for the card - uncomment the next line. this will fill the whole card */
-  /* background-image: var(--cardbg-img); */
-
-  /* by default, your background picture will repeat - uncomment the next line if you don't want that */
-  /* background-repeat: no-repeat; */
-
-  /* uncomment the next line if you want a border around the card - the look can be changed in the variables on top of this file */
+  box-shadow: 0px 0px 100px 0px var(--cardshadow);
+  backdrop-filter: blur(10px); /* shadow dropped by the card on the background */
   border: var(--cardborder);
 }
 
@@ -179,10 +157,20 @@ a:hover {
   height: var(--profilepicsize);
   padding: var(--half);
   object-fit: cover;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .circle img {
-  border-radius: 50%;
+  border-radius: 1%;
 }
 
 .rounded img {
