@@ -10,7 +10,7 @@ function setupDom() {
   const dom = new JSDOM(`
     <body>
       <button id="mobile-nav-toggle"></button>
-      <div id="links"></div>
+      <div id="links"><a href="/index/weebcorner.html">weeb corner</a></div>
       <img id="reisen-trigger" />
       <img id="lain-trigger" />
       <audio id="reisen"></audio>
@@ -65,5 +65,38 @@ describe('app.js', () => {
     expect(fetch).not.toHaveBeenCalled();
     expect(document.querySelector('.footer').textContent).toContain(String(new Date().getFullYear()));
     expect(console.error).not.toHaveBeenCalled();
+  });
+
+  it('toggles the mobile navigation menu', () => {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const links = document.getElementById('links');
+
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(links.style.display).toBe('none');
+
+    toggle.click();
+
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(links.style.display).toBe('block');
+
+    toggle.click();
+
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(links.style.display).toBe('none');
+  });
+
+  it('closes the mobile navigation menu after a link is clicked', () => {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const links = document.getElementById('links');
+
+    toggle.click();
+    links.querySelector('a').click();
+
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(links.style.display).toBe('none');
   });
 });
