@@ -11,7 +11,34 @@ function setContainerMessage(container, className, text) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+  const mobileNavLinks = document.getElementById('links');
   const footerText = document.querySelector('.footer');
   const currentYear = new Date().getFullYear();
-  footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+
+  if (mobileNavToggle && mobileNavLinks && mobileNavToggle.dataset.initialized !== 'true') {
+    mobileNavToggle.dataset.initialized = 'true';
+
+    const setMobileNavState = (isOpen) => {
+      mobileNavLinks.style.display = isOpen ? 'block' : 'none';
+      mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    setMobileNavState(false);
+
+    mobileNavToggle.addEventListener('click', function() {
+      const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      setMobileNavState(!isOpen);
+    });
+
+    mobileNavLinks.addEventListener('click', function(event) {
+      if (event.target.closest('a')) {
+        setMobileNavState(false);
+      }
+    });
+  }
+
+  if (footerText) {
+    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+  }
 });
