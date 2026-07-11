@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
   }
   
-  const targetDate = new Date("2026-10-01T00:00:00");
+  const targetDate = new Date("2026-09-30T00:00:00");
 
   function updateCountdown() {
     const now = new Date();
