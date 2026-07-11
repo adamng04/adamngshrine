@@ -187,7 +187,7 @@ body {
 
 .android-countdown-banner {
     border-radius: 4px;
-    background: linear-gradient(180deg, rgb(255, 2, 2));
+    background: red;
     color: #000000;
     padding: 1.2rem 1.4rem;
     box-sizing: border-box;
@@ -195,7 +195,8 @@ body {
     position: relative;
     overflow: hidden;
     width: 80%;
-    box-shadow: 0 0 28px rgba(255, 0, 0, 0.2);
+    max-width: 80%;
+    text-align: left; 
 }
 
 .android-countdown-content {
@@ -630,5 +631,9 @@ small {
     .content {
         grid-column: 1;
         grid-row: 3;
+    }
+
+    .android-countdown-banner {
+        width: 100%;
     }
 }
