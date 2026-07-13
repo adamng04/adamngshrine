@@ -3,9 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>adamngshrine dream journal</title>
+    <link rel="icon" href="https://media.adamngshrine.com/images/logo-01-01.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: rgb(12, 12, 12);
+            color: rgb(211, 211, 211);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .adamngs {
+            font-size: 2rem;
+        }
+
+        .title {
+            font-size: 8rem;
+            animation: glow 20s ease-in-out infinite;
+            text-shadow: 0 0 6px rgb(255, 255, 255);
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .title {
+                font-size: 4rem;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {text-shadow: 0 0 12px rgb(255, 255, 255);}
+            50% {text-shadow: 0 0 6px rgb(255, 255, 255)}
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            justify-content: space-between;
+            font-size: 14px;
+            padding: 20px;
+        }
+
+        .nav_options {
+            a {
+                margin: 0 6px;
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .dreamlog {
+            width: 60%;
+            margin: 0 auto;
+            border-bottom: 1px solid white;
+        }
+
+        .dreamlog > * {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .footer {
+            margin: 60px 0;
+        }
+    </style>
 </head>
 <body>
-    work in progress baby
+    <div class="nav">
+        <div class="nav_logo">
+            <a href="/"><img src="https://media.adamngshrine.com/images/logo-01-01.png" alt="modernlogo" width="40px"></a>
+        </div>
+        <div class="nav_options">
+            <a href="/">home</a>
+            <a href="/index/AUportal.html">back to AU portal</a>
+        </div>
+    </div>
+    <div class="adamngs">adamng04's</div>
+    <div class="title">dream journal</div>
+    <div class="content">
+        <div class="dreamlog">
+            <h5>July 11, 2026</h5>
+            <p>yesterday i dreamt whereas a friend of mine suddenly went furious at me and blocked me on sight. funny enough i talked to them about it, and they thought it was funny and experienced the same, just different circumstances.</p>
+        </div>
+    </div>
+    <div class="footer">inspired by <a target="_blank" href="https://eyeorb.net/dreams.html">eyeorb's dreamlog</a></div>
 </body>
 </html>
