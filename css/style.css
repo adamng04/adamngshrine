@@ -52,7 +52,6 @@ body {
     font-family: 'Merriweather', sans-serif;
     min-height: 10rem;
     padding: 10px;
-    margin-top: 2em;
     border-bottom: 2px solid;
     border-image: var(--border-image);
     display: flex;
@@ -63,10 +62,8 @@ body {
   .bg-overlay {
     position: absolute;
     inset: 0;
-    background: url(https://safebooru.org//samples/2563/sample_e1a161c28054a031ad25e03f011ddea4ed58c70b.jpg?5374068) 0px -120px/100% 280% no-repeat;
+    background: url(/imagesbackup/zr.jpg) 0px -120px/100% 280% no-repeat;
     z-index: 0;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
     filter: hue-rotate(120deg);
 
     &::before {
@@ -74,8 +71,6 @@ body {
       position: absolute;
       inset: 0;
       background-color: #000000e7;
-      border-top-left-radius: 1em;
-      border-top-right-radius: 1em;
       opacity: 0.6;
       z-index: 1;
     }
@@ -83,7 +78,6 @@ body {
       content: '';
       position: absolute;
       inset: 0;
-      backdrop-filter: blur(0.5px);
     }
   }
 
@@ -133,7 +127,7 @@ body {
     z-index: 3;
     width: 80%;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
     
     a {
@@ -259,7 +253,7 @@ body {
     box-sizing: border-box;
     border: 1px solid #ffc073;
     border-radius: 4px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     background: rgb(25, 25, 25);
 }
 
@@ -357,7 +351,7 @@ body {
 
 .sticker {
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .stickers {
