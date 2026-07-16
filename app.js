@@ -41,23 +41,5 @@ document.addEventListener('DOMContentLoaded', function() {
   if (footerText) {
     footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
   }
-  
-  const targetDate = new Date("2026-09-30T00:00:00");
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      document.getElementById("android-countdown").textContent = "0 days";
-      return;
-    }
-
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("android-countdown").textContent = `${days} days`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 60000); // Update every minute
 });
 
