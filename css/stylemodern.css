@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Raleway font loaded via <link> in HTML */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -35,7 +44,7 @@
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     a {
         margin: 0 10px;
@@ -98,6 +107,7 @@
     margin: 0 auto;
     input {
         width: 100%;
+        max-width: 100%;
         border-radius: 10px;
     }
 }
@@ -127,7 +137,7 @@
         width: 44%;
         h1 {
             color: #ff8000;
-            margin-bottom: 20px 0;
+            margin-bottom: 20px;
         }
     }
     p {
@@ -135,7 +145,11 @@
     }
     .image {
         width: 50%;
+        overflow: hidden;
         img{
+            display: block;
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
             border: 6px double #ff8000;
             box-shadow: 8px 8px 1px #004d49;
@@ -144,7 +158,9 @@
 }
 
 .reminder {
-    margin: 100px 0;
+    padding: 60px 0;
+    border-radius: 10px;
+    margin: 40px 0;
 }
 
 .contacts {
@@ -187,6 +203,24 @@
     }
 }
 
+.wrapper {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ffc073;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: rgb(25, 25, 25);
+}
+
+.footer-image {
+    border: 1px solid #ffc073;
+}
+
+.footer {
+    color: #daddd5;
+    width: 100%;
+}
+
 .bottom {
     margin: 10px auto;
     margin-bottom: 20px;
@@ -208,18 +242,27 @@
 @media screen and (max-width: 768px) {
     .container {
         width: 100%;
+        padding: 0 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .nav-options {
+        flex-wrap: wrap;
+        gap: 0.25rem;
     }
 
     .main-text-image {
         margin: 20px 0;
         display: block;
-        box-sizing: border-box;
         .text {
             width: 100%;
         }
         .image {
-            width: 90%;
-            justify-content: start;
+            width: 100%;
         }
     }
 
