@@ -102,6 +102,10 @@
             color: rgb(231, 204, 204);
         }
 
+        .status-msg {
+            opacity: .6;
+        }
+
         @media (max-width: 600px) {
             .dreamlog {
                 width: 90%;
@@ -128,20 +132,61 @@
     <div class="title">dream journal</div>
     <div class="content">
         <p>Dreams cannot be remembered forever. Hover over an entry to recall it.</p>
-        <div class="dreamlog">
-            <div class="time-mood">July 20, 2026 ✦ mood: hangover</div>
-            <p>had another recurring dream where i was transported back to my highschool days, where everything incredibly sucked. in real life highschool wasn't really that bad, but my dreams amplified those bad moments to 11. in fact i've been having the same highschool dreams for 6 times now.</p>
-        </div>
-        <div class="dreamlog">
-            <div class="time-mood">July 16, 2026 ✦ mood: indifferent</div>
-            <p>had a dream where i was V1 ultrakill stuck in the backrooms. due to a long standing bug i couldnt hook the skulls and had to grab it. there were at least 4 maurices every single room. sadly there were only ultrakill enemies and not la ruga from calamity mod.</p>
-        </div>
-        <div class="dreamlog">
-            <div class="time-mood">July 11, 2026 ✦ mood: extremely terrible</div>
-            <p>yesterday i dreamt whereas a friend of mine suddenly went furious at me and blocked me on sight. funny enough i talked to them about it, and they thought it was funny and experienced the same, just different circumstances.</p>
+        <div id="dreamlog-container">
+            <p class="status-msg">loading dreams...</p>
         </div>
     </div>
     <div class="footer">inspired by <a target="_blank" href="https://eyeorb.net/dreams.html">eyeorb's dreamlog</a></div>
     <a href="#start">back to top</a>
+
+    <script>
+        function setStatus(container, message) {
+            container.textContent = '';
+            const p = document.createElement('p');
+            p.className = 'status-msg';
+            p.textContent = message;
+            container.appendChild(p);
+        }
+
+        function buildDreamEntry(dream) {
+            const entry = document.createElement('div');
+            entry.className = 'dreamlog';
+
+            const timeMood = document.createElement('div');
+            timeMood.className = 'time-mood';
+            timeMood.textContent = `${dream.date} \u2726 mood: ${dream.mood}`;
+
+            const text = document.createElement('p');
+            text.textContent = dream.text;
+
+            entry.appendChild(timeMood);
+            entry.appendChild(text);
+            return entry;
+        }
+
+        async function loadDreams() {
+            const container = document.getElementById('dreamlog-container');
+            try {
+                const response = await fetch('dreams.json');
+                if (!response.ok) throw new Error('Failed to fetch dreams.json');
+                const dreams = await response.json();
+
+                if (!Array.isArray(dreams) || dreams.length === 0) {
+                    setStatus(container, 'No dreams yet.');
+                    return;
+                }
+
+                container.textContent = '';
+                const fragment = document.createDocumentFragment();
+                dreams.forEach(dream => fragment.appendChild(buildDreamEntry(dream)));
+                container.appendChild(fragment);
+            } catch (err) {
+                setStatus(container, "couldn't load dreams.json — make sure it's in the same folder as this page.");
+                console.error(err);
+            }
+        }
+
+        loadDreams();
+    </script>
 </body>
 </html>
