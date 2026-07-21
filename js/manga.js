@@ -3,7 +3,7 @@ function loadCSS() {
     Object.assign(link, {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '/styleweeb.css'
+        href: '/css/cssAU/styleweeb.css'
     });
     document.head.appendChild(link);
 }

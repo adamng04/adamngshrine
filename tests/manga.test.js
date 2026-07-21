@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import vm from 'node:vm';
 
-const mangaScript = readFileSync(resolve(process.cwd(), 'manga.js'), 'utf8');
+const mangaScript = readFileSync(resolve(process.cwd(), 'js/manga.js'), 'utf8');
 
 function createData(title) {
   return [{

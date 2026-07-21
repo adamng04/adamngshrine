@@ -167,7 +167,7 @@
         async function loadDreams() {
             const container = document.getElementById('dreamlog-container');
             try {
-                const response = await fetch('dreams.json');
+                const response = await fetch('/json/dreams.json');
                 if (!response.ok) throw new Error('Failed to fetch dreams.json');
                 const dreams = await response.json();
 

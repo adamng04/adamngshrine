@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import vm from 'node:vm';
 
-const appScript = readFileSync(resolve(process.cwd(), 'app.js'), 'utf8');
+const appScript = readFileSync(resolve(process.cwd(), 'js/app.js'), 'utf8');
 
 function setupDom() {
   const dom = new JSDOM(`
