@@ -25,7 +25,7 @@ function createEl(tag, className, text) {
     return el;
 }
 
-function renderList(data, containerId) {
+function renderList(data, containerId, type) {
     const container = document.getElementById(containerId);
     if (!container) return console.error(`Container "${containerId}" not found`);
     container.replaceChildren();
@@ -35,20 +35,20 @@ function renderList(data, containerId) {
 
         const imageDiv = createEl('div', 'image');
         const img = document.createElement('img');
-        img.src = item.image.src;
-        img.alt = item.image.alt;
+        img.src = `/index/weebimages/${type}/${item.cover}`;
+        img.alt = item.title;
         imageDiv.appendChild(img);
 
         const descDiv = createEl('div', 'description');
         const descHeader = createEl('div', 'description-header');
 
         const headerImg = document.createElement('img');
-        headerImg.src = item.description.header.image.src;
-        headerImg.alt = item.description.header.image.alt;
+        headerImg.src = `/index/weebimages/${type}/${item.cover}`;
+        headerImg.alt = item.title;
 
         const nameDiv = createEl('div', 'name');
-        nameDiv.appendChild(createEl('h3', null, item.description.header.name.title));
-        nameDiv.appendChild(createEl('small', null, item.description.header.name.author));
+        nameDiv.appendChild(createEl('h3', null, item.title));
+        nameDiv.appendChild(createEl('small', null, `${item.author} - ${item.year}`));
 
         descHeader.appendChild(headerImg);
         descHeader.appendChild(nameDiv);
@@ -56,11 +56,12 @@ function renderList(data, containerId) {
 
         const descContent = createEl('div', 'description-content');
 
-        const statusDiv = createEl('div', 'status', item.descriptionContent.status);
+        const scoreText = item.score != null ? `${item.score}/10` : "--/10";
+        const statusDiv = createEl('div', 'status', `Status: ${item.status}. - Score: ${scoreText}`);
 
         descContent.appendChild(statusDiv);
         descContent.appendChild(createEl('h4', null, "Reader's comment:"));
-        descContent.appendChild(createEl('p', null, item.descriptionContent.comment));
+        descContent.appendChild(createEl('p', null, item.comment));
 
         listItem.appendChild(imageDiv);
         listItem.appendChild(descDiv);
@@ -73,16 +74,13 @@ function renderList(data, containerId) {
 document.addEventListener('DOMContentLoaded', async () => {
     loadCSS();
 
-    const sections = [
-        { id: 'manga-container', url: '/json/manga-data.json' },
-        { id: 'anime-container', url: '/json/anime-data.json' }
-    ];
+    const sections = ["manga", "anime"];
 
-    for (const { id, url } of sections) {
-        const el = document.getElementById(id);
+    for (const type of sections) {
+        const container = `${type}-container`;
+        const el = document.getElementById(container);
         if (!el) continue;
-        const data = await loadData(url);
-        renderList(data, id);
+        const data = await loadData(`/json/${type}-data.json`);
+        renderList(data, container, type);
     }
 });
-

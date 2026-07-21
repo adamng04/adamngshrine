@@ -8,14 +8,14 @@ const mangaScript = readFileSync(resolve(process.cwd(), 'manga.js'), 'utf8');
 
 function createData(title) {
   return [{
-    image: { src: '/img.png', alt: 'cover' },
-    description: {
-      header: {
-        image: { src: '/head.png', alt: 'header' },
-        name: { title, author: 'author' }
-      }
-    },
-    descriptionContent: { status: 'reading', comment: 'good' }
+    id: "test",
+    title,
+    author: "author",
+    year: 2020,
+    cover: "test.jpg",
+    status: "reading",
+    score: 8,
+    comment: "good"
   }];
 }
 
