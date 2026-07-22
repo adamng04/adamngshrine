@@ -1,0 +1,161 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  border: none;
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(
+      to left top,
+      #212121, #383f4d, #40637c, #338ba7, #00b6c8, #00c6bf,
+      #44d4ad, #79df95, #a6ce69, #cbba4f, #e8a14c, #fb875f
+    );
+    background-size: 800% 300%;
+    opacity: 0.4;
+    animation: rainbow_animation 20s ease infinite;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.592);
+  }
+}
+
+@keyframes rainbow_animation {
+  0%, 100% { background-position: 0 0; }
+  50%      { background-position: 100% 0; }
+}
+
+body {
+  margin: 0;
+  position: relative;
+  color: rgb(246, 246, 246);
+  text-align: center;
+  font-style: italic;
+
+  a {
+    margin: 0 6px;
+    color: rgb(10, 66, 58);
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.adamngs {
+  font-size: 2rem;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 8rem;
+  color: #fff;
+  text-shadow: 0 0 6px #fff;
+  animation: glow 20s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 12px #fff; }
+  50%      { text-shadow: 0 0 6px #fff; }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 14px;
+
+  &_options a {
+    margin: 0 6px;
+    color: rgb(240, 190, 190);
+    text-decoration: none;
+  }
+}
+
+.content {
+  max-width: 50rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.dreamlog {
+  margin: 14px 0;
+  padding: 20px;
+  border-radius: 24px 24px 8px 24px;
+  background: #242624;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.18);
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  > * {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: start;
+  }
+
+  p {
+    filter: blur(3px);
+    opacity: 0.55;
+    transition:
+      filter 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  &:hover,
+  &:focus-within {
+    background: #2d302d;
+
+    p {
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    .time-mood {
+      color: rgb(245, 228, 228);
+    }
+  }
+}
+
+.time-mood {
+  margin: 0;
+  color: rgb(231, 204, 204);
+}
+
+.status-msg {
+  opacity: 0.6;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .dreamlog {
+    margin: 20px auto;
+  }
+}
