@@ -24,16 +24,15 @@ body {
   background: linear-gradient(140deg, rgb(218, 216, 72), #f8a149, #ff9327, #98c6bd, rgb(153, 153, 153)); 
   border-radius: 18px;
   box-shadow: 0 2px 3px rgb(0, 0, 0);
-  &::before {
-    box-shadow: 0 2px -3px rgb(0, 0, 0);
-  }
 }
 
-:root a {
-    padding: 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.2s ease;
+:root {
+    a {
+        padding: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
 }
 
 .container {
@@ -79,7 +78,7 @@ body {
 }
 
 .header-text {
-    text-align: center
+    text-align: center;
 }
 
 .middle {
@@ -120,12 +119,6 @@ body {
     line-height: 1.5;
     appearance: none;
     border: none;
-}
-
-.separator {
-    height: 1px;
-    border: 1px solid black;
-    background-color: #0e1313;
 }
 
 .main-text-image {
@@ -222,8 +215,7 @@ body {
 }
 
 .bottom {
-    margin: 10px auto;
-    margin-bottom: 20px;
+    margin: 10px auto 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,7 +231,7 @@ body {
     width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .container {
         width: 100%;
         padding: 0 10px;
@@ -266,31 +258,30 @@ body {
         }
     }
 
-    .main-text-image:nth-child(2)  {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: start !important;
+    .main-text-image {
+        &:nth-child(2) {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: start !important;
+        }
     }
 
-    .newsletter input{
-        width: 95%;
+    .newsletter {
+        input {
+            width: 95%;
+        }
     }
 
     .bottom {
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
     }
 
     .contacts {
-        width: 100%;
         justify-content: start;
         text-align: left;
         
         h3 {
-            border-bottom: 2px solid;
             border-image: linear-gradient(-90deg, #002d2b, #009479, #fdbe72, #009479,#002d2b) 1;
-            padding-bottom: 4px;
         }
         
         ul {

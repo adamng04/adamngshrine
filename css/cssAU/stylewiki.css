@@ -20,13 +20,12 @@ h1 {
 }
 
 a {
-    text-decoration: none;
     color: #3f0eee;
     text-decoration: underline;
-}
 
-a:visited {
-    color: #020276;
+    &:visited {
+        color: #020276;
+    }
 }
 
 span {
@@ -44,22 +43,27 @@ span {
     margin: 0;
 }
 
-.nav_logo_title p:nth-child(2) {
-    margin: -2px 0;
-    font-size: 8px;
-    font-style: italic;
+.nav_logo_title {
+    p {
+        margin: 0;
+        font-size: 18px;
+
+        &:nth-child(2) {
+            margin: -2px 0;
+            font-size: 8px;
+            font-style: italic;
+        }
+    }
 }
 
-.nav_logo_title p {
-    margin: 0;
-    font-size: 18px;
-}
+:is(.nav_options, .main_container_header_infobox) {
+    a {
+        margin-right: 6px;
+        color: #3f0eee;
 
-.nav_options a, .main_container_header_infobox a{
-    margin-right: 6px;
-    color: #3f0eee;
-    &:hover {
-        color: #ea7908;
+        &:hover {
+            color: #ea7908;
+        }
     }
 }
 
@@ -76,13 +80,14 @@ span {
     top: 20px;
     max-height: 300px;
     overflow: hidden;
-    font-weight: thinner;
 }
 
-.sidebar_header p{
-    border-bottom: 1px solid #717171;
-    padding: 10px 0;
-    width: 80%;
+.sidebar_header {
+    p {
+        width: 80%;
+        padding: 10px 0;
+        border-bottom: 1px solid #717171;
+    }
 }
 
 .sidebar_contents {
@@ -92,17 +97,17 @@ span {
     gap: 10px;
     font-size: 16px;
     border-collapse: collapse;
-}
 
-.sidebar_contents a {
-    text-decoration: none;
-    color: #6f4af6;
-    padding: 2px 0;
-    width: 70%;
-}
+    a {
+        width: 70%;
+        padding: 2px 0;
+        color: #6f4af6;
+        text-decoration: none;
 
-.sidebar_contents a:hover {
-    color: #ea7908;
+        &:hover {
+            color: #ea7908;
+        }
+    }
 }
 
 .main {
@@ -146,31 +151,20 @@ span {
     border-bottom: 1px solid gray;
 }
 
-.main_container{
+.main_container {
     margin: 20px 0;
 }
 
-.main_content p{
-    font-size: 16px;
-    line-height: 26px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 14px 0;
+.main_content {
+    p {
+        margin: 14px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 26px;
+    }
 }
 
-.notification {
-    width: 40%;
-    margin: 10px auto;
-    border: 2px solid #be1414;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-.notification p {
-    margin: 4px 10px;
-}
-
-sup{
+sup {
     font-size: 10px;
     position: relative;
     top: -0.5em;
@@ -184,7 +178,7 @@ sup{
     column-rule: 1px solid #ccc;
 }
 
-@media only screen and (max-width: 448px){
+@media (max-width: 448px) {
     .infobox {
         float: none;
         width: 100%;
@@ -213,14 +207,10 @@ sup{
         align-items: start;
         width: 100%;
         margin: 30px 0;
-    }
 
-    #main_title p {
-        margin: 8px 0;
-    }
-
-    .notification {
-        width: 100%;
+        p {
+            margin: 8px 0;
+        }
     }
 
     .main, .nav_mobile {

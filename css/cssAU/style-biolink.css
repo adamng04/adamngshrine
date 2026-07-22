@@ -40,10 +40,6 @@
   -ms-overflow-style: none;
 }
 
-body {
-  background-color: var(--background);
-}
-
 /* this applies to everything on the page */
 main {
   /* positioning */
@@ -70,11 +66,10 @@ main {
   margin-top: 5vh;
   text-align: center;
   text-indent: 0;
-}
 
-/* h1 is a header tag - on this page, it's used for the title above the card */
-h1 {
-  font-family: var(--titlefont);
+  h1 {
+    font-family: var(--titlefont);
+  }
 }
 
 /* the card block */
@@ -96,54 +91,40 @@ h1 {
   margin: var(--half) auto;
   border-radius: var(--spacing);
   background-color: var(--btncolor);
-  color: var(--background);
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
   border: var(--btnborder); /* uncomment if you want a border around the card */
-}
 
-/* this applies to the buttons in the list of links when active */
-.linkbtn:hover {
-  background-color: var(--btncolorhover);
-  color: var(--background);
-  cursor: pointer;
-  transition: 0.5s;
-}
+  /* button state and label */
+  &:hover {
+    background-color: var(--btncolorhover);
+    cursor: pointer;
 
-/* these apply to the buttons labels */
-.linkbtn span {
-  font-family: var(--linkfont);
-  color: var(--btnlinkcolor);
-  font-size: 1.5em;
-  transition: 0.5s;
-}
+    span {
+      color: var(--btnlinkcolorhover);
+      letter-spacing: 0.1em;
+    }
+  }
 
-/* these apply to the buttons labels when active */
-.linkbtn:hover span {
-  color: var(--btnlinkcolorhover);
-  letter-spacing: 0.1em; /* this makes the letter spread on hover, remove this line if you don't like that */
-  transition: 0.5s;
+  span {
+    font-family: var(--linkfont);
+    color: var(--btnlinkcolor);
+    font-size: 1.5em;
+    transition: 0.5s;
+  }
 }
 
 /* other links styling */
 a {
   text-decoration: none;
   color: var(--linkcolor);
-}
 
-/* other actives links styling */
-a:hover {
-  text-decoration: none;
-  color: var(--linkcolorhover);
-}
-
-/* class styling */
-.flex {
-  display: flex;
-  flex-flow: row wrap;
+  &:hover {
+    color: var(--linkcolorhover);
+  }
 }
 
 .center {
@@ -152,12 +133,14 @@ a:hover {
 }
 
 /* profile pic styling, this is what create the mask on the shape */
-.profilepic img {
-  width: var(--profilepicsize);
-  height: var(--profilepicsize);
-  padding: var(--half);
-  object-fit: cover;
-  animation: rotate 10s linear infinite;
+.profilepic {
+  img {
+    width: var(--profilepicsize);
+    height: var(--profilepicsize);
+    padding: var(--half);
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+  }
 }
 
 @keyframes rotate {
@@ -169,39 +152,17 @@ a:hover {
   }
 }
 
-.circle img {
-  border-radius: 1%;
-}
-
-.rounded img {
-  border-radius: var(--profilepiccorner);
-}
-
-/* social links icons */
-.icon {
-  color: var(--linkcolor);
-  transition: 0.5s;
-  padding: 3px;
-}
-
-/* social links icons, active */
-.icon:hover {
-  color: var(--linkcolorhover);
-  text-shadow: 0px 0px 15px var(--linkcolorhover); /* glow effect around the icon when hovering */
-  transform: scale(1.1); /* scaling up when hovering */
-  transition: 0.5s;
+.rounded {
+  img {
+    border-radius: var(--profilepiccorner);
+  }
 }
 
 /* indents the description paragraph */
-#intro p {
-  text-indent: 5%;
-}
-
-/* this affects the block of social links */
-#socials {
-  padding: var(--spacing);
-  text-indent: 0;
-  text-align: center;
+#intro {
+  p {
+    text-indent: 5%;
+  }
 }
 
 /* credits block at the bottom */
@@ -222,9 +183,8 @@ a:hover {
   bottom: 0%;
   left: 45%;
   opacity: 0.25;
-}
 
-/* makes the template credits block opaque when active */
-#tmplt_credits:hover {
-  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
 }

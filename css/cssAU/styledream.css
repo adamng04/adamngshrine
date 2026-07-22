@@ -77,8 +77,10 @@ body {
   margin: 0 auto;
   padding: 20px;
   font-size: 14px;
+}
 
-  &_options a {
+.nav_options {
+  a {
     margin: 0 6px;
     color: rgb(240, 190, 190);
     text-decoration: none;
@@ -100,7 +102,6 @@ body {
   transition:
     background-color 0.25s ease,
     box-shadow 0.25s ease;
-
   > * {
     margin: 10px 0;
     font-size: 18px;
@@ -134,10 +135,6 @@ body {
 .time-mood {
   margin: 0;
   color: rgb(231, 204, 204);
-}
-
-.status-msg {
-  opacity: 0.6;
 }
 
 .back-to-top {
