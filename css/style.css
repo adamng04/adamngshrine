@@ -152,7 +152,7 @@ body {
     }
 }
 
-.nav-mobile {
+.nav- {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.70);
     border-radius: 5px;
@@ -201,13 +201,76 @@ body {
 }
 
 .icon {
-    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    color: #fdbe72;
+    background: black;
+    border: 0;
+    border-left: 2px solid rgba(251, 189, 113, 0.55);
+    cursor: pointer;
+    font: inherit;
     position: absolute;
     right: 0;
     top: 0;
+    transition: background-color 180ms ease, box-shadow 180ms ease;
 
     &:hover {
-        background-color: #414141;
+        box-shadow: inset 0 0 14px rgba(251, 189, 113, 0.16);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #daddd5;
+        outline-offset: -4px;
+    }
+
+    &[aria-expanded="true"] {
+        background-color: rgba(14, 14, 14, 0.46);
+    }
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    span {
+        display: block;
+        width: 1.45rem;
+        height: 0.16rem;
+        background-color: currentColor;
+        border-radius: 999px;
+        box-shadow: 0 0 5px rgba(251, 189, 113, 0.45);
+        transform-origin: center;
+        transition: transform 220ms ease, opacity 160ms ease, width 220ms ease;
+    }
+}
+
+.icon[aria-expanded="true"] .burger-icon {
+    span:first-child {
+        transform: translateY(0.46rem) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+        width: 0;
+        opacity: 0;
+    }
+
+    span:last-child {
+        transform: translateY(-0.46rem) rotate(-45deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icon,
+    .burger-icon span {
+        transition: none;
     }
 }
 
@@ -405,6 +468,10 @@ small {
         a {
             font-size: 1.4rem;
         }
+    }
+
+    .icon {
+        display: flex;
     }
 
     .introduction {
