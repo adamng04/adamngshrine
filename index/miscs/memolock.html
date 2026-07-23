@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memolock, write the year once, then lock it</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/cssAU/stylememolock.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">Memolock</div>
+      <a class="btn btn-outline" href="#" data-action="github-download">Download on git.gay &#8599;</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Write the year down.<br>Then lock it.</h1>
+      <p class="lede">
+        Memolock is a small offline app for keeping one honest report per year:
+        books read, places visited, habits tracked, and a note to your future self.
+        Fill it in as you go, then lock it so it can't quietly get rewritten later.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" data-action="github-download">Download on git.gay</a>
+        <a class="btn btn-outline" href="#how-it-works">See how it works</a>
+      </div>
+      <p class="hero-note">No installer required to read this page, the app itself runs entirely on your device.</p>
+    </div>
+  </section>
+
+  <section class="report">
+    <div class="wrap">
+      <div class="report-frame">
+        <div class="report-head">
+          <div>
+            <p class="eyebrow">Annual report</p>
+            <div class="title">Year in review</div>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="num" data-stat="0">1</div>
+            <div class="label">Books read</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-stat="1">2</div>
+            <div class="label">Places visited</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-stat="2">12,000</div>
+            <div class="label">Steps per day</div>
+            <div class="sub">Daily average</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-stat="3">10</div>
+            <div class="label">Albums listened</div>
+            <div class="sub">This year</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-stat="4">6.4h</div>
+            <div class="label">Average daily sleep</div>
+            <div class="sub">Per night</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-stat="5">4h</div>
+            <div class="label">Daily exercise</div>
+            <div class="sub">Per day</div>
+          </div>
+        </div>
+        <div class="report-note">
+          <span class="label">Personal note</span>
+          <span class="quote">"A year that mostly happened while I was looking somewhere else. Glad I wrote it down anyway."</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>One report for last year. Write as many as you remember.</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step">
+          <div class="idx">01</div>
+          <h3>Start the year</h3>
+          <p>Create a report for the previous year. The year itself is set the moment you create it and can't be changed afterward.</p>
+        </div>
+        <div class="step">
+          <div class="idx">02</div>
+          <h3>Fill it in as you go</h3>
+          <p>Track books, places, sleep, steps, and exercise, and summarize the year with a quote.</p>
+        </div>
+        <div class="step">
+          <div class="idx">03</div>
+          <h3>Lock it</h3>
+          <p>When you're ready, lock the report. It stays readable, but it becomes read-only until January 1 of the following year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split lock">
+    <div class="wrap">
+      <div class="col-eyebrow">
+        <p class="eyebrow">The lock</p>
+        <h2 style="font-size:28px;">Permanent, on purpose</h2>
+      </div>
+      <div class="col-copy">
+        <p>Once a report is locked, it can't be edited or reopened for editing until the unlock date arrives. That's the deal: you write it once, honestly, and then you leave it alone.</p>
+        <div class="lock-card">
+          <span class="k">What locking does</span>
+          Marks the report read-only on this device until January 1 of next year. It does not delete anything, and it does not touch reports from other years.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="wrap">
+      <div class="col-eyebrow">
+        <p class="eyebrow">Storage</p>
+        <h2 style="font-size:28px;">Stays on your device</h2>
+      </div>
+      <div class="col-copy">
+        <p>Every report lives in one readable JSON file next to the app. There's no account to make, nothing tracked, and nothing sent anywhere.</p>
+        <p>Open the file in a text editor if you ever want to look under the hood: it's plain data, not a database you need Memolock to unlock.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-section">
+    <div class="wrap">
+      <img src="memolock-logo.png" alt="Memolock logo" class="logo-mark">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="#" data-action="github-repo">Download on git.gay</a>
+      </div>
+      <div class="footer-copy">
+        &copy; Memolock. Content licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" data-action="cc-license">CC BY-SA 4.0</a>
+        by adamngshrine.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const statVariants = {
+      0: ['1', '12', '24', '8', '31'],
+      1: ['2', '14', '9', '23', '17'],
+      2: ['12,000', '9,400', '14,200', '10,800'],
+      3: ['10', '7', '13', '9'],
+      4: ['6.4h', '7.1h', '5.9h', '6.8h'],
+      5: ['4h', '3h', '5h', '2h']
+    };
+
+    document.querySelectorAll('.stat .num').forEach((el) => {
+      const key = el.getAttribute('data-stat');
+      const options = statVariants[key];
+      if (!options) return;
+
+      setInterval(() => {
+        el.style.opacity = '0';
+        setTimeout(() => {
+          const next = options[Math.floor(Math.random() * options.length)];
+          el.textContent = next;
+          el.style.opacity = '1';
+        }, 350);
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
