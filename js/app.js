@@ -26,9 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setMobileNavState(false);
 
-    mobileNavToggle.addEventListener('click', function() {
+    mobileNavToggle.addEventListener('click', function(event) {
+      event.stopPropagation();
       const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
       setMobileNavState(!isOpen);
+    });
+
+    document.addEventListener('click', function() {
+      setMobileNavState(false);
+    });
+
+    mobileNavToggle.parentElement.addEventListener('click', function(event) {
+      event.stopPropagation();
     });
 
     mobileNavLinks.addEventListener('click', function(event) {

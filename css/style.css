@@ -152,16 +152,16 @@ body {
     }
 }
 
-.nav- {
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.70);
-    border-radius: 5px;
-    border: 3px solid #fbbd71;
-    box-shadow: 0 0 2px #004f4d;
+.nav-mobile {
+    display: none;
     position: sticky;
     top: 0;
-    z-index: 1;
-    display: none;
+    z-index: 3;
+    background: var(--background-color);
+    border: 1px solid #ffc073;
+    border-radius: 4px;
+    width: 95%;
+    margin: 10px auto !important;
 
     #links {
         display: none;
@@ -452,6 +452,7 @@ small {
     .main {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
+        gap: 0;
         width: 95%;
     }
 
