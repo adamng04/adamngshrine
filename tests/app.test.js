@@ -7,13 +7,15 @@ import vm from 'node:vm';
 const appScript = readFileSync(resolve(process.cwd(), 'js/app.js'), 'utf8');
 const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
 
+const originalConsole = console;
+
 function setupDom() {
   const dom = new JSDOM(indexHtml, { url: 'https://example.com', runScripts: 'outside-only' });
 
   global.window = dom.window;
   global.document = dom.window.document;
   global.Event = dom.window.Event;
-  global.console = { ...console, error: vi.fn() };
+  global.console = { ...originalConsole, error: vi.fn() };
 
   const audio = document.getElementById('audio');
   const reisen = document.getElementById('reisen');
@@ -32,7 +34,7 @@ describe('app.js', () => {
     delete global.window;
     delete global.document;
     delete global.Event;
-    delete global.console;
+    global.console = originalConsole;
   });
 
   it('smoke: initializes without runtime errors', () => {
