@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const links = document.getElementById('links');
   const footerText = document.querySelector('.footer');
 
-  if (toggle && links) {
+  if (toggle && links && toggle.dataset.navInitialized !== 'true') {
+    toggle.dataset.navInitialized = 'true';
+
     const setOpen = (isOpen) => {
       links.style.display = isOpen ? 'block' : 'none';
       toggle.setAttribute('aria-expanded', String(isOpen));
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (footerText) {
-    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${new Date().getFullYear()}`;
+    footerText.textContent =
+      `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${new Date().getFullYear()}`;
   }
 });
-
