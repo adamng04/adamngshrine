@@ -48,7 +48,7 @@ function renderList(data, containerId, type) {
 
         const nameDiv = createEl('div', 'name');
         nameDiv.appendChild(createEl('h3', null, item.title));
-        nameDiv.appendChild(createEl('small', null, `${item.author} - ${item.year}`));
+        nameDiv.appendChild(createEl('small', null, `${item.studio} - ${item.year}`));
 
         descHeader.appendChild(headerImg);
         descHeader.appendChild(nameDiv);

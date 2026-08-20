@@ -3,52 +3,35 @@ function playAudio(audioId) {
   if (audio) audio.play();
 }
 
-function setContainerMessage(container, className, text) {
-  const message = document.createElement('div');
-  message.className = className;
-  message.textContent = text;
-  container.replaceChildren(message);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
-  const mobileNavLinks = document.getElementById('links');
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const links = document.getElementById('links');
   const footerText = document.querySelector('.footer');
-  const currentYear = new Date().getFullYear();
 
-  if (mobileNavToggle && mobileNavLinks && mobileNavToggle.dataset.initialized !== 'true') {
-    mobileNavToggle.dataset.initialized = 'true';
-
-    const setMobileNavState = (isOpen) => {
-      mobileNavLinks.style.display = isOpen ? 'block' : 'none';
-      mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+  if (toggle && links) {
+    const setOpen = (isOpen) => {
+      links.style.display = isOpen ? 'block' : 'none';
+      toggle.setAttribute('aria-expanded', String(isOpen));
     };
 
-    setMobileNavState(false);
+    setOpen(false);
 
-    mobileNavToggle.addEventListener('click', function(event) {
+    toggle.addEventListener('click', function(event) {
       event.stopPropagation();
-      const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-      setMobileNavState(!isOpen);
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    document.addEventListener('click', function() {
-      setMobileNavState(false);
+    document.addEventListener('click', function(event) {
+      if (!links.contains(event.target)) setOpen(false);
     });
 
-    mobileNavToggle.parentElement.addEventListener('click', function(event) {
-      event.stopPropagation();
-    });
-
-    mobileNavLinks.addEventListener('click', function(event) {
-      if (event.target.closest('a')) {
-        setMobileNavState(false);
-      }
+    links.addEventListener('click', function(event) {
+      if (event.target.closest('a')) setOpen(false);
     });
   }
 
   if (footerText) {
-    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${currentYear}`;
+    footerText.textContent = `copyright CC BY-SA 4.0 adamngshrine ~ 2023 - ${new Date().getFullYear()}`;
   }
 });
 

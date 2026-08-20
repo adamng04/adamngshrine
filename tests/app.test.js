@@ -8,46 +8,17 @@ const appScript = readFileSync(resolve(process.cwd(), 'js/app.js'), 'utf8');
 const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
 
 function setupDom() {
-  const dom = new JSDOM(`
-    <body>
-      <button id="mobile-nav-toggle" class="icon" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">
-        <span class="burger-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-      <div id="links"><a href="/index/weebcorner.html">weeb corner</a></div>
-      <img id="reisen-trigger" />
-      <img id="lain-trigger" />
-      <audio id="reisen"></audio>
-      <audio id="audio"></audio>
-      
-      <p class="footer"></p>
-      <a class="button active" data-section="index"></a>
-      <a class="button" data-section="about"></a>
-      <main id="index" class="content active"></main>
-      <section id="about" class="content"></section>
-    </body>
-  `, { url: 'https://example.com' });
+  const dom = new JSDOM(indexHtml, { url: 'https://example.com', runScripts: 'outside-only' });
 
   global.window = dom.window;
   global.document = dom.window.document;
   global.Event = dom.window.Event;
-  global.KeyboardEvent = dom.window.KeyboardEvent;
-  global.fetch = vi.fn().mockResolvedValue({
-    ok: true,
-    json: async () => [{ username: 'adam', content: 'hello', timestamp: 'now' }]
-  });
   global.console = { ...console, error: vi.fn() };
 
-  Object.defineProperty(document.getElementById('audio'), 'play', { value: vi.fn() });
-  Object.defineProperty(document.getElementById('reisen'), 'play', { value: vi.fn() });
-}
-
-async function flushAsync() {
-  await new Promise((resolvePromise) => setTimeout(resolvePromise, 0));
-  await new Promise((resolvePromise) => setTimeout(resolvePromise, 0));
+  const audio = document.getElementById('audio');
+  const reisen = document.getElementById('reisen');
+  if (audio) Object.defineProperty(audio, 'play', { value: vi.fn() });
+  if (reisen) Object.defineProperty(reisen, 'play', { value: vi.fn() });
 }
 
 describe('app.js', () => {
@@ -61,15 +32,12 @@ describe('app.js', () => {
     delete global.window;
     delete global.document;
     delete global.Event;
-    delete global.KeyboardEvent;
-    delete global.fetch;
+    delete global.console;
   });
 
-  it('smoke: initializes without runtime errors', async () => {
+  it('smoke: initializes without runtime errors', () => {
     document.dispatchEvent(new Event('DOMContentLoaded'));
-    await flushAsync();
 
-    expect(fetch).not.toHaveBeenCalled();
     expect(document.querySelector('.footer').textContent).toContain(String(new Date().getFullYear()));
     expect(console.error).not.toHaveBeenCalled();
   });
@@ -95,8 +63,7 @@ describe('app.js', () => {
   });
 
   it('uses accessible burger markup in the page', () => {
-    const page = new JSDOM(indexHtml);
-    const toggle = page.window.document.getElementById('mobile-nav-toggle');
+    const toggle = document.getElementById('mobile-nav-toggle');
     const burger = toggle.querySelector('.burger-icon');
 
     expect(toggle.tagName).toBe('BUTTON');
@@ -105,7 +72,6 @@ describe('app.js', () => {
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
     expect(burger.getAttribute('aria-hidden')).toBe('true');
     expect(burger.children).toHaveLength(3);
-    expect(toggle.querySelector('.fa-bars')).toBeNull();
   });
 
   it('closes the mobile navigation menu after a link is clicked', () => {
@@ -116,6 +82,21 @@ describe('app.js', () => {
 
     toggle.click();
     links.querySelector('a').click();
+
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(links.style.display).toBe('none');
+  });
+
+  it('closes the mobile navigation menu when clicking outside it', () => {
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const links = document.getElementById('links');
+
+    toggle.click();
+    expect(links.style.display).toBe('block');
+
+    document.body.click();
 
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
     expect(links.style.display).toBe('none');

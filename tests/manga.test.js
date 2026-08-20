@@ -10,7 +10,7 @@ function createData(title) {
   return [{
     id: "test",
     title,
-    author: "author",
+    studio: "studio",
     year: 2020,
     cover: "test.jpg",
     status: "reading",

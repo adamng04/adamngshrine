@@ -2,17 +2,17 @@
     {
         "id": "mushishi",
         "title": "Mushi-Shi",
-        "author": "Artland",
+        "studio": "Artland",
         "year": 2005,
         "cover": "mushishi-anime.jpg",
-        "status": "Finished",
+        "status": "Watched",
         "score": 10,
         "comment": "My memory with Mushi-shi was fuzzy. I was given a medium to watch, and the first thing I saw was this anime. The exploration of the supernatural in an uncanny, yet calm and soothing, as if the Mushi themselves also live a life like we do. Ginko, the protagonist, blends himself within the world of two living beings, and crafting life lessons from what he has experienced, even in life and death situations."
     },
     {
         "id": "killlakill",
         "title": "Kill la Kill",
-        "author": "TRIGGER",
+        "studio": "TRIGGER",
         "year": 2013,
         "cover": "killlakill-anime.jpg",
         "status": "Watched",
@@ -22,17 +22,17 @@
     {
         "id": "takopi",
         "title": "Takopi no Genzai",
-        "author": "Enishiya",
+        "studio": "Enishiya",
         "year": 2025,
         "cover": "takopi-anime.webp",
-        "status": "Finished",
+        "status": "Watched",
         "score": 10,
         "comment": "I feel like short stories like these are hardly seen by most people, especially this one. This one is brave enough to daringly tackle the absurdity of life under abuse, neglect, and mental fuckups. I went into this series drunk as hell, watching with 5 other homies, and walked out sobbing like a bitch. Would definitely, heavily recommend to others."
     },
     {
         "id": "aot",
         "title": "Shingeki no Kyoujin",
-        "author": "Wit/MAPPA",
+        "studio": "Wit/MAPPA",
         "year": 2013,
         "cover": "aot-anime.jpg",
         "status": "Watched",
@@ -42,7 +42,7 @@
     {
         "id": "frieren",
         "title": "Sousou no Frieren",
-        "author": "Madhouse",
+        "studio": "Madhouse",
         "year": 2020,
         "cover": "frieren-anime.jpg",
         "status": "Watching",

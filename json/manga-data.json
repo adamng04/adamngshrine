@@ -2,17 +2,17 @@
     {
         "id": "kimitsuzu",
         "title": "Kimi to Tsuzuru Utakata",
-        "author": "Yuama",
+        "studio": "Yuama",
         "year": 2020,
         "cover": "kimitsuzu-manga.jpg",
         "status": "Finished",
         "score": 10,
-        "comment": "The first manga of the entry, and also one of the final bosses of doomed yuri. Thinking about it now and then, I really don't know how the author managed to use the most predictable plot and made it 10 times more emotional and captivated me as a reader. I wholeheartedly recommend this to every yuri specimen, seriously."
+        "comment": "The first manga of the entry, and also one of the final bosses of doomed yuri. Thinking about it now and then, I really don't know how the studio managed to use the most predictable plot and made it 10 times more emotional and captivated me as a reader. I wholeheartedly recommend this to every yuri specimen, seriously."
     },
     {
         "id": "tegamibachi",
         "title": "Tegami Bachi",
-        "author": "Asada Hiroyuki",
+        "studio": "Asada Hiroyuki",
         "year": 2006,
         "cover": "tegamibachi-manga.jpg",
         "status": "Finished",
@@ -22,7 +22,7 @@
     {
         "id": "kaguya",
         "title": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
-        "author": "Akasaka Aka",
+        "studio": "Akasaka Aka",
         "year": 2019,
         "cover": "kaguya-manga.png",
         "status": "Finished",
@@ -32,7 +32,7 @@
     {
         "id": "watatabe",
         "title": "Watashi wo Tabetai, Hitodenashi",
-        "author": "Naekawa Sai",
+        "studio": "Naekawa Sai",
         "year": 2020,
         "cover": "watatabe-manga.jpg",
         "status": "Currently Reading",
@@ -42,7 +42,7 @@
     {
         "id": "juliet",
         "title": "Kishuku Gakkou no Juliet",
-        "author": "Kaneda Yousuke",
+        "studio": "Kaneda Yousuke",
         "year": 2015,
         "cover": "juliet-manga.jpg",
         "status": "Finished",
@@ -52,7 +52,7 @@
     {
         "id": "yona",
         "title": "Akatsuki no Yona",
-        "author": "Mizuho Kusanagi",
+        "studio": "Mizuho Kusanagi",
         "year": 2009,
         "cover": "yona-manga.png",
         "status": "Finished",
@@ -62,7 +62,7 @@
     {
         "id": "punpun",
         "title": "Oyasumi Punpun",
-        "author": "Inio Asano",
+        "studio": "Inio Asano",
         "year": 2007,
         "cover": "punpun-manga.jpg",
         "status": "Finished",
@@ -72,7 +72,7 @@
     {
         "id": "akuhana",
         "title": "Aku no Hana",
-        "author": "Shūzō Oshimi",
+        "studio": "Shūzō Oshimi",
         "year": 2009,
         "cover": "akuhana-manga.jpg",
         "status": "Finished",
@@ -82,7 +82,7 @@
     {
         "id": "aizawa",
         "title": "Mietemasu yo! Aizawa-san",
-        "author": "Odoroo Dorothy",
+        "studio": "Odoroo Dorothy",
         "year": 2022,
         "cover": "aizawa-manga.jpg",
         "status": "Currently Reading",
